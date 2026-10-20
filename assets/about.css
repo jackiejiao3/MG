@@ -78,3 +78,7 @@
  .ab-legal-name { min-height:0; }
  .ab-next { padding:40px 24px; flex-direction:column; align-items:start; }
 }
+
+/* Keep the meeting subjects prominent within the shared milestone frame. */
+.ab-milestone-photo--people { width:100%; aspect-ratio:2 / 1; overflow:hidden; }
+.ab-milestone-photo--people img { width:100%; height:100%; object-fit:cover; transform:scale(1.2); transform-origin:left 42%; }
