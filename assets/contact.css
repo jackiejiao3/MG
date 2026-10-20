@@ -1,0 +1,79 @@
+/* Contact only: approved gold illustrations, shared brand typography. */
+.contact-page { --contact-paper:#f3ede2; --contact-white:#fffdf9; background:var(--contact-paper); }
+.contact-page main { font-size:1.0625rem; }
+.contact-page .contact-width { width:min(100%,1600px); margin-inline:auto; padding-inline:clamp(20px,4vw,72px); }
+.contact-page .contact-hero { background:var(--ink); color:var(--contact-white); padding-block:clamp(40px,5vw,72px); border-bottom:1px solid #5e523c; }
+.contact-page .contact-hero-copy { max-width:780px; border-left:2px solid var(--gold); padding-left:clamp(18px,2vw,28px); }
+.contact-page .contact-kicker { font-size:.9375rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); line-height:1.5; }
+.contact-page .contact-hero h1 { font:400 clamp(2.5rem,4vw,4.25rem)/1.08 var(--serif); letter-spacing:-.025em; margin-top:16px; }
+.contact-page .contact-hero-copy > p:last-child { color:#e0dfd9; font-size:1.125rem; line-height:1.65; max-width:620px; margin-top:20px; }
+.contact-page .contact-routing { padding-block:clamp(36px,4vw,58px) 36px; }
+.contact-page .section-label { font-size:1rem; letter-spacing:.09em; margin-bottom:13px; }
+.contact-page .section-label span { font-size:1.1875rem; }
+.contact-page .contact-routing h2,.contact-page .contact-enquiry h2 { font:400 clamp(1.875rem,2.9vw,2.875rem)/1.15 var(--serif); letter-spacing:-.02em; }
+.contact-page .contact-products { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(14px,1.7vw,26px); margin-top:30px; }
+.contact-page .contact-product { min-width:0; padding:0; display:flex; flex-direction:column; text-align:left; font:inherit; color:var(--ink); background:var(--contact-white); border:1px solid var(--line); border-radius:2px; cursor:pointer; transition:border-color .18s ease,box-shadow .18s ease; }
+.contact-page .contact-product:hover { border-color:var(--gold-deep); }
+.contact-page .contact-product[aria-pressed="true"] { border-color:var(--gold-deep); box-shadow:0 0 0 1px var(--gold-deep); }
+.contact-page .contact-product:focus-visible,.contact-page .contact-field :is(input,select,textarea):focus-visible,.contact-page .contact-send:focus-visible { outline:3px solid #806327; outline-offset:4px; }
+.contact-page .contact-product-media { position:relative; display:block; width:100%; aspect-ratio:3/2; padding:22px 10px 0; }
+.contact-page .contact-product-media img { width:100%; height:100%; object-fit:contain; }
+.contact-page .contact-product-number { position:absolute; top:12px; left:18px; color:#806733; font:400 1.125rem/1.3 var(--serif); }
+.contact-page .contact-product-copy { display:flex; flex:1; flex-direction:column; padding:18px clamp(16px,1.7vw,26px) 24px; }
+.contact-page .contact-product-title { display:block; min-height:2.4em; font:400 clamp(1.375rem,1.8vw,1.75rem)/1.18 var(--serif); overflow-wrap:break-word; }
+.contact-page .contact-product-description { display:block; margin-top:12px; color:#625e57; font-size:1rem; line-height:1.6; }
+.contact-page .contact-product-route { display:flex; justify-content:space-between; align-items:center; gap:12px; padding-top:24px; margin-top:auto; color:#806733; font-size:1rem; font-weight:600; }
+.contact-page .contact-product-check { display:grid; place-items:center; width:23px; height:23px; flex:0 0 23px; border:1px solid #b6a374; border-radius:50%; font:600 .9375rem/1 var(--sans); color:transparent; }
+.contact-page .contact-product[aria-pressed="true"] .contact-product-check { background:var(--gold); border-color:var(--gold); color:var(--ink); }
+.contact-page .contact-enquiry { padding-bottom:clamp(48px,5vw,76px); scroll-margin-top:24px; }
+.contact-page .contact-enquiry-heading { border-top:1px solid var(--line); padding-top:32px; margin-bottom:28px; }
+.contact-page .contact-enquiry-layout { display:grid; grid-template-columns:minmax(240px,.8fr) minmax(0,1.6fr); }
+.contact-page .contact-destination { min-width:0; display:flex; flex-direction:column; padding:clamp(26px,3vw,44px); background:var(--ink); color:var(--contact-white); }
+.contact-page .contact-destination-icon { width:38px; height:38px; margin-bottom:28px; }
+.contact-page .contact-destination .contact-kicker { font-size:.875rem; color:#c7b184; }
+.contact-page .contact-destination h3 { font:400 clamp(1.875rem,2.8vw,2.5rem)/1.15 var(--serif); margin-top:14px; overflow-wrap:break-word; }
+.contact-page .contact-scope { color:#e1ddd4; font-size:1.125rem; line-height:1.5; margin-top:18px; }
+.contact-page .contact-responsibility { padding-top:56px; margin-top:auto; }
+.contact-page .contact-responsibility h4 { display:flex; align-items:center; gap:10px; font-size:1rem; font-weight:500; color:#cab787; margin-bottom:12px; }
+.contact-page .contact-responsibility h4 img { flex:0 0 22px; }
+.contact-page .contact-responsibility p { font-size:1rem; line-height:1.65; color:#d3d1c9; }
+.contact-page .contact-enquiry-form { min-width:0; background:var(--contact-white); padding:clamp(26px,3vw,44px); }
+.contact-page .contact-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.contact-page .contact-field { min-width:0; }
+.contact-page .contact-field label { display:block; font-size:1rem; font-weight:500; margin-bottom:8px; }
+.contact-page .contact-field :is(input,select,textarea) { width:100%; min-width:0; max-width:100%; padding:12px; border:1px solid #c9beab; border-radius:2px; background:#fff; color:var(--ink); font:400 1rem/1.5 var(--sans); }
+.contact-page .contact-field select { text-overflow:ellipsis; }
+.contact-page .contact-field textarea { min-height:140px; resize:vertical; }
+.contact-page .contact-field :is(input,textarea)::placeholder { color:#74706a; opacity:1; }
+.contact-page .contact-field-wide { grid-column:1/-1; }
+.contact-page .contact-send { display:inline-flex; align-items:center; gap:28px; margin-top:28px; padding:14px 22px; min-height:48px; border:0; border-radius:1px; font:600 1rem/1.5 var(--sans); background:var(--gold); color:var(--ink); cursor:pointer; }
+.contact-page .contact-send:hover { background:#cdb580; }
+.contact-page .contact-send:disabled { opacity:.65; cursor:not-allowed; }
+.contact-page .contact-send span { font-size:1.375rem; line-height:1; }
+.contact-page .contact-form-notice { margin-top:16px; font-size:.875rem; line-height:1.6; color:#625e57; max-width:560px; }
+.contact-page .contact-form-status { margin-top:12px; font-size:1rem; line-height:1.6; color:#65502a; }
+.contact-page .contact-form-status:empty { display:none; }
+@media (max-width:900px) {
+  .contact-page .contact-products { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .contact-page .contact-product-media { aspect-ratio:auto; height:220px; }
+  .contact-page .contact-product-title { min-height:0; }
+  .contact-page .contact-fields { grid-template-columns:1fr; gap:20px; }
+}
+@media (max-width:700px) {
+  .contact-page .contact-enquiry-layout { grid-template-columns:1fr; }
+  .contact-page .contact-responsibility { padding-top:26px; }
+  .contact-page .contact-destination-icon { margin-bottom:18px; }
+}
+@media (max-width:520px) {
+  .contact-page .contact-products { grid-template-columns:1fr; gap:18px; }
+  .contact-page .contact-product-media { height:210px; padding-top:22px; }
+  .contact-page .contact-product-title { font-size:1.5rem; }
+  .contact-page .contact-product-copy { padding:14px 22px 24px; }
+  .contact-page .contact-product-route { padding-top:18px; }
+  .contact-page .contact-enquiry-form,.contact-page .contact-destination { padding:26px 22px; }
+  .contact-page .contact-hero-copy > p:last-child { font-size:1rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .contact-page { scroll-behavior:auto; }
+  .contact-page .contact-product { transition:none; }
+}

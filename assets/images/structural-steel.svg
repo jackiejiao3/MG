@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#202326"/>
+  <rect x="96" y="176" width="1008" height="448" rx="4" fill="#292d30" stroke="#bda16d" stroke-width="2" stroke-dasharray="12 10"/>
+  <text x="600.0" y="384" font-family="Georgia, serif" font-size="42" fill="#bda16d" text-anchor="middle" font-weight="400">Structural Steel</text>
+  <text x="600.0" y="448" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" fill="#aeb2b4" text-anchor="middle">Envisioned: Large structural steel columns and trusses during fabrication</text>
+</svg>

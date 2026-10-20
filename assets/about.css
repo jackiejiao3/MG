@@ -1,0 +1,80 @@
+/* About Modern Group: editorial introduction, milestones and governance. */
+.about-page { background:var(--ivory); }
+.about-page .site-header { position:relative; background:var(--ink); }
+.ab-eyebrow { color:var(--gold-deep); font:600 10px/1.5 var(--sans); letter-spacing:.17em; text-transform:uppercase; margin-bottom:18px; }
+.ab-hero { display:grid; grid-template-columns:46% 54%; min-height:510px; }
+.ab-hero-copy { padding:62px 10% 58px 13%; align-self:center; }
+.ab-hero h1 { font:400 clamp(44px,4.7vw,72px)/1.06 var(--serif); letter-spacing:-.035em; margin-bottom:24px; }
+.ab-hero-copy > p:not(.ab-eyebrow) { font-size:14px; line-height:1.8; color:#66635c; margin-bottom:16px; }
+.ab-hero-copy > p.ab-lead { font-size:18px; color:var(--ink); }
+.ab-hero-photo { margin:0; position:relative; min-height:510px; }
+.ab-hero-photo img { position:absolute; width:100%; height:100%; object-fit:cover; }
+.ab-hero-photo figcaption { position:absolute; bottom:0; left:0; right:0; color:white; padding:40px 25px 20px; background:linear-gradient(transparent,#202326b8); font-size:10px; text-transform:uppercase; letter-spacing:.13em; }
+.ab-link { display:inline-flex; align-items:center; gap:24px; padding:10px 0; border-bottom:1px solid var(--gold); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.ab-link:hover { color:var(--gold-deep); }
+.ab-facts { display:grid; grid-template-columns:1fr 1fr 1.1fr; padding:28px 6%; gap:35px; border-bottom:1px solid var(--line); }
+.ab-facts > div { display:flex; gap:20px; align-items:center; border-right:1px solid var(--line); }
+.ab-facts strong { font:400 48px/1 var(--serif); color:var(--gold-deep); }
+.ab-facts span { font-size:11px; letter-spacing:.06em; }
+.ab-facts > p { font-size:13px; color:#6b665c; align-self:center; }
+.ab-section { padding:64px 6%; scroll-margin-top:25px; }
+.ab-heading { display:grid; grid-template-columns:1.3fr 1fr; gap:10%; align-items:end; margin-bottom:34px; }
+.ab-heading > p { font-size:14px; line-height:1.8; color:#6b665c; max-width:390px; }
+.ab-section h2,.ab-next h2 { font:400 clamp(32px,3.4vw,49px)/1.12 var(--serif); letter-spacing:-.025em; }
+.ab-development { background:#fffdf8; }
+.ab-milestones { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+.ab-year { font:400 43px/1 var(--serif); color:var(--gold-deep); padding:0 0 18px; margin-bottom:18px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; }
+.ab-year span { font:400 20px var(--sans); align-self:center; }
+.ab-milestone img { width:100%; aspect-ratio:2; object-fit:cover; }
+.ab-milestone h3 { font:400 25px/1.2 var(--serif); margin:22px 0 10px; }
+.ab-milestone p { color:#68655e; font-size:13px; line-height:1.8; }
+.ab-companies { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+.ab-company { padding:27px; display:flex; flex-direction:column; border-top:2px solid var(--gold); background:#fffcf5; }
+.ab-city { font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:#857456; }
+.ab-company h3 { font:400 43px/1.1 var(--serif); margin:14px 0; }
+.ab-legal-name { font-size:12px; color:#6b665c; min-height:3.4em; line-height:1.7; }
+.ab-company-scope { border-top:1px solid var(--line); margin:20px 0; padding-top:17px; }
+.ab-company h4 { font-size:12px; font-weight:600; line-height:1.6; margin-bottom:8px; }
+.ab-company-scope p { color:#6b665c; font-size:12px; line-height:1.8; }
+.ab-company .ab-link { margin-top:auto; align-self:start; }
+.ab-legal-note { margin-top:24px; padding-left:16px; border-left:2px solid var(--gold); font-size:11px; color:#6b665c; line-height:1.8; }
+.ab-legal-note span { display:block; color:var(--ink); font-weight:600; margin-bottom:4px; }
+.ab-governance { display:grid; grid-template-columns:1fr 1fr; gap:9%; background:var(--ink); color:var(--ivory); }
+.ab-governance .ab-eyebrow { color:var(--gold); }
+.ab-governance-copy > p:not(.ab-eyebrow) { font-size:14px; line-height:1.8; color:#c8c7be; margin-top:24px; }
+.ab-responsibility { border-left:1px solid #bda16d65; padding-left:22px; margin-top:28px; }
+.ab-responsibility strong { font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#dac393; }
+.ab-responsibility p { font-size:12px; color:#bfbfb6; margin-top:5px; }
+.ab-responsibility > span { display:block; margin:10px 0; color:var(--gold); }
+.ab-policies { list-style:none; counter-reset:policy; }
+.ab-policies li { position:relative; counter-increment:policy; border-top:1px solid #ffffff25; padding:19px 0 19px 44px; }
+.ab-policies li:last-child { border-bottom:1px solid #ffffff25; }
+.ab-policies li::before { content:counter(policy,decimal-leading-zero); position:absolute; left:0; top:22px; color:var(--gold); font-size:12px; }
+.ab-policies h3 { font-size:15px; font-weight:500; margin-bottom:7px; }
+.ab-policies p { font-size:12px; line-height:1.7; color:#bfbfb6; }
+.ab-next { padding:50px 6%; display:flex; justify-content:space-between; align-items:center; gap:30px; }
+.ab-next-links { display:flex; flex-direction:column; align-items:start; gap:15px; }
+.about-page a:focus-visible { outline:2px solid var(--gold); outline-offset:5px; }
+@media(max-width:900px) {
+ .ab-hero-copy { padding:40px 9%; }
+ .ab-hero,.ab-hero-photo { min-height:480px; }
+ .ab-hero h1 { font-size:46px; }
+ .ab-milestones { gap:18px; }
+ .ab-company { padding:20px; }
+ .ab-heading { gap:5%; }
+}
+@media(max-width:650px) {
+ .ab-hero { grid-template-columns:1fr; }
+ .ab-hero-copy { padding:40px 24px; }
+ .ab-hero-photo { min-height:280px; }
+ .ab-facts { grid-template-columns:1fr 1fr; gap:20px; padding:24px; }
+ .ab-facts > div { flex-direction:column; align-items:start; gap:10px; }
+ .ab-facts > div:nth-child(2) { border:0; }
+ .ab-facts > p { grid-column:1/-1; }
+ .ab-section { padding:42px 24px; }
+ .ab-heading,.ab-governance { grid-template-columns:1fr; gap:22px; }
+ .ab-milestones,.ab-companies { grid-template-columns:1fr; gap:30px; }
+ .ab-milestone h3 { margin-top:18px; }
+ .ab-legal-name { min-height:0; }
+ .ab-next { padding:40px 24px; flex-direction:column; align-items:start; }
+}
