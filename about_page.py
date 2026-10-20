@@ -5,7 +5,7 @@ def render_about(page):
 <div class="ab-facts" aria-label="Group overview"><div><strong>03</strong><span>Operating companies</span></div><div><strong>04</strong><span>Product lines</span></div><p>Shared leadership.<br>Company-level responsibility.</p></div>
 <section class="ab-section ab-development" id="development" aria-labelledby="ab-history-title"><div class="ab-heading"><div><p class="ab-eyebrow">01 / Our development</p><h2 id="ab-history-title">Built on specialist expertise.</h2></div><p>Each milestone adds a distinct capability to our manufacturing network.</p></div><div class="ab-milestones">'''
     milestones = [
-        ('2010','MDHI founded','mdhi_birdview.webp','MDHI manufacturing base','Modern Heavy Industries (Taicang) Co., Ltd. was founded, establishing the structural steel and industrial fabrication capabilities behind the network.'),
+        ('2010','MDHI founded','about-mdhi-founded-meeting.webp','MDHI team in a technical project discussion','Modern Heavy Industries (Taicang) Co., Ltd. was founded, establishing the structural steel and industrial fabrication capabilities behind the network.'),
         ('2017','MMEC founded','mmec_birdview.webp','MMEC manufacturing base','Modern Modular Engineering & Construction Co., Ltd. was founded. Its port-adjacent modular yard added integrated-module capability to the network.'),
         ('2025','MEEM facility opens','meem_birdview.webp','MEEM manufacturing facility','A dedicated manufacturing facility for HRSG pressure parts and air-cooled heat exchangers opened, completing the current four-product-line network.')
     ]
