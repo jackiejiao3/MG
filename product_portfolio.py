@@ -58,8 +58,8 @@ PRODUCTS = (
         "applications": ("Process cooling", "Power generation", "Energy facilities"),
         "detail": "MEEM is the responsible operating company for this product line. Equipment configuration, materials, thermal duty and inspection requirements are reviewed against the customer’s specification.",
         "slots": (
-            {"label": "Bundle & finned-tube detail", "image": None, "alt": "", "caption": ""},
-            {"label": "Equipment assembly", "image": None, "alt": "", "caption": ""},
+            {"label": "Assembly hall", "image": "air-cooled-heat-exchanger-assembly-hall.webp", "alt": "Air-cooled heat exchanger assemblies in the MEEM manufacturing hall", "caption": "Assembly hall"},
+            {"label": "Modular air-cooled heat exchanger", "image": "modular-air-cooled-heat-exchanger.webp", "alt": "Front view of a modular air-cooled heat exchanger assembly", "caption": "Modular air-cooled heat exchanger"},
         ),
         "technical": "Equipment configuration · thermal duty · material requirements",
     },
