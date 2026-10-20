@@ -1403,7 +1403,7 @@ footer { padding: 46px clamp(24px, 6vw, 96px); }
 }
 
 /* Keep the right-hand side of the ACHE photo visible when cropped. */
-img[src$="product-air-cooled-heat-exchangers-default.jpg"] {
+img[src$="product-air-cooled-heat-exchangers-default.webp"] {
   object-position: right center;
   transform-origin: right center;
 }
