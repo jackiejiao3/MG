@@ -28,7 +28,7 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
     page_assets = ""
     if active == "About":
         body_class += " about-page"
-        page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=milestone-people-3')}">'''
+        page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=hero-centered-4')}">'''
     if active == "Product Portfolio":
         body_class += " portfolio-page"
         page_assets = f'''
