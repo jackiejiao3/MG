@@ -7,7 +7,7 @@ def render_about(page):
     milestones = [
         ('2010','MDHI founded','about-mdhi-founded-meeting.webp','MDHI team in a technical project discussion','Modern Heavy Industries (Taicang) Co., Ltd. was founded, establishing the structural steel and industrial fabrication capabilities behind the network.'),
         ('2017','MMEC founded','mmec_birdview.webp','MMEC manufacturing base','Modern Modular Engineering & Construction Co., Ltd. was founded. Its port-adjacent modular yard added integrated-module capability to the network.'),
-        ('2025','MEEM facility opens','meem_birdview.webp','MEEM manufacturing facility','A dedicated manufacturing facility for HRSG pressure parts and air-cooled heat exchangers opened, completing the current four-product-line network.')
+        ('2025','MEEM facility opens','about-meem-opening.webp','MEEM facility grand opening ceremony','A dedicated manufacturing facility for HRSG pressure parts and air-cooled heat exchangers opened, completing the current four-product-line network.')
     ]
     for year,title,image,alt,copy in milestones:
         photo = f'<img src="../assets/images/{image}" alt="{alt}" loading="lazy" decoding="async">'
