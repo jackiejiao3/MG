@@ -1,4 +1,4 @@
-/* Local-only product routing. No network requests or data storage. */
+/* Product routing and submission to the same-origin enquiry mail handler. */
 (() => {
   const page = document.querySelector('.contact-page');
   if (!page) return;
@@ -25,9 +25,36 @@
   // Preserve incoming product links from Home and other pages, including file:// use.
   const requested = new URLSearchParams(window.location.search).get('product');
   choose(products.has(requested) ? requested : (products.has(select.value) ? select.value : cards[0].dataset.contactProduct));
-  form.addEventListener('submit', event => {
+  let submitting = false;
+  form.addEventListener('submit', async event => {
     event.preventDefault();
-    status.textContent = 'Your enquiry has not been sent. Online submission is not connected yet.';
+    if (submitting || !form.reportValidity()) return;
+    submitting = true;
+    send.disabled = true;
+    form.setAttribute('aria-busy', 'true');
+    status.textContent = 'Sending your enquiry…';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.message || 'Unable to send. Please try again or email jackie.jo@mdhichina.com.');
+      }
+      form.reset();
+      choose(select.value);
+      status.textContent = result.message;
+    } catch (error) {
+      status.textContent = error instanceof SyntaxError || error instanceof TypeError
+        ? 'Unable to send online. Please email jackie.jo@mdhichina.com or try again later.'
+        : error.message;
+    } finally {
+      submitting = false;
+      send.disabled = false;
+      form.removeAttribute('aria-busy');
+    }
   });
   send.disabled = false;
 })();
