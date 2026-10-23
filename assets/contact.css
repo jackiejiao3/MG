@@ -87,3 +87,15 @@
 .contact-page .contact-company-emails a { color:#f4efe3; text-decoration:underline; text-underline-offset:4px; overflow-wrap:anywhere; }
 .contact-page .contact-company-emails a:hover { color:#dbc398; }
 .contact-page .contact-company-emails a:focus-visible { outline:2px solid #dbc398; outline-offset:4px; }
+
+/* Company enquiry addresses are visible immediately in the Contact hero. */
+.contact-page .contact-hero-emails { margin-top:28px; padding-top:20px; }
+.contact-page .contact-hero-emails h2 { font:500 1rem/1.5 var(--sans); color:#cab787; margin:0 0 16px; }
+.contact-page .contact-hero-emails dl { grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px 32px; }
+.contact-page .contact-hero-emails dt { font-size:1rem; }
+.contact-page .contact-hero-emails dd { font-size:1.125rem; }
+@media (max-width:760px) {
+  .contact-page .contact-hero-emails dl { grid-template-columns:1fr; gap:14px; }
+  .contact-page .contact-hero-emails dl > div { display:grid; grid-template-columns:64px minmax(0,1fr); gap:12px; align-items:baseline; }
+  .contact-page .contact-hero-emails dd { font-size:1rem; }
+}
