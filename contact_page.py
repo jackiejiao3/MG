@@ -42,6 +42,13 @@ def render_contact(page):
       <img class="contact-destination-icon" src="../assets/images/work-route.svg" width="38" height="38" alt="">
       <p class="contact-kicker">Relevant operating company</p>
       <div id="enquiry-destination" aria-live="polite" aria-atomic="true"><h3 data-contact-company>MDHI + MMEC</h3><p class="contact-scope" data-contact-scope>Structural Steel</p></div>
+      <div class="contact-company-emails" aria-labelledby="company-emails-title">
+        <h4 id="company-emails-title">Company enquiry emails</h4>
+        <dl>
+          <div><dt>MDHI</dt><dd><a href="mailto:info@mdhiglobal.com">info@mdhiglobal.com</a></dd></div>
+          <div><dt>MMEC</dt><dd><a href="mailto:build@mmecglobal.com">build@mmecglobal.com</a></dd></div>
+        </dl>
+      </div>
       <div class="contact-responsibility"><h4><img src="../assets/images/work-responsibility.svg" width="22" height="22" alt="">Clear responsibility</h4><p>Commercial enquiries and quotations may be coordinated across the network. Contracts and project obligations remain with the responsible operating company.</p></div>
     </aside>
     <form class="contact-enquiry-form" data-contact-form action="send-enquiry.php" method="post" aria-label="Project enquiry" aria-describedby="contact-form-notice">
