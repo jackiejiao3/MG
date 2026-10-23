@@ -2,7 +2,7 @@
 .home .hero--group { min-height: max(760px, 100svh); padding: 160px clamp(24px, 6vw, 96px) 100px; align-items: center; }
 .hero--group .hero-overlay { background: linear-gradient(90deg, #141718f5 0%, #141718d9 40%, #1417184d 72%, #14171826), linear-gradient(0deg,#14171888,transparent 60%); }
 .hero--group .hero-content { max-width: 1060px; width: 100%; }
-.home .hero--group h1 { max-width: none; font-family: var(--sans); font-weight: 500; font-size: clamp(42px, 6.8vw, 100px); letter-spacing: -.055em; line-height: 1.05; margin: 0 0 25px; }
+.home .hero--group h1 { max-width: none; font-family: var(--sans); font-weight: 800; font-size: clamp(46px, 7.5vw, 112px); letter-spacing: -.035em; line-height: 1; margin: 0 0 25px; }
 .hero-tagline { font: 400 clamp(30px,3.4vw,50px)/1.12 var(--serif); letter-spacing: -.02em; color: #f6f2e8; margin-bottom: 23px; }
 .hero--group .hero-copy { max-width: 560px; font-size: 17px; line-height: 1.8; color: #d4d9d7; margin-bottom: 20px; }
 .hero-company-signature { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; color: #dbc398; font-size: 13px; letter-spacing: .16em; margin-bottom: 32px; }
