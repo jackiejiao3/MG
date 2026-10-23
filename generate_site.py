@@ -100,8 +100,8 @@ def home():
   <div class="hero-content">
     <p class="eyebrow">Three specialist companies. One Modern Group.</p>
     <h1 id="group-title">MODERN GROUP</h1>
-    <p class="hero-tagline">Specialist manufacturing.<br>Connected expertise.</p>
-    <p class="hero-copy">Structural steel, modular plants and energy equipment — manufactured in China for projects worldwide.</p>
+    <p class="hero-full-name"><em>Modern Heavy Industries Group</em></p>
+    <p class="hero-copy">Modern Heavy Industries Group, or Modern Group, is an integrated manufacturing group specializing in structural steel, modular plants, air-cooled heat exchangers and HRSG systems.</p>
     <p class="hero-company-signature" aria-label="Companies in the Modern Group network"><a href="mdhi/index.html">MDHI</a><span aria-hidden="true">·</span><a href="mmec/index.html">MMEC</a><span aria-hidden="true">·</span><a href="meem/index.html">MEEM</a></p>
     <div class="hero-actions"><a class="button button-gold" href="#about">Discover our network <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="product-portfolio/index.html">Explore our capabilities</a></div>
   </div>
