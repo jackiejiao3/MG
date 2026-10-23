@@ -3,8 +3,9 @@
 .hero--group .hero-overlay { background: linear-gradient(90deg, #141718f5 0%, #141718d9 40%, #1417184d 72%, #14171826), linear-gradient(0deg,#14171888,transparent 60%); }
 .hero--group .hero-content { max-width: 1060px; width: 100%; }
 .home .hero--group h1 { max-width: none; font-family: var(--sans); font-weight: 800; font-size: clamp(46px, 7.5vw, 112px); letter-spacing: -.035em; line-height: 1; margin: 0 0 25px; }
-.hero-tagline { font: 400 clamp(30px,3.4vw,50px)/1.12 var(--serif); letter-spacing: -.02em; color: #f6f2e8; margin-bottom: 23px; }
-.hero--group .hero-copy { max-width: 560px; font-size: 17px; line-height: 1.8; color: #d4d9d7; margin-bottom: 20px; }
+.hero-full-name { font: italic 400 clamp(24px,2.6vw,38px)/1.3 var(--serif); letter-spacing: -.01em; color: #e2cda8; margin: -8px 0 28px; }
+.hero-full-name em { font-style: inherit; }
+.hero--group .hero-copy { max-width: 680px; font-size: 17px; line-height: 1.8; color: #d4d9d7; margin-bottom: 20px; }
 .hero-company-signature { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; color: #dbc398; font-size: 13px; letter-spacing: .16em; margin-bottom: 32px; }
 .hero-company-signature a { padding: 3px 0; }
 .hero-company-signature a:hover { color: white; }
@@ -53,7 +54,7 @@
   .home .hero--group { padding: 130px 20px 85px; min-height: 100svh; }
   .home .hero--group h1 { font-size: clamp(30px,8.8vw,52px); margin-bottom: 25px; }
   .hero--group .eyebrow { font-size: 10px; letter-spacing: .08em; max-width: 330px; }
-  .hero-tagline { font-size: clamp(29px,7.5vw,40px); line-height: 1.15; }
+  .hero-full-name { font-size: clamp(22px,5.5vw,30px); line-height: 1.35; margin-top: -10px; margin-bottom: 25px; }
   .hero--group .hero-copy { font-size: 15px; line-height: 1.8; }
   .hero-company-signature { font-size: 12px; gap: 14px; }
   .hero--group .hero-actions { flex-direction: column; align-items: flex-start; }
