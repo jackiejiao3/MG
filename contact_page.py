@@ -44,7 +44,8 @@ def render_contact(page):
       <div id="enquiry-destination" aria-live="polite" aria-atomic="true"><h3 data-contact-company>MDHI + MMEC</h3><p class="contact-scope" data-contact-scope>Structural Steel</p></div>
       <div class="contact-responsibility"><h4><img src="../assets/images/work-responsibility.svg" width="22" height="22" alt="">Clear responsibility</h4><p>Commercial enquiries and quotations may be coordinated across the network. Contracts and project obligations remain with the responsible operating company.</p></div>
     </aside>
-    <form class="contact-enquiry-form" data-contact-form action="#" onsubmit="event.preventDefault();" aria-label="Project enquiry" aria-describedby="contact-form-notice">
+    <form class="contact-enquiry-form" data-contact-form action="send-enquiry.php" method="post" aria-label="Project enquiry" aria-describedby="contact-form-notice">
+      <div hidden aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
       <div class="contact-fields">
         <div class="contact-field"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required></div>
         <div class="contact-field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required></div>
@@ -52,15 +53,15 @@ def render_contact(page):
         <div class="contact-field"><label for="region">Project region</label><input type="text" id="region" name="region" placeholder="Country / region"></div>
         <div class="contact-field contact-field-wide"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements"></textarea></div>
       </div>
-      <button type="submit" class="contact-send" data-contact-send disabled>Send enquiry <span aria-hidden="true">→</span></button>
-      <p class="contact-form-notice" id="contact-form-notice">Online submission is not connected yet. Information entered here is not sent.</p>
+      <button type="submit" class="contact-send" data-contact-send>Send enquiry <span aria-hidden="true">→</span></button>
+      <p class="contact-form-notice" id="contact-form-notice">All product enquiries are sent to <a href="mailto:jackie.jo@mdhichina.com">jackie.jo@mdhichina.com</a>.</p>
       <p class="contact-form-status" data-contact-status role="status" aria-live="polite"></p>
-      <noscript><p class="contact-form-notice">Please enable JavaScript to select a product and preview the enquiry routing.</p></noscript>
+      <noscript><p class="contact-form-notice">You can submit this form without JavaScript. All enquiries go to jackie.jo@mdhichina.com.</p></noscript>
     </form>
   </div>
 </section>'''
     result = page("Contact & Enquiries | Modern Group", 1, "Contact", "", "", "", content,
                   "Start with the product scope. We will direct you to the relevant operating company.")
     result = result.replace('<body class="inner">', '<body class="inner contact-page">')
-    result = result.replace('</head>', '  <link rel="stylesheet" href="../assets/contact.css?v=20260904">\n  <script defer src="../assets/contact.js?v=20260904"></script>\n</head>')
+    result = result.replace('</head>', '  <link rel="stylesheet" href="../assets/contact.css?v=20260904">\n  <script defer src="../assets/contact.js?v=20261023-mail"></script>\n</head>')
     return result
