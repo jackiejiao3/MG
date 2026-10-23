@@ -77,3 +77,13 @@
   .contact-page { scroll-behavior:auto; }
   .contact-page .contact-product { transition:none; }
 }
+
+/* Direct company contacts complement the central enquiry form. */
+.contact-page .contact-company-emails { margin-top:30px; padding-top:24px; border-top:1px solid #ffffff30; }
+.contact-page .contact-company-emails h4 { color:#cab787; font-size:1rem; font-weight:500; margin-bottom:16px; line-height:1.5; }
+.contact-page .contact-company-emails dl { display:grid; gap:18px; }
+.contact-page .contact-company-emails dt { color:#cab787; font-size:.9375rem; font-weight:600; margin-bottom:3px; }
+.contact-page .contact-company-emails dd { margin:0; font-size:1rem; line-height:1.65; }
+.contact-page .contact-company-emails a { color:#f4efe3; text-decoration:underline; text-underline-offset:4px; overflow-wrap:anywhere; }
+.contact-page .contact-company-emails a:hover { color:#dbc398; }
+.contact-page .contact-company-emails a:focus-visible { outline:2px solid #dbc398; outline-offset:4px; }
