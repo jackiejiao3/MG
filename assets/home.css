@@ -1,0 +1,84 @@
+/* Homepage: brand introduction first; company relationships in The Network. */
+.home .hero--group { min-height: max(760px, 100svh); padding: 160px clamp(24px, 6vw, 96px) 100px; align-items: center; }
+.hero--group .hero-overlay { background: linear-gradient(90deg, #141718f5 0%, #141718d9 40%, #1417184d 72%, #14171826), linear-gradient(0deg,#14171888,transparent 60%); }
+.hero--group .hero-content { max-width: 1060px; width: 100%; }
+.home .hero--group h1 { max-width: none; font-family: var(--sans); font-weight: 800; font-size: clamp(46px, 7.5vw, 112px); letter-spacing: -.035em; line-height: 1; margin: 0 0 25px; }
+.hero--group .hero-copy { max-width: 680px; font-size: 17px; line-height: 1.8; color: #d4d9d7; margin-bottom: 20px; }
+.hero-company-signature { list-style: none; display: grid; gap: 12px; max-width: 900px; color: #dbc398; margin: 26px 0 34px; }
+.hero-company-signature a { display: grid; grid-template-columns: 88px minmax(0,1fr); align-items: baseline; gap: 20px; padding: 3px 0; }
+.hero-company-signature strong { font-size: clamp(20px,1.8vw,25px); font-weight: 700; letter-spacing: .025em; line-height: 1.4; }
+.hero-company-signature a > span { font-size: clamp(17px,1.5vw,21px); font-weight: 500; line-height: 1.6; }
+.hero-company-signature a:hover { color: #f2ddb6; }
+.hero--group .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero--group .button { padding: 14px 20px; font-size: 16px; }
+.home .network-overview { display: block; background: #f6f2e8; border-top: 1px solid var(--line); }
+.network-heading { margin-bottom: 45px; }
+.network-heading h2 { font: 400 clamp(36px,4.3vw,64px)/1.08 var(--serif); letter-spacing: -.035em; margin: 0 0 22px; }
+.network-lead { color: #303736; font-size: clamp(17px,1.6vw,23px); line-height: 1.5; margin-bottom: 12px; }
+.network-heading > p:last-child { color: #686b68; font-size: 15px; line-height: 1.75; }
+.network-brand { position: relative; background: #252c2b; color: #d5d9d5; width: min(440px,100%); margin: 0 auto; padding: 28px 40px 23px; text-align: center; }
+.network-brand img { width: 100%; height: auto; max-width: 340px; margin: 0 auto 9px; }
+.network-brand p { font-size: 14px; letter-spacing: .06em; }
+.network-brand::after { content: ''; position: absolute; height: 34px; top: 100%; left: 50%; border-left: 1px solid var(--gold-deep); }
+.network-company-headings { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 34px; padding-top: 34px; }
+.network-company-headings::before { content: ''; position: absolute; left: 16.6667%; right: 16.6667%; top: 0; border-top: 1px solid var(--gold-deep); }
+.network-company-headings > a { position: relative; padding: 12px 24px 24px; text-align: center; }
+.network-company-headings > a::before { content: ''; position: absolute; top: -34px; height: 34px; left: 50%; border-left: 1px solid var(--gold-deep); }
+.network-company-headings > a::after { content: ''; position: absolute; top: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-deep); left: calc(50% - 3px); }
+.network-company-headings h3 { font: 600 clamp(28px,3.1vw,44px)/1.2 var(--sans); letter-spacing: -.025em; margin-bottom: 7px; }
+.network-company-headings a:hover h3 { color: #8b703d; }
+.network-company-headings p { font-size: clamp(16px, 1.45vw, 20px); font-weight: 500; color: #39423d; line-height: 1.6; text-wrap: balance; }
+.network-shared-leadership { line-height: 1.5; display: flex; justify-content: center; align-items: center; gap: 22px; padding: 18px 26px; background: #252c2b; color: #e2e5e1; }
+.network-shared-symbol { font-size: 36px; line-height: 1; color: #d8bd8e; padding-right: 22px; border-right: 1px solid #bda16d88; }
+.network-shared-leadership h4 { color: #dcc49a; font-size: 15px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 2px; }
+.network-shared-leadership p { font-size: 14px; letter-spacing: .03em; }
+.network-scope-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); margin: 20px 0 30px; }
+.network-scope-grid > div { padding: 3px clamp(18px,3vw,44px) 8px; min-width: 0; }
+.network-scope-grid > div + div { border-left: 1px solid var(--line); }
+.network-fact-label { text-transform: uppercase; letter-spacing: .14em; color: #8b703d; font-size: 15px; font-weight: 600; margin-bottom: 7px; }
+.network-base, .network-focus > p:last-child { color: #343c37; font-size: 15px; line-height: 1.7; }
+.network-focus { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.network-accountability { display: flex; justify-content: space-between; gap: 28px; align-items: center; border-top: 1px solid var(--gold); padding-top: 25px; }
+.network-accountability > div { padding-left: 20px; border-left: 3px solid var(--gold); }
+.network-accountability h3 { font: 400 clamp(20px,2vw,28px)/1.3 var(--serif); margin-bottom: 7px; }
+.network-accountability p { font-size: 14px; line-height: 1.75; color: #686b68; }
+.network-accountability > a { flex-shrink: 0; color: #806538; border-bottom: 1px solid var(--gold); font-size: 14px; padding: 5px 0; }
+.hero--group a:focus-visible, .network-overview a:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 5px; }
+.network-mobile-companies { display: none; }
+@media (max-width: 900px) {
+  .network-accountability { align-items: start; flex-direction: column; gap: 15px; }
+  .network-company-headings > a { padding-left: 12px; padding-right: 12px; }
+}
+@media (max-width: 600px) {
+  .home .hero--group { padding: 130px 20px 85px; min-height: 100svh; }
+  .home .hero--group h1 { font-size: clamp(30px,8.8vw,52px); margin-bottom: 25px; }
+  .hero--group .eyebrow { font-size: 15px; letter-spacing: .08em; max-width: 330px; }
+  .hero--group .hero-copy { font-size: 15px; line-height: 1.8; }
+  .hero-company-signature { gap: 14px; margin: 24px 0 30px; }
+  .hero-company-signature a { grid-template-columns: 64px minmax(0,1fr); gap: 12px; }
+  .hero-company-signature strong { font-size: 18px; }
+  .hero-company-signature a > span { font-size: 15px; line-height: 1.65; }
+  .hero--group .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero--group .button { padding: 13px 18px; font-size: 16px; }
+  .hero--group .scroll-cue { font-size: 14px; white-space: normal; width: max-content; max-width: calc(100% - 40px); text-align: center; bottom: 25px; }
+  .network-heading { margin-bottom: 30px; }
+  .network-heading h2 { font-size: clamp(32px,8.5vw,44px); }
+  .network-brand { padding: 24px; }
+  .network-brand::after { height: 25px; }
+  .network-company-headings, .network-scope-grid { display: none; }
+  .network-shared-leadership { margin-top: 25px; padding: 17px 16px; gap: 13px; }
+  .network-shared-symbol { font-size: 29px; padding-right: 13px; }
+  .network-shared-leadership h4 { font-size: 15px; letter-spacing: .1em; }
+  .network-shared-leadership p { font-size: 14px; }
+  .network-mobile-companies { display: grid; gap: 22px; margin: 24px 0 30px 12px; padding-left: 20px; border-left: 1px solid var(--gold); }
+  .network-mobile-companies article { position: relative; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+  .network-mobile-companies article:last-child { padding-bottom: 0; border-bottom: 0; }
+  .network-mobile-companies article::before { content: ''; position: absolute; top: 18px; left: -21px; width: 14px; border-top: 1px solid var(--gold); }
+  .network-mobile-companies h3 { font-size: 28px; font-weight: 600; line-height: 1.2; margin-bottom: 6px; }
+  .network-mobile-companies h3 a { display: flex; align-items: center; justify-content: space-between; }
+  .network-mobile-companies h3 span { color: #8b703d; font-size: 18px; }
+  .network-mobile-name { font-size: 16px; font-weight: 500; color: #39423d; margin-bottom: 18px; line-height: 1.65; text-wrap: balance; }
+  .network-mobile-companies dl { display: grid; gap: 12px; }
+  .network-mobile-companies dt { color: #8b703d; font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
+  .network-mobile-companies dd { font-size: 14px; line-height: 1.65; }
+}
