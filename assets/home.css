@@ -26,7 +26,7 @@
 .network-company-headings > a::after { content: ''; position: absolute; top: -4px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold-deep); left: calc(50% - 3px); }
 .network-company-headings h3 { font: 600 clamp(28px,3.1vw,44px)/1.2 var(--sans); letter-spacing: -.025em; margin-bottom: 7px; }
 .network-company-headings a:hover h3 { color: #8b703d; }
-.network-company-headings p { font-size: 13px; color: #4d5350; line-height: 1.55; }
+.network-company-headings p { font-size: clamp(16px, 1.45vw, 20px); font-weight: 500; color: #39423d; line-height: 1.6; text-wrap: balance; }
 .network-shared-leadership { display: flex; justify-content: center; align-items: center; gap: 22px; padding: 18px 26px; background: #252c2b; color: #e2e5e1; }
 .network-shared-symbol { font-size: 36px; line-height: 1; color: #d8bd8e; padding-right: 22px; border-right: 1px solid #bda16d88; }
 .network-shared-leadership h4 { color: #dcc49a; font-size: 13px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 2px; }
@@ -73,7 +73,7 @@
   .network-mobile-companies h3 { font-size: 28px; font-weight: 600; line-height: 1.2; margin-bottom: 6px; }
   .network-mobile-companies h3 a { display: flex; align-items: center; justify-content: space-between; }
   .network-mobile-companies h3 span { color: #8b703d; font-size: 18px; }
-  .network-mobile-name { font-size: 12px; color: #686b68; margin-bottom: 16px; line-height: 1.6; }
+  .network-mobile-name { font-size: 16px; font-weight: 500; color: #39423d; margin-bottom: 18px; line-height: 1.65; text-wrap: balance; }
   .network-mobile-companies dl { display: grid; gap: 12px; }
   .network-mobile-companies dt { color: #8b703d; font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
   .network-mobile-companies dd { font-size: 14px; line-height: 1.65; }
