@@ -4,10 +4,11 @@
 .hero--group .hero-content { max-width: 1060px; width: 100%; }
 .home .hero--group h1 { max-width: none; font-family: var(--sans); font-weight: 800; font-size: clamp(46px, 7.5vw, 112px); letter-spacing: -.035em; line-height: 1; margin: 0 0 25px; }
 .hero--group .hero-copy { max-width: 680px; font-size: 17px; line-height: 1.8; color: #d4d9d7; margin-bottom: 20px; }
-.hero-company-signature { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; color: #dbc398; font-size: 13px; letter-spacing: .16em; margin-bottom: 32px; }
-.hero-company-signature a { padding: 3px 0; }
-.hero-company-signature a:hover { color: white; }
-.hero-company-signature > span { color: #bda16d88; }
+.hero-company-signature { list-style: none; display: grid; gap: 12px; max-width: 900px; color: #dbc398; margin: 26px 0 34px; }
+.hero-company-signature a { display: grid; grid-template-columns: 88px minmax(0,1fr); align-items: baseline; gap: 20px; padding: 3px 0; }
+.hero-company-signature strong { font-size: clamp(20px,1.8vw,25px); font-weight: 700; letter-spacing: .025em; line-height: 1.4; }
+.hero-company-signature a > span { font-size: clamp(17px,1.5vw,21px); font-weight: 500; line-height: 1.6; }
+.hero-company-signature a:hover { color: #f2ddb6; }
 .hero--group .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero--group .button { padding: 14px 20px; font-size: 11px; }
 .home .network-overview { display: block; background: #f6f2e8; border-top: 1px solid var(--line); }
@@ -53,7 +54,10 @@
   .home .hero--group h1 { font-size: clamp(30px,8.8vw,52px); margin-bottom: 25px; }
   .hero--group .eyebrow { font-size: 10px; letter-spacing: .08em; max-width: 330px; }
   .hero--group .hero-copy { font-size: 15px; line-height: 1.8; }
-  .hero-company-signature { font-size: 12px; gap: 14px; }
+  .hero-company-signature { gap: 14px; margin: 24px 0 30px; }
+  .hero-company-signature a { grid-template-columns: 64px minmax(0,1fr); gap: 12px; }
+  .hero-company-signature strong { font-size: 18px; }
+  .hero-company-signature a > span { font-size: 15px; line-height: 1.65; }
   .hero--group .hero-actions { flex-direction: column; align-items: flex-start; }
   .hero--group .button { padding: 13px 18px; font-size: 10px; }
   .hero--group .scroll-cue { font-size: 9px; white-space: nowrap; bottom: 25px; }
