@@ -6,6 +6,7 @@
   const cards = Array.from(page.querySelectorAll('[data-contact-product]'));
   const company = page.querySelector('[data-contact-company]');
   const scope = page.querySelector('[data-contact-scope]');
+  const emailContacts = Array.from(page.querySelectorAll('[data-contact-email-company]'));
   const form = page.querySelector('[data-contact-form]');
   const status = page.querySelector('[data-contact-status]');
   const send = page.querySelector('[data-contact-send]');
@@ -18,6 +19,10 @@
     cards.forEach(card => card.setAttribute('aria-pressed', String(card.dataset.contactProduct === product)));
     company.textContent = products.get(product);
     scope.textContent = product;
+    const relevantCompanies = products.get(product).split(' + ');
+    emailContacts.forEach(contact => {
+      contact.hidden = !relevantCompanies.includes(contact.dataset.contactEmailCompany);
+    });
     status.textContent = '';
   };
   cards.forEach(card => card.addEventListener('click', () => choose(card.dataset.contactProduct)));
