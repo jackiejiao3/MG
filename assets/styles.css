@@ -1412,3 +1412,8 @@ img[src$="product-air-cooled-heat-exchangers-default.webp"] {
 .header-cta, .button { line-height: 1.5; }
 .map-filters button { white-space: normal; overflow-wrap: anywhere; }
 .map-legend > span { line-height: 1.5; }
+
+/* Company manufacturing photography: preserve complete equipment in all viewports. */
+.profile-visuals { min-width:0; }
+.profile-image.profile-image--manufacturing { min-height:0; }
+.profile-image--manufacturing img { position:relative; inset:auto; display:block; width:100%; height:auto; object-fit:contain; }
