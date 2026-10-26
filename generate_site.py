@@ -175,13 +175,13 @@ def mdhi_profile():
     facts = [("Legal name","Modern Heavy Industries (Taicang) Co., Ltd."),("Address","169 Longjiang Road, Taicang Port Development Zone, Taicang, Jiangsu 215433, China"),("Scope","Structural Steel"),("Website","mdhiglobal.com")]
     desc = "MDHI is the group’s specialist structural-steel fabricator in Taicang, serving demanding international projects with CNC high-accuracy production, project coordination and port-oriented delivery."
     scope = "Structural steel fabrication for buildings, infrastructure, power, mining, oil & gas and industrial projects. Capabilities include detailing, procurement, column-and-beam fabrication, complex steel structures, mechanical plate-work, conveyors, coatings, assembly and logistics."
-    return profile("mdhi", "MDHI", "Modern Heavy Industries (Taicang) Co., Ltd.", "Structural Steel", "Taicang, Jiangsu", desc, scope, facts, "mdhi-large-module-delivery.webp", "Large fabricated module on an SPMT transporter at the MDHI workshop")
+    return profile("mdhi", "MDHI", "Modern Heavy Industries (Taicang) Co., Ltd.", "Structural Steel", "Taicang, Jiangsu", desc, scope, facts, "mdhi-large-module-delivery-clean.webp", "Large fabricated module on an SPMT transporter at the MDHI workshop")
 
 def mmec_profile():
     facts = [("Legal name","Modern Modular Engineering & Construction Co., Ltd."),("Address","2669 Yanjiang Road, Daxin Town, Zhangjiagang, Jiangsu, China"),("Scope","Structural Steel · Modular Plants"),("Website","mmecglobal.com")]
     desc = "MMEC is the group’s modular engineering and construction platform in Zhangjiagang. It combines a 77,000 m² covered workshop with a 166,000 m² modular yard adjacent to Gangxin Port."
     scope = "Heavy structural steel fabrication, modular plant and process module manufacturing, pipe spool fabrication, blasting and coating, logistics coordination, SPMT and port load-out."
-    return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec-heavy-steel-assembly.webp", "Large steel assemblies with access platforms during fabrication at MMEC")
+    return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec-heavy-steel-assembly-clean.webp", "Large steel assemblies with access platforms during fabrication at MMEC")
 
 def meem_profile():
     facts = [("Legal name","Modern Energy Equipment Manufacturing Co., Ltd."),("Address","1 Duanshan Road, Deji Subdistrict, Zhangjiagang, Jiangsu 215635, China"),("Scope","HRSG Pressure Parts · ACHE"),("Website","m-energy.com")]
