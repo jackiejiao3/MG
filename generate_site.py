@@ -175,7 +175,7 @@ def mdhi_profile():
     facts = [("Legal name","Modern Heavy Industries (Taicang) Co., Ltd."),("Address","169 Longjiang Road, Taicang Port Development Zone, Taicang, Jiangsu 215433, China"),("Scope","Structural Steel"),("Website","mdhiglobal.com")]
     desc = "MDHI is the group’s specialist structural-steel fabricator in Taicang, serving demanding international projects with CNC high-accuracy production, project coordination and port-oriented delivery."
     scope = "Structural steel fabrication for buildings, infrastructure, power, mining, oil & gas and industrial projects. Capabilities include detailing, procurement, column-and-beam fabrication, complex steel structures, mechanical plate-work, conveyors, coatings, assembly and logistics."
-    return profile("mdhi", "MDHI", "Modern Heavy Industries (Taicang) Co., Ltd.", "Structural Steel", "Taicang, Jiangsu", desc, scope, facts, "mdhi-large-module-delivery-clean.webp", "Large fabricated module on an SPMT transporter at the MDHI workshop")
+    return profile("mdhi", "MDHI", "Modern Heavy Industries (Taicang) Co., Ltd.", "Structural Steel", "Taicang, Jiangsu", desc, scope, facts, "mdhi-robotic-steel-welding.webp", "Robotic welding of a large structural steel assembly at the MDHI workshop")
 
 def mmec_profile():
     facts = [("Legal name","Modern Modular Engineering & Construction Co., Ltd."),("Address","2669 Yanjiang Road, Daxin Town, Zhangjiagang, Jiangsu, China"),("Scope","Structural Steel · Modular Plants"),("Website","mmecglobal.com")]
