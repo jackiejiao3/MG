@@ -36,7 +36,7 @@ PRODUCTS = (
     {
         "id": "hrsg-pressure-parts", "name": "HRSG Pressure Parts", "short": "Pressure-part assemblies",
         "theme": "hrsg", "company": "MEEM", "companies": ("MEEM",),
-        "image": "pp-b2b-product-hrsg-pressure-parts.webp", "alt": "HRSG pressure-part header assembly in a fabrication workshop",
+        "image": "hrsg-pressure-part-module-assemblies.webp", "alt": "Rows of HRSG pressure-part tube modules in yellow frames at the manufacturing facility",
         "headline": "Purpose-built for heat recovery.",
         "description": "Dedicated manufacture of pressure-part components and assemblies for heat recovery steam generator applications, delivered by MEEM.",
         "scope": ("Finned tubes & headers", "Manifolds & harps", "Pressure-part modules"),
