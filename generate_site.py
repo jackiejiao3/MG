@@ -155,17 +155,18 @@ def companies_locations():
     return render_companies(page, interactive_map)
 
 
-def profile(slug, code, legal, role, location, desc, scope, facts, img):
+def profile(slug, code, legal, role, location, desc, scope, facts, img, image_alt):
     depth = 1
     r = lambda p: rel(p, depth)
     hero_title = f"{code}"
     hero_sub = f"{legal} — {role}."
     content = inner_hero(hero_title, hero_sub, f"assets/images/{img}", depth)
-    content += f'''<section class="content-shell company-profile"><div class="profile-image"><img src="{r(f'assets/images/{img}')}" alt="Aerial view of {code} manufacturing facility"><span class="profile-image-label">{code} · {location}</span></div><div class="prose"><p class="eyebrow dark">Operating company</p><h2>{legal}</h2><p>{desc}</p><div class="profile-facts">'''
+    visuals = f'<div class="profile-image profile-image--manufacturing"><img src="{r(f"assets/images/{img}")}" alt="{html.escape(image_alt)}" loading="lazy" decoding="async"><span class="profile-image-label">{code} · {location}</span></div>'
+    content += f'''<section class="content-shell company-profile"><div class="profile-visuals">{visuals}</div><div class="prose"><p class="eyebrow dark">Operating company</p><h2>{legal}</h2><p>{desc}</p><div class="profile-facts">'''
     for k, v in facts:
         content += f'<div><span>{k}</span><strong>{v}</strong></div>'
     content += f'''</div><h3>Core manufacturing scope</h3><p>{scope}</p><a class="button button-gold profile-cta" href="{official_url(code)}" target="_blank" rel="noopener">Visit {code} website ↗</a></div></section>'''
-    return page(f"{code} | Modern Group", depth, None, "", "", "", content, f"{legal} — {role}.")
+    return page(f"{code} | Modern Group", depth, None, "", "", "", content, f"{legal} — {role}.").replace("assets/styles.css", "assets/styles.css?v=company-photos-1")
 
 def official_url(code):
     return {"MDHI":"https://mdhiglobal.com","MMEC":"https://mmecglobal.com","MEEM":"https://m-energy.com"}[code]
@@ -174,19 +175,19 @@ def mdhi_profile():
     facts = [("Legal name","Modern Heavy Industries (Taicang) Co., Ltd."),("Address","169 Longjiang Road, Taicang Port Development Zone, Taicang, Jiangsu 215433, China"),("Scope","Structural Steel"),("Website","mdhiglobal.com")]
     desc = "MDHI is the group’s specialist structural-steel fabricator in Taicang, serving demanding international projects with CNC high-accuracy production, project coordination and port-oriented delivery."
     scope = "Structural steel fabrication for buildings, infrastructure, power, mining, oil & gas and industrial projects. Capabilities include detailing, procurement, column-and-beam fabrication, complex steel structures, mechanical plate-work, conveyors, coatings, assembly and logistics."
-    return profile("mdhi", "MDHI", "Modern Heavy Industries (Taicang) Co., Ltd.", "Structural Steel", "Taicang, Jiangsu", desc, scope, facts, "mdhi_birdview.webp")
+    return profile("mdhi", "MDHI", "Modern Heavy Industries (Taicang) Co., Ltd.", "Structural Steel", "Taicang, Jiangsu", desc, scope, facts, "mdhi-large-module-delivery.webp", "Large fabricated module on an SPMT transporter at the MDHI workshop")
 
 def mmec_profile():
     facts = [("Legal name","Modern Modular Engineering & Construction Co., Ltd."),("Address","2669 Yanjiang Road, Daxin Town, Zhangjiagang, Jiangsu, China"),("Scope","Structural Steel · Modular Plants"),("Website","mmecglobal.com")]
     desc = "MMEC is the group’s modular engineering and construction platform in Zhangjiagang. It combines a 77,000 m² covered workshop with a 166,000 m² modular yard adjacent to Gangxin Port."
     scope = "Heavy structural steel fabrication, modular plant and process module manufacturing, pipe spool fabrication, blasting and coating, logistics coordination, SPMT and port load-out."
-    return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec_birdview.webp")
+    return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec-heavy-steel-assembly.webp", "Large steel assemblies with access platforms during fabrication at MMEC")
 
 def meem_profile():
     facts = [("Legal name","Modern Energy Equipment Manufacturing Co., Ltd."),("Address","1 Duanshan Road, Deji Subdistrict, Zhangjiagang, Jiangsu 215635, China"),("Scope","HRSG Pressure Parts · ACHE"),("Website","m-energy.com")]
     desc = "MEEM is the group’s newest manufacturing facility, dedicated to energy equipment for power generation and process industries. It brings 15+ years of sector experience into a purpose-built Zhangjiagang plant."
     scope = "Heat recovery steam generator (HRSG) pressure parts including finned tubes, headers, manifolds, harps and modules; air-cooled heat exchangers (ACHE); ASME pressure vessels; and modular structures for energy projects."
-    return profile("meem", "MEEM", "Modern Energy Equipment Manufacturing Co., Ltd.", "HRSG Pressure Parts · ACHE", "Zhangjiagang, Jiangsu", desc, scope, facts, "meem_birdview.webp")
+    return profile("meem", "MEEM", "Modern Energy Equipment Manufacturing Co., Ltd.", "HRSG Pressure Parts · ACHE", "Zhangjiagang, Jiangsu", desc, scope, facts, "air-cooled-heat-exchanger-assembly-hall.webp", "Air-cooled heat exchanger assemblies inside the MEEM manufacturing hall")
 
 def product_portfolio():
     from product_portfolio import render_portfolio
