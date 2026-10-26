@@ -181,13 +181,13 @@ def mmec_profile():
     facts = [("Legal name","Modern Modular Engineering & Construction Co., Ltd."),("Address","2669 Yanjiang Road, Daxin Town, Zhangjiagang, Jiangsu, China"),("Scope","Structural Steel · Modular Plants"),("Website","mmecglobal.com")]
     desc = "MMEC is the group’s modular engineering and construction platform in Zhangjiagang. It combines a 77,000 m² covered workshop with a 166,000 m² modular yard adjacent to Gangxin Port."
     scope = "Heavy structural steel fabrication, modular plant and process module manufacturing, pipe spool fabrication, blasting and coating, logistics coordination, SPMT and port load-out."
-    return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec-heavy-steel-assembly-refined.webp", "Large steel assemblies with access platforms during fabrication at MMEC")
+    return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec-integrated-module-transport.webp", "Integrated module on an SPMT transporter at the MMEC workshop")
 
 def meem_profile():
     facts = [("Legal name","Modern Energy Equipment Manufacturing Co., Ltd."),("Address","1 Duanshan Road, Deji Subdistrict, Zhangjiagang, Jiangsu 215635, China"),("Scope","HRSG Pressure Parts · ACHE"),("Website","m-energy.com")]
     desc = "MEEM is the group’s newest manufacturing facility, dedicated to energy equipment for power generation and process industries. It brings 15+ years of sector experience into a purpose-built Zhangjiagang plant."
     scope = "Heat recovery steam generator (HRSG) pressure parts including finned tubes, headers, manifolds, harps and modules; air-cooled heat exchangers (ACHE); ASME pressure vessels; and modular structures for energy projects."
-    return profile("meem", "MEEM", "Modern Energy Equipment Manufacturing Co., Ltd.", "HRSG Pressure Parts · ACHE", "Zhangjiagang, Jiangsu", desc, scope, facts, "mdhi-large-module-delivery-clean.webp", "Large fabricated module on an SPMT transporter in a manufacturing workshop")
+    return profile("meem", "MEEM", "Modern Energy Equipment Manufacturing Co., Ltd.", "HRSG Pressure Parts · ACHE", "Zhangjiagang, Jiangsu", desc, scope, facts, "meem-hrsg-header-welding.webp", "Welder working on an HRSG header assembly at the MEEM manufacturing facility")
 
 def product_portfolio():
     from product_portfolio import render_portfolio
