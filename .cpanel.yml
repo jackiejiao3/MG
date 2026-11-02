@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home1/mdhiglob/public_html/moderngroup/
     - /bin/mkdir -p "$DEPLOYPATH"
-    - /bin/cp -R index.html assets about companies-locations contact legal-notice mdhi meem mmec privacy product-portfolio quality-hse "$DEPLOYPATH"
+    - /bin/cp -R index.html assets about companies-locations contact legal-notice mdhi meem mmec privacy product-portfolio quality-hse .htaccess "$DEPLOYPATH"
