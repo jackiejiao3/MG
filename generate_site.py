@@ -15,7 +15,35 @@ def header(title, depth, active=None):
         ("Quality & HSE", r("quality-hse/index.html")),
         ("Contact", r("contact/index.html")),
     ]
-    links = "".join(f'<a class="{"active-nav" if active==label else ""}" href="{href}">{label}</a>' for label, href in nav)
+    submenus = {
+        "Quality & HSE": ("quality-submenu", [
+            ("Overview", "quality-hse/index.html"),
+            ("Quality Management", "quality-hse/index.html#quality-process"),
+            ("Health, Safety & Environment", "quality-hse/index.html#hse-principles"),
+            ("Certificates", "quality-hse/certificates/index.html"),
+        ]),
+        "Contact": ("contact-submenu", [
+            ("Project Enquiry", "contact/index.html#enquiry-form"),
+            ("Company Contacts", "contact/index.html#company-emails"),
+            ("FAQ", "faq/index.html"),
+        ]),
+    }
+    links = []
+    for label, href in nav:
+        current = "active-nav" if active == label else ""
+        link = f'<a class="{current}" href="{href}">{html.escape(label)}</a>'
+        if label in submenus:
+            submenu_id, items = submenus[label]
+            escaped_label = html.escape(label)
+            children = "".join(f'<a href="{r(path)}">{html.escape(name)}</a>' for name, path in items)
+            link = (
+                f'<div class="nav-menu" data-menu-label="{escaped_label}">{link}'
+                f'<button class="nav-menu-toggle" type="button" aria-label="Open {escaped_label} submenu" '
+                f'aria-expanded="false" aria-controls="{submenu_id}"><span aria-hidden="true"></span></button>'
+                f'<div class="nav-submenu" id="{submenu_id}" hidden>{children}</div></div>'
+            )
+        links.append(link)
+    links = "".join(links)
     return f'''<header class="site-header {'inner-header' if depth else ''}"><a class="brand" href="{r('index.html')}" aria-label="Modern Group home"><span class="brand-surface"><img src="{r('assets/images/logo-white.webp')}" alt="Modern Group" width="598" height="115"></span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button><nav id="primary-nav" aria-label="Primary navigation">{links}</nav><div class="header-tools"><a class="header-cta" href="{r('contact/index.html')}">Start an enquiry</a></div></header>'''
 
 def footer(depth):
@@ -42,7 +70,7 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
     if active == "Quality & HSE":
         body_class += " quality-page"
         page_assets = f'''
-  <link rel="stylesheet" href="{r('assets/quality-hse.css')}">
+  <link rel="stylesheet" href="{r('assets/quality-hse.css?v=environment-card-1')}">
   <script defer src="{r('assets/quality-hse.js')}"></script>'''
     return f'''<!doctype html>
 <html lang="en">
@@ -100,9 +128,9 @@ def home():
   <div class="hero-content">
     <p class="eyebrow">Three specialist companies. One Modern Group.</p>
     <h1 id="group-title">MODERN GROUP</h1>
-    <p class="hero-copy">Modern Group is an integrated manufacturing group specializing in structural steel, modular plants, air-cooled heat exchangers and HRSG systems.</p>
+    <p class="hero-copy">Modern Heavy Industries Group (Modern Group) brings together three specialist manufacturers in Jiangsu, China. Their capabilities span structural steel fabrication, modular plant manufacturing, heat recovery steam generator (HRSG) pressure parts and air-cooled heat exchangers.</p>
     <ul class="hero-company-signature" aria-label="Companies in the Modern Group network">
-      <li><a href="mdhi/index.html"><strong>MDHI</strong><span>Modern Heavy Industries Co., Ltd.</span></a></li>
+      <li><a href="mdhi/index.html"><strong>MDHI</strong><span>Modern Heavy Industries (Taicang) Co., Ltd.</span></a></li>
       <li><a href="mmec/index.html"><strong>MMEC</strong><span>Modern Modular Engineering &amp; Construction Co., Ltd.</span></a></li>
       <li><a href="meem/index.html"><strong>MEEM</strong><span>Modern Energy Equipment Manufacturing Co., Ltd.</span></a></li>
     </ul>
@@ -115,14 +143,14 @@ def home():
   <div class="network-heading">
     <h2 id="network-title">One group identity.<br>Three connected companies.</h2>
     <p class="network-lead">Shared leadership. Complementary capabilities. Clear responsibility.</p>
-    <p>Modern Group is the shared commercial identity of MDHI, MMEC and MEEM.</p>
+    <p>Under the Modern Group brand, MDHI, MMEC and MEEM share executive leadership. Each operating company is responsible for its own contracts, certifications and delivery.</p>
   </div>
   <div class="network-relationship" aria-label="Modern Group connects three operating companies under shared executive leadership">
     <div class="network-brand"><img src="assets/images/logo-white.webp" alt="Modern Group" width="598" height="115" loading="lazy"><p>Shared commercial identity</p></div>
     <div class="network-company-headings">
-      <a href="mdhi/index.html"><h3>MDHI</h3><p>Modern Heavy Industries</p></a>
-      <a href="mmec/index.html"><h3>MMEC</h3><p>Modern Modular Engineering &amp; Construction</p></a>
-      <a href="meem/index.html"><h3>MEEM</h3><p>Modern Energy Equipment Manufacturing</p></a>
+      <a href="mdhi/index.html"><h3>MDHI</h3><p>Modern Heavy Industries (Taicang) Co., Ltd.</p></a>
+      <a href="mmec/index.html"><h3>MMEC</h3><p>Modern Modular Engineering &amp; Construction Co., Ltd.</p></a>
+      <a href="meem/index.html"><h3>MEEM</h3><p>Modern Energy Equipment Manufacturing Co., Ltd.</p></a>
     </div>
     <div class="network-shared-leadership"><span class="network-shared-symbol" aria-hidden="true">↔</span><div><h4>Shared executive leadership</h4><p>Led by the same executive team</p></div></div>
     <div class="network-scope-grid">
@@ -131,9 +159,9 @@ def home():
       <div><p class="network-fact-label">Manufacturing base</p><p class="network-base">Zhangjiagang, Jiangsu</p><div class="network-focus"><p class="network-fact-label">Specialist focus</p><p>HRSG Pressure Parts<br>Air-Cooled Heat Exchangers</p></div></div>
     </div>
     <div class="network-mobile-companies">
-      <article><h3><a href="mdhi/index.html">MDHI <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Heavy Industries</p><dl><div><dt>Manufacturing base</dt><dd>Taicang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel</dd></div></dl></article>
-      <article><h3><a href="mmec/index.html">MMEC <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Modular Engineering &amp; Construction</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel · Modular Plants</dd></div></dl></article>
-      <article><h3><a href="meem/index.html">MEEM <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Energy Equipment Manufacturing</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>HRSG Pressure Parts · Air-Cooled Heat Exchangers</dd></div></dl></article>
+      <article><h3><a href="mdhi/index.html">MDHI <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Heavy Industries (Taicang) Co., Ltd.</p><dl><div><dt>Manufacturing base</dt><dd>Taicang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel</dd></div></dl></article>
+      <article><h3><a href="mmec/index.html">MMEC <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Modular Engineering &amp; Construction Co., Ltd.</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel · Modular Plants</dd></div></dl></article>
+      <article><h3><a href="meem/index.html">MEEM <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Energy Equipment Manufacturing Co., Ltd.</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>HRSG Pressure Parts · Air-Cooled Heat Exchangers</dd></div></dl></article>
     </div>
   </div>
   <div class="network-accountability"><div><h3>Connected at group level. Accountable at company level.</h3><p>Contracts, certifications and project delivery remain with the relevant operating company.</p></div><a href="#companies">Explore our companies <span aria-hidden="true">↗</span></a></div>
@@ -163,10 +191,12 @@ def profile(slug, code, legal, role, location, desc, scope, facts, img, image_al
     content = inner_hero(hero_title, hero_sub, f"assets/images/{img}", depth)
     visuals = f'<div class="profile-image profile-image--manufacturing"><img src="{r(f"assets/images/{img}")}" alt="{html.escape(image_alt)}" loading="lazy" decoding="async"><span class="profile-image-label">{code} · {location}</span></div>'
     content += f'''<section class="content-shell company-profile"><div class="profile-visuals">{visuals}</div><div class="prose"><p class="eyebrow dark">Operating company</p><h2>{legal}</h2><p>{desc}</p><div class="profile-facts">'''
-    for k, v in facts:
-        content += f'<div><span>{k}</span><strong>{v}</strong></div>'
-    content += f'''</div><h3>Core manufacturing scope</h3><p>{scope}</p><a class="button button-gold profile-cta" href="{official_url(code)}" target="_blank" rel="noopener">Visit {code} website ↗</a></div></section>'''
-    return page(f"{code} | Modern Group", depth, None, "", "", "", content, f"{legal} — {role}.").replace("assets/styles.css", "assets/styles.css?v=company-photos-1")
+    for label, value in facts:
+        if label == "Website":
+            value = f'<a href="{official_url(code)}" target="_blank" rel="noopener">{value}</a>'
+        content += f'<div><span>{label}</span><strong>{value}</strong></div>'
+    content += f'''</div><h3>Core manufacturing scope</h3><p>{scope}</p></div></section>'''
+    return page(f"{code} | Modern Group", depth, None, "", "", "", content, f"{legal} — {role}.").replace("assets/styles.css", "assets/styles.css?v=company-website-link")
 
 def official_url(code):
     return {"MDHI":"https://mdhiglobal.com","MMEC":"https://mmecglobal.com","MEEM":"https://m-energy.com"}[code]

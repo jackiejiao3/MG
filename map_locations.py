@@ -6,7 +6,7 @@ Transport street addresses were not supplied; no addresses have been invented.
 
 LOCATIONS = [
     dict(id='mmec', kind='site', icon='mmec', code='MMEC', x=34.687, y=19.730,
-         title='Modern Modular Engineering & Construction (Suzhou) Co., Ltd.',
+         title='Modern Modular Engineering & Construction Co., Ltd.',
          chinese='玛顿模块化工程制造（苏州）有限公司', kicker='Manufacturing site · Zhangjiagang',
          address='2669 Yanjiang Rd., Daxin Town, Zhangjiagang',
          copy='Structural steel and modular plants.'),

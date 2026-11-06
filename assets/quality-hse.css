@@ -79,7 +79,7 @@
 .qh-hse-card { min-width:0; padding:28px; display:flex; flex-direction:column; }
 .qh-safety { --qh-card-ink:#4d592e; background:#dde6cc; color:var(--qh-card-ink); }
 .qh-improve { --qh-card-ink:#825126; background:#f0dfc3; color:var(--qh-card-ink); }
-.qh-environment { --qh-card-ink:#d8e5d4; background:#244d43; color:var(--qh-card-ink); }
+.qh-environment { --qh-card-ink:#2d514b; background:#d7e6e2; color:var(--qh-card-ink); }
 .qh-hse-card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:35px; }
 .qh-hse-card-top svg { width:48px; height:48px; stroke:currentColor; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
 .qh-hse-card-top span { font:400 24px var(--serif); opacity:.5; }

@@ -75,9 +75,9 @@ def render_contact(page):
   <div class="section-label"><span>03</span> Company enquiry emails</div>
   <h2 id="company-emails-title">Contact our companies directly.</h2>
   <div class="contact-email-grid">
-    <article><h3>MDHI</h3><p>Modern Heavy Industries</p><a href="mailto:info@mdhiglobal.com">info@mdhiglobal.com <span aria-hidden="true">↗</span></a></article>
-    <article><h3>MMEC</h3><p>Modern Modular Engineering &amp; Construction</p><a href="mailto:build@mmecglobal.com">build@mmecglobal.com <span aria-hidden="true">↗</span></a></article>
-    <article><h3>MEEM</h3><p>Modern Energy Equipment Manufacturing</p><a href="mailto:info@m-energy.com">info@m-energy.com <span aria-hidden="true">↗</span></a></article>
+    <article><h3>MDHI</h3><p>Modern Heavy Industries (Taicang) Co., Ltd.</p><a href="mailto:info@mdhiglobal.com">info@mdhiglobal.com <span aria-hidden="true">↗</span></a></article>
+    <article><h3>MMEC</h3><p>Modern Modular Engineering &amp; Construction Co., Ltd.</p><a href="mailto:build@mmecglobal.com">build@mmecglobal.com <span aria-hidden="true">↗</span></a></article>
+    <article><h3>MEEM</h3><p>Modern Energy Equipment Manufacturing Co., Ltd.</p><a href="mailto:info@m-energy.com">info@m-energy.com <span aria-hidden="true">↗</span></a></article>
   </div>
 </section>'''
     result = page("Contact & Enquiries | Modern Group", 1, "Contact", "", "", "", content,
