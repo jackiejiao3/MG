@@ -21,7 +21,7 @@ LOCATIONS = [
          address='169 Longjiang Rd., Taicang Port Development Zone, Taicang',
          copy='Structural steel fabrication.'),
     dict(id='sh', kind='site', icon='office', code='Shanghai office', x=66.298, y=66.719,
-         title='Modern Shanghai Engineering Center', chinese='', kicker='Engineering center · Shanghai',
+         title='Shanghai Engineering Office', chinese='', kicker='Engineering office · Shanghai',
          address='183 Kaibin Rd., Building B, Shanghai',
          copy='Engineering and commercial coordination.'),
     dict(id='gangxin', kind='transport', icon='port', code='Gangxin terminal', x=36.716, y=18.074,
