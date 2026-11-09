@@ -19,6 +19,8 @@
     submenu.hidden = !open;
   };
   const openMenu = (selected) => menus.forEach((menu) => setMenuOpen(menu, menu === selected));
+  openMenu(null);
+  header.classList.add('nav-enhanced');
 
   menus.forEach((menu) => {
     const { group, link, button, submenu } = menu;

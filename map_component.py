@@ -19,7 +19,7 @@ def render_map(depth, variant='full'):
         pins.append(f'<button class="map-hotspot map-hotspot--{p["kind"]}{" is-active" if active else ""}" type="button" style="--x:{p["x"]}%;--y:{p["y"]}%;" {attrs} aria-label="Show details for {p["title"]}" aria-pressed="{pressed}"><img src="{icon_path(item)}" alt="" draggable="false"></button>')
         address = f'<address>{p["address"]}</address>' if p['address'] else ''
         chinese = f'<p class="map-location-chinese" lang="zh-CN">{p["chinese"]}</p>' if p['chinese'] else ''
-        cards.append(f'<article class="map-location-card" data-map-card="{p["id"]}" data-map-type="{p["kind"]}"><img src="{icon_path(item)}" alt="" width="36" height="62"><div><span class="map-location-code">{p["code"]}</span><h4>{p["title"]}</h4>{chinese}{address}<p>{p["copy"]}</p><button type="button" data-map-select="{p["id"]}" aria-pressed="{pressed}">Locate on map ↗</button></div></article>')
+        cards.append(f'<article class="map-location-card" id="location-{p["id"]}" data-map-card="{p["id"]}" data-map-type="{p["kind"]}"><img src="{icon_path(item)}" alt="" width="36" height="62"><div><span class="map-location-code">{p["code"]}</span><h4>{p["title"]}</h4>{chinese}{address}<p>{p["copy"]}</p><button type="button" data-map-select="{p["id"]}" aria-pressed="{pressed}">Locate on map ↗</button></div></article>')
         if item['kind'] == 'site':
             chips.append((item['id'], f'<button type="button" class="map-site-chip{" is-active" if active else ""}" data-map-select="{p["id"]}" data-map-chip aria-pressed="{pressed}">{"Shanghai" if p["id"] == "sh" else p["code"]}</button>'))
         else:

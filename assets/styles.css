@@ -1437,3 +1437,15 @@ img[src$="product-air-cooled-heat-exchangers-default.webp"] {
   .nav-submenu { position:static; flex-basis:100%; min-width:0; padding:4px 12px; margin:0 0 4px; box-shadow:none; border:0; border-left:1px solid var(--gold); }
   .site-header nav { max-height:calc(100svh - 80px); overflow-y:auto; }
 }
+
+/* Keep the full link list available when the navigation script is unavailable. */
+.site-header:not(.nav-enhanced) { position:relative; height:auto; min-height:94px; flex-wrap:wrap; padding-block:12px; background:var(--ink); }
+.site-header:not(.nav-enhanced) .menu-toggle,
+.site-header:not(.nav-enhanced) .nav-menu-toggle { display:none; }
+.site-header:not(.nav-enhanced) #primary-nav { position:static; display:flex; flex-flow:row wrap; align-items:flex-start; gap:12px 20px; max-height:none; padding:0; opacity:1; visibility:visible; transform:none; pointer-events:auto; background:none; border:0; box-shadow:none; }
+.site-header:not(.nav-enhanced) .nav-menu { display:block; }
+.site-header:not(.nav-enhanced) .nav-submenu { position:static; min-width:0; padding:0 0 0 8px; margin:4px 0 0; border:0; border-left:1px solid var(--gold); box-shadow:none; }
+.site-header:not(.nav-enhanced) #primary-nav .nav-submenu a { padding:4px; }
+@media (max-width:900px) {
+  .site-header:not(.nav-enhanced) #primary-nav { flex-basis:100%; }
+}

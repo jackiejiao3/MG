@@ -45,7 +45,7 @@ def render_quality(page):
 <aside class="qh-accountability qh-width" aria-label="Responsibility"><div><span class="qh-small-mark" aria-hidden="true">↗</span><p><strong>One shared identity. Clear responsibility.</strong> Shared principles guide the network. Project-level quality and HSE responsibility remains with the company undertaking the work.</p></div><div class="qh-company-links">{company_links}</div></aside>
 <section class="qh-quality qh-width" id="quality-process" aria-labelledby="quality-heading"><div class="qh-section-heading"><div><p class="qh-kicker">01 / Quality &amp; responsible operations</p><h2 id="quality-heading">Responsible operations.<br><em>A practical management approach.</em></h2></div><p>Clear responsibilities, risk assessment, workplace monitoring and continual improvement provide a practical framework for responsible manufacturing.</p></div><div class="qh-process"><div class="qh-process-navigation" aria-label="Quality process steps">'''
     for i, (key, title, *_rest) in enumerate(STEPS, 1):
-        content += f'<button type="button" id="step-{key}" data-qh-step="{key}" aria-controls="panel-{key}"><span>{i:02d}</span><strong>{escape(title)}</strong><b aria-hidden="true">↗</b></button>'
+        content += f'<a href="#panel-{key}" id="step-{key}" data-qh-step="{key}" aria-controls="panel-{key}"><span>{i:02d}</span><strong>{escape(title)}</strong><b aria-hidden="true">↗</b></a>'
     content += '</div><div class="qh-process-content">'
     for i, (key, title, headline, copy, records, topic) in enumerate(STEPS, 1):
         items = ''.join(f'<li><span aria-hidden="true">✓</span>{escape(record)}</li>' for record in records)

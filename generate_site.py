@@ -39,7 +39,7 @@ def header(title, depth, active=None):
                 f'<div class="nav-menu" data-menu-label="{escaped_label}">{link}'
                 f'<button class="nav-menu-toggle" type="button" aria-label="Open {escaped_label} submenu" '
                 f'aria-expanded="false" aria-controls="{submenu_id}"><span aria-hidden="true"></span></button>'
-                f'<div class="nav-submenu" id="{submenu_id}" hidden>{children}</div></div>'
+                f'<div class="nav-submenu" id="{submenu_id}">{children}</div></div>'
             )
         links.append(link)
     links = "".join(links)
@@ -79,8 +79,8 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(desc)}">
   <link rel="icon" href="{r('assets/images/favicon.ico')}">
-  <link rel="stylesheet" href="{r('assets/styles.css')}">
-  <script defer src="{r('assets/site.js')}"></script>{page_assets}
+  <link rel="stylesheet" href="{r('assets/styles.css')}?v=static-navigation-1">
+  <script defer src="{r('assets/site.js')}?v=static-navigation-1"></script>{page_assets}
 </head>
 <body class="{body_class}">
 {header(title.split(' | ')[0], depth, active)}
