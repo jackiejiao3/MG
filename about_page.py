@@ -9,11 +9,11 @@ def render_about(page):
         ('2017','MMEC founded','about-mmec-chairman.webp','Composite image of the chairman presenting the MMEC factory plan','Modern Modular Engineering & Construction Co., Ltd. was founded. Its port-adjacent modular yard added integrated-module capability to the network.'),
         ('2025','MEEM facility opens','about-meem-opening.webp','MEEM facility grand opening ceremony','A dedicated manufacturing facility for HRSG pressure parts and air-cooled heat exchangers opened, completing the current four-product-line network.')
     ]
-    for year,title,image,alt,copy in milestones:
+    for slug, (year,title,image,alt,copy) in zip(("mdhi", "mmec", "meem"), milestones):
         photo = f'<img src="../assets/images/{image}" alt="{alt}" loading="lazy" decoding="async">'
         if image == 'about-mdhi-founded-meeting.webp':
             photo = f'<div class="ab-milestone-photo ab-milestone-photo--people">{photo}</div>'
-        content += f'<article class="ab-milestone"><div class="ab-year">{year}<span aria-hidden="true">↗</span></div>{photo}<h3>{title}</h3><p>{escape(copy)}</p></article>'
+        content += f'<article class="ab-milestone"><div class="ab-year">{year}<a href="../{slug}/index.html" aria-label="Explore {slug.upper()}"><span aria-hidden="true">↗</span></a></div>{photo}<h3>{title}</h3><p>{escape(copy)}</p></article>'
     content += '''</div></section><section class="ab-section ab-structure" aria-labelledby="ab-structure-title"><div class="ab-heading"><div><p class="ab-eyebrow">02 / Group structure</p><h2 id="ab-structure-title">One identity.<br>Three operating companies.</h2></div><p>Shared standards connect our companies. Each brings its own manufacturing scope and remains accountable for its projects.</p></div><div class="ab-companies">'''
     companies=[('MDHI','Taicang','Modern Heavy Industries (Taicang) Co., Ltd.','Structural steel','Steel structures for buildings, infrastructure and industrial projects.'),('MMEC','Zhangjiagang','Modern Modular Engineering & Construction Co., Ltd.','Structural steel · Modular plants','Structural fabrication, module assembly and port-oriented logistics.'),('MEEM','Zhangjiagang','Modern Energy Equipment Manufacturing Co., Ltd.','HRSG pressure parts · Air-cooled heat exchangers','Energy equipment for power generation and process applications.')]
     for code,city,legal,scope,copy in companies:

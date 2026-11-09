@@ -196,259 +196,233 @@
 }
   </script>
   <style>
-    .faq-wrap { width: min(1160px, 90%); margin-inline: auto; }
-    .faq-overview { background: var(--soft); padding: clamp(28px, 4vw, 56px) 0; }
-    .faq-overview h1 { font: 700 clamp(36px, 5vw, 64px)/1.08 var(--serif); margin: 8px 0 12px; }
-    .faq-count { margin: 10px 0 22px; font-weight: 700; }
-    .faq-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 24px; }
-    .faq-index section { border-top: 2px solid var(--gold); padding-top: 8px; }
-    .faq-index h2 { font-size: 19px; }
-    .faq-index ul, .faq-related ul { list-style: none; }
-    .faq-index li { font-size: 15px; margin: 5px 0; }
-    .faq-index a, .faq-answer a, .faq-related a { text-decoration: underline; text-underline-offset: .18em; }
-    .faq-answers { padding-block: 40px; max-width: 900px; }
-    .faq-answers section + section { margin-top: 26px; }
-    .faq-answers details { border-block-start: 1px solid var(--line); scroll-margin-top: 18px; }
-    .faq-answers details:last-child { border-block-end: 1px solid var(--line); }
-    .faq-answers summary { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 15px 0; cursor: pointer; list-style: none; font-weight: 700; }
-    .faq-answers summary::-webkit-details-marker { display: none; }
-    .faq-toggle { color: var(--gold-deep); font-size: 22px; }
-    .faq-toggle::before { content: "+"; }
-    .faq-answers details[open] .faq-toggle::before { content: "−"; }
-    .faq-answer { padding: 0 32px 16px 0; }
-    .faq-answer > a { display: inline-block; margin-top: 8px; }
-    .faq-bottom { margin-bottom: 48px; }
-    .faq-cta { background: var(--soft); padding: clamp(20px, 4vw, 36px); }
-    .faq-cta .button { margin-top: 14px; }
-    .faq-related { margin-top: 28px; }
-    .faq-related ul { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 8px; }
-    @media (min-width: 901px) { .faq-overview { min-height: calc(100svh - 94px); } }
-    @media (max-width: 900px) { .faq-index { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 560px) { .faq-index { grid-template-columns: 1fr; } }
-  </style>
+.faq-shell{max-width:1320px;margin:auto;padding:32px 6% 64px}
+.faq-hero .inner-hero-bg { object-position: center 37%; }
+.faq-hero .faq-intro { max-width: 680px; margin-top: 23px; color: #ffffffbd; }
+.faq-hero p.faq-count { margin-top: 16px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: .13em; }
+.faq-category-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 14px;color:var(--muted)}
+.faq-categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:30px}
+.faq-card{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);text-align:left;padding:18px 16px;min-height:124px;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transition:background .18s,border-color .18s,color .18s}
+.faq-card-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--gold-deep);letter-spacing:.08em}
+.faq-card-title{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2}
+.faq-card:hover{border-color:var(--gold-deep);background:#bda16d12}
+.faq-card[aria-current="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.faq-card[aria-current="true"] .faq-card-top{color:var(--gold)}
+.faq-card:focus-visible,.faq-item summary:focus-visible{outline:2px solid var(--gold-deep);outline-offset:4px}
+.faq-panel{border-top:1px solid var(--gold);padding:24px 0 8px;scroll-margin-top:24px}
+.faq-panel[hidden]{display:none}
+.faq-panel h2{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 18px}
+.faq-item{border-top:1px solid var(--line);scroll-margin-top:24px}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item summary{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:20px 0;cursor:pointer;list-style:none;font-weight:500;font-size:16px;line-height:1.5}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';color:var(--gold-deep);font-size:24px;font-weight:400;flex:none}
+.faq-item[open] summary::after{content:'−'}
+.faq-answer{max-width:850px;padding:0 36px 22px 0}
+.faq-answer p{margin:0;line-height:1.8;font-size:15px;color:var(--muted)}
+.faq-answer a{text-decoration:underline;text-decoration-color:var(--gold-deep);text-underline-offset:3px;overflow-wrap:anywhere}
+.faq-company-links{margin:12px 0 0;padding-left:20px;line-height:1.7}
+.faq-answer > a{display:inline-block;margin-top:12px;font-size:13px}
+.faq-cta{margin-top:40px;padding:32px;background:var(--ink);color:var(--ivory);display:flex;justify-content:space-between;align-items:center;gap:32px}
+.faq-cta h2{font-family:var(--serif);font-size:30px;font-weight:400;margin:0 0 10px}
+.faq-cta p{max-width:650px;line-height:1.6;font-size:14px;margin:0;color:#ddd9d0}
+.faq-cta .button{flex:none;white-space:nowrap}
+.faq-related{margin-top:32px}
+.faq-related h2{font-family:var(--serif);font-size:24px;font-weight:400;margin:0 0 14px}
+.faq-related ul{display:flex;flex-wrap:wrap;gap:12px 28px;list-style:none;padding:0;margin:0}
+.faq-related a{font-size:13px;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:5px}
+@media(max-width:1100px){.faq-categories{gap:8px}.faq-card{padding:16px 12px}.faq-card-title{font-size:18px}}
+@media(max-width:800px){.faq-categories{grid-template-columns:repeat(3,minmax(0,1fr))}.faq-card{min-height:112px;gap:18px}.faq-cta{align-items:flex-start;flex-direction:column;gap:22px}}
+@media(max-width:520px){.faq-shell{padding:26px 5% 44px}.faq-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:24px}.faq-card{min-height:112px;padding:14px}.faq-card:last-child{grid-column:1/-1;min-height:76px;flex-direction:row;align-items:center}.faq-card:last-child .faq-card-top{gap:18px}.faq-card-title{font-size:20px}.faq-panel h2{font-size:27px}.faq-item summary{font-size:15px;padding:17px 0}.faq-answer{padding-right:8px}.faq-cta{padding:24px}.faq-related ul{gap:16px 24px}}
+</style>
 </head>
-<body>
+<body class="inner faq-page">
 <header class="site-header inner-header"><a class="brand" href="../index.html" aria-label="Modern Group home"><span class="brand-surface"><img src="../assets/images/logo-white.webp" alt="Modern Group" width="598" height="115"></span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button><nav id="primary-nav" aria-label="Primary navigation"><a class="" href="../index.html">Home</a><a class="" href="../about/index.html">About</a><a class="" href="../companies-locations/index.html">Companies & Locations</a><a class="" href="../product-portfolio/index.html">Product Portfolio</a><div class="nav-menu" data-menu-label="Quality &amp; HSE"><a class="" href="../quality-hse/index.html">Quality & HSE</a><button class="nav-menu-toggle" type="button" aria-label="Open Quality &amp; HSE submenu" aria-expanded="false" aria-controls="quality-submenu"><span aria-hidden="true"></span></button><div class="nav-submenu" id="quality-submenu"><a href="../quality-hse/index.html">Overview</a><a href="../quality-hse/index.html#quality-process">Quality Management</a><a href="../quality-hse/index.html#hse-principles">Health, Safety &amp; Environment</a><a href="../quality-hse/certificates/index.html">Certificates</a></div></div><div class="nav-menu" data-menu-label="Contact"><a class="" href="../contact/index.html">Contact</a><button class="nav-menu-toggle" type="button" aria-label="Open Contact submenu" aria-expanded="false" aria-controls="contact-submenu"><span aria-hidden="true"></span></button><div class="nav-submenu" id="contact-submenu"><a href="../contact/index.html">Contact &amp; Enquiries</a><a href="../faq/index.html" class="active-nav" aria-current="page">FAQ</a></div></div></nav><div class="header-tools"><a class="header-cta" href="../contact/index.html">Start an enquiry</a></div></header>
 <main>
-  <section class="faq-overview" aria-labelledby="faq-title">
-    <div class="faq-wrap">
-      <p class="eyebrow">Modern Group Support</p>
-      <h1 id="faq-title">Answers before you enquire.</h1>
-      <p>Clear answers for procurement and project teams before they send an enquiry.</p>
-      <p class="faq-count">21 Questions Answered</p>
-      <nav class="faq-index" aria-label="FAQ questions">
-      <section aria-labelledby="faq-group-1">
-        <h2 id="faq-group-1">Group &amp; Companies</h2>
-        <ul>
-          <li><a href="#q1">What is Modern Group?</a></li>
-          <li><a href="#q2">What is the difference between Modern Group and MDHI, MMEC and MEEM?</a></li>
-          <li><a href="#q3">Which company should I contact first?</a></li>
-          <li><a href="#q4">Where are the Modern Group manufacturing sites?</a></li>
-        </ul>
-      </section>
-      <section aria-labelledby="faq-group-2">
-        <h2 id="faq-group-2">Products</h2>
-        <ul>
-          <li><a href="#q5">Which company manufactures structural steel?</a></li>
-          <li><a href="#q6">What is the difference between MDHI and MMEC for structural steel?</a></li>
-          <li><a href="#q7">Which company manufactures modular plants?</a></li>
-          <li><a href="#q8">Which company manufactures HRSG pressure parts and air-cooled heat exchangers?</a></li>
-          <li><a href="#q9">What HRSG components does MEEM manufacture?</a></li>
-          <li><a href="#q10">What types of air-cooled heat exchangers does MEEM manufacture?</a></li>
-        </ul>
-      </section>
-      <section aria-labelledby="faq-group-3">
-        <h2 id="faq-group-3">Logistics &amp; Shipping</h2>
-        <ul>
-          <li><a href="#q11">How close are your factories to the port?</a></li>
-          <li><a href="#q12">How do you ship large or oversized items?</a></li>
-          <li><a href="#q13">Can MMEC arrange module transport and port load-out?</a></li>
-          <li><a href="#q14">Do you handle export packing and sea fastening?</a></li>
-          <li><a href="#q15">How do I get to your factories?</a></li>
-        </ul>
-      </section>
-      <section aria-labelledby="faq-group-4">
-        <h2 id="faq-group-4">Enquiry &amp; Quotation</h2>
-        <ul>
-          <li><a href="#q16">How do I send an enquiry to Modern Group?</a></li>
-          <li><a href="#q17">What information should I send for a quotation?</a></li>
-          <li><a href="#q18">What does the Shanghai office do?</a></li>
-        </ul>
-      </section>
-      <section aria-labelledby="faq-group-5">
-        <h2 id="faq-group-5">Quality &amp; Responsibility</h2>
-        <ul>
-          <li><a href="#q19">Who holds the certifications and quality responsibility?</a></li>
-          <li><a href="#q20">Can I specify inspection, testing and witness requirements in my enquiry?</a></li>
-          <li><a href="#q21">Where can I find and verify each company’s certificates?</a></li>
-        </ul>
-      </section>
-      </nav>
-    </div>
-  </section>
-  <div class="faq-wrap faq-answers">
-    <section aria-labelledby="faq-group-1">
-      <details id="q1" open>
-        <summary>What is Modern Group?<span class="faq-toggle" aria-hidden="true"></span></summary>
+<section class="inner-hero faq-hero" aria-labelledby="faq-title">
+  <img class="inner-hero-bg" src="../assets/images/faq-manufacturing-yard.webp?v=crane-photo" width="1600" height="900" alt="" fetchpriority="high">
+  <div class="inner-hero-content">
+    <div class="breadcrumb">Modern Group · FAQ</div>
+    <p class="eyebrow">Modern Group Support</p>
+    <h1 id="faq-title">Answers before you enquire.</h1>
+    <p class="faq-intro">Clear answers for procurement and project teams before they send an enquiry.</p>
+    <p class="faq-count">5 ASPECTS · 21 QUESTIONS ANSWERED</p>
+  </div>
+</section>
+  <div class="faq-shell">
+    <p class="faq-category-label">Choose a topic</p>
+    <nav class="faq-categories" aria-label="FAQ topics">
+      <a class="faq-card" href="#panel-group"><span class="faq-card-top"><span>01</span><span aria-hidden="true">↗</span></span><span class="faq-card-title">Group &amp; Companies</span></a>
+      <a class="faq-card" href="#panel-products"><span class="faq-card-top"><span>02</span><span aria-hidden="true">↗</span></span><span class="faq-card-title">Products</span></a>
+      <a class="faq-card" href="#panel-logistics"><span class="faq-card-top"><span>03</span><span aria-hidden="true">↗</span></span><span class="faq-card-title">Logistics &amp; Shipping</span></a>
+      <a class="faq-card" href="#panel-enquiry"><span class="faq-card-top"><span>04</span><span aria-hidden="true">↗</span></span><span class="faq-card-title">Enquiry &amp; Quotation</span></a>
+      <a class="faq-card" href="#panel-quality"><span class="faq-card-top"><span>05</span><span aria-hidden="true">↗</span></span><span class="faq-card-title">Quality &amp; Responsibility</span></a>
+    </nav>
+    <section class="faq-panel" id="panel-group" aria-labelledby="faq-group-1">
+      <h2 id="faq-group-1">Group &amp; Companies</h2>
+      <details class="faq-item" id="q1" open>
+        <summary>What is Modern Group?</summary>
         <div class="faq-answer">
           <p>Modern Group is the short name for Modern Heavy Industries Group. The group connects three specialist manufacturers in Jiangsu, China, whose work includes fabricating structural steel, building modular plants, and manufacturing heat recovery steam generator (HRSG) pressure parts and air-cooled heat exchangers.</p>
           <a href="../about/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q2">
-        <summary>What is the difference between Modern Group and MDHI, MMEC and MEEM?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q2">
+        <summary>What is the difference between Modern Group and MDHI, MMEC and MEEM?</summary>
         <div class="faq-answer">
           <p>Modern Group is the name MDHI, MMEC and MEEM use to present their combined capabilities and coordinate enquiries. For each project, the relevant operating company provides the quotation, signs the contract and takes responsibility for quality, applicable certifications and delivery.</p>
           <a href="../about/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q3">
-        <summary>Which company should I contact first?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q3">
+        <summary>Which company should I contact first?</summary>
         <div class="faq-answer">
           <p>Start with the product scope. Contact MDHI or MMEC for structural steel, depending on the project requirements, MMEC for modular plants, and MEEM for HRSG pressure parts and air-cooled heat exchangers. If you are unsure, send one enquiry to Modern Group for coordination.</p>
           <a href="../companies-locations/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q4">
-        <summary>Where are the Modern Group manufacturing sites?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q4">
+        <summary>Where are the Modern Group manufacturing sites?</summary>
         <div class="faq-answer">
           <p>MDHI: 169 Longjiang Road, Taicang. MMEC: 2669 Yanjiang Road, Zhangjiagang. MEEM: 1 Duanshan Road, Zhangjiagang. The group also has an engineering centre in Shanghai at 183 Kaibin Road, Building B.</p>
           <a href="../companies-locations/index.html">Learn more →</a>
         </div>
       </details>
     </section>
-    <section aria-labelledby="faq-group-2">
-      <details id="q5">
-        <summary>Which company manufactures structural steel?<span class="faq-toggle" aria-hidden="true"></span></summary>
+    <section class="faq-panel" id="panel-products" aria-labelledby="faq-group-2">
+      <h2 id="faq-group-2">Products</h2>
+      <details class="faq-item" id="q5">
+        <summary>Which company manufactures structural steel?</summary>
         <div class="faq-answer">
           <p>MDHI in Taicang and MMEC in Zhangjiagang manufacture structural steel. Both fabricate project-specific packages, and enquiries are routed by product scope to the company with the relevant responsibility.</p>
           <a href="../product-portfolio/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q6">
-        <summary>What is the difference between MDHI and MMEC for structural steel?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q6">
+        <summary>What is the difference between MDHI and MMEC for structural steel?</summary>
         <div class="faq-answer">
           <p>Both manufacture structural steel. MDHI is in Taicang and focuses on structural steel; MMEC is in Zhangjiagang and also manufactures modular plants. Enquiries are routed by product scope.</p>
           <a href="../product-portfolio/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q7">
-        <summary>Which company manufactures modular plants?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q7">
+        <summary>Which company manufactures modular plants?</summary>
         <div class="faq-answer">
           <p>MMEC in Zhangjiagang manufactures modular plants, including process modules, process skids and preassembled pipe racks. It provides integrated module assembly and port-oriented logistics, about 1 km from the Gangxin Heavy Equipment Terminal.</p>
           <a href="../product-portfolio/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q8">
-        <summary>Which company manufactures HRSG pressure parts and air-cooled heat exchangers?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q8">
+        <summary>Which company manufactures HRSG pressure parts and air-cooled heat exchangers?</summary>
         <div class="faq-answer">
           <p>MEEM in Zhangjiagang manufactures HRSG pressure parts and air-cooled heat exchangers. It is the group&#x27;s dedicated energy-equipment facility for power generation and process applications.</p>
           <a href="../product-portfolio/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q9">
-        <summary>What HRSG components does MEEM manufacture?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q9">
+        <summary>What HRSG components does MEEM manufacture?</summary>
         <div class="faq-answer">
           <p>Finned tubes, headers, harps and platens, and bundles and modules. MEEM manufactures HRSG pressure-part assemblies for heat recovery steam generator applications.</p>
           <a href="../product-portfolio/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q10">
-        <summary>What types of air-cooled heat exchangers does MEEM manufacture?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q10">
+        <summary>What types of air-cooled heat exchangers does MEEM manufacture?</summary>
         <div class="faq-answer">
           <p>Air finned coolers, air cooled condensers, modular air-cooled heat exchangers, hot air recirculation air-cooled heat exchangers, and tube bundles.</p>
           <a href="../product-portfolio/index.html">Learn more →</a>
         </div>
       </details>
     </section>
-    <section aria-labelledby="faq-group-3">
-      <details id="q11">
-        <summary>How close are your factories to the port?<span class="faq-toggle" aria-hidden="true"></span></summary>
+    <section class="faq-panel" id="panel-logistics" aria-labelledby="faq-group-3">
+      <h2 id="faq-group-3">Logistics &amp; Shipping</h2>
+      <details class="faq-item" id="q11">
+        <summary>How close are your factories to the port?</summary>
         <div class="faq-answer">
           <p>Very close. MMEC is about 1 km from the Gangxin Heavy Equipment Terminal, MEEM about 2 km, and MDHI about 10 km from Taicang Port. All three sites are on the Yangtze River.</p>
           <a href="../companies-locations/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q12">
-        <summary>How do you ship large or oversized items?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q12">
+        <summary>How do you ship large or oversized items?</summary>
         <div class="faq-answer">
           <p>Large and oversized items ship through Yangtze River ports close to the factories. Lifting, transport and packing plans are prepared for oversized items with the operating company.</p>
           <a href="../companies-locations/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q13">
-        <summary>Can MMEC arrange module transport and port load-out?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q13">
+        <summary>Can MMEC arrange module transport and port load-out?</summary>
         <div class="faq-answer">
           <p>Yes. MMEC can coordinate transport by self-propelled modular transporter (SPMT) and port load-out. It also offers portside or Free on Board (FOB) delivery options and can assist with vessel booking and export documentation, depending on the agreed scope.</p>
           <a href="https://mmecglobal.com/">Learn more →</a>
         </div>
       </details>
-      <details id="q14">
-        <summary>Do you handle export packing and sea fastening?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q14">
+        <summary>Do you handle export packing and sea fastening?</summary>
         <div class="faq-answer">
           <p>Yes. Export packing, rust prevention, lifting protection and sea fastening are arranged with the operating company, according to size, weight, destination and transport method.</p>
           <a href="../companies-locations/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q15">
-        <summary>How do I get to your factories?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q15">
+        <summary>How do I get to your factories?</summary>
         <div class="faq-answer">
           <p>The nearest international airport is Shanghai Pudong, about 95 km from MDHI and about 230 km from MMEC and MEEM. Zhangjiagang Railway Station is about 30 km from MMEC and MEEM.</p>
           <a href="../companies-locations/index.html">Learn more →</a>
         </div>
       </details>
     </section>
-    <section aria-labelledby="faq-group-4">
-      <details id="q16">
-        <summary>How do I send an enquiry to Modern Group?<span class="faq-toggle" aria-hidden="true"></span></summary>
+    <section class="faq-panel" id="panel-enquiry" aria-labelledby="faq-group-4">
+      <h2 id="faq-group-4">Enquiry &amp; Quotation</h2>
+      <details class="faq-item" id="q16">
+        <summary>How do I send an enquiry to Modern Group?</summary>
         <div class="faq-answer">
           <p>Start with the product scope on the Contact page. Enquiries go to jackie.jo@mdhichina.com, or directly to <a href="https://mdhiglobal.com/">MDHI</a> (info@mdhiglobal.com), <a href="https://mmecglobal.com/">MMEC</a> (build@mmecglobal.com), or <a href="https://m-energy.com/">MEEM</a> (info@m-energy.com).</p>
           <a href="../contact/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q17">
-        <summary>What information should I send for a quotation?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q17">
+        <summary>What information should I send for a quotation?</summary>
         <div class="faq-answer">
           <p>Send the product line, project region, drawings, standards, quantities, destination and any inspection or certificate requirements. Photos or samples can help when drawings are incomplete.</p>
           <a href="../contact/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q18">
-        <summary>What does the Shanghai office do?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q18">
+        <summary>What does the Shanghai office do?</summary>
         <div class="faq-answer">
           <p>The Shanghai engineering centre at 183 Kaibin Road, Building B, handles engineering and commercial coordination. Manufacturing stays at the three sites in Taicang and Zhangjiagang.</p>
           <a href="../contact/index.html">Learn more →</a>
         </div>
       </details>
     </section>
-    <section aria-labelledby="faq-group-5">
-      <details id="q19">
-        <summary>Who holds the certifications and quality responsibility?<span class="faq-toggle" aria-hidden="true"></span></summary>
+    <section class="faq-panel" id="panel-quality" aria-labelledby="faq-group-5">
+      <h2 id="faq-group-5">Quality &amp; Responsibility</h2>
+      <details class="faq-item" id="q19">
+        <summary>Who holds the certifications and quality responsibility?</summary>
         <div class="faq-answer">
           <p>Certifications are held by the operating company, not by Modern Group as a brand. Ask the relevant company directly for a certificate&#x27;s scope, validity and verification link before ordering.</p>
           <a href="../quality-hse/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q20">
-        <summary>Can I specify inspection, testing and witness requirements in my enquiry?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q20">
+        <summary>Can I specify inspection, testing and witness requirements in my enquiry?</summary>
         <div class="faq-answer">
           <p>Yes. Include the required tests, acceptance criteria and any client or third-party witness points. MDHI describes how these are addressed in an inspection and test plan, and MEEM publishes capabilities for material verification, non-destructive testing and pressure testing.</p>
           <a href="../quality-hse/index.html">Learn more →</a>
         </div>
       </details>
-      <details id="q21">
-        <summary>Where can I find and verify each company’s certificates?<span class="faq-toggle" aria-hidden="true"></span></summary>
+      <details class="faq-item" id="q21">
+        <summary>Where can I find and verify each company’s certificates?</summary>
         <div class="faq-answer">
           <p>Start with the Certificates page to find the published listings for MDHI, MMEC and MEEM. For a specific order, ask the operating company to confirm the certificate holder, scope and validity.</p>
           <a href="../quality-hse/certificates/index.html">Learn more →</a>
         </div>
       </details>
     </section>
-  </div>
-  <div class="faq-wrap faq-bottom">
     <section class="faq-cta">
-      <h2>Still need clarification?</h2>
-      <p>Send your enquiry with the product line and project region. A clear question early can save days of quotation revision later.</p>
+      <div><h2>Still need clarification?</h2>
+      <p>Send your enquiry with the product line and project region. A clear question early can save days of quotation revision later.</p></div>
       <a class="button button-gold" href="../contact/index.html">Send an Enquiry →</a>
     </section>
     <section class="faq-related">
@@ -463,5 +437,31 @@
   </div>
 </main>
 <footer><div class="footer-brand"><span class="brand-surface"><img src="../assets/images/logo-white.webp" alt="Modern Group" width="598" height="115"></span></div><p>Modern Group is a commercial brand and is not a separate incorporated legal entity. Contracts, certifications and legal obligations are held by the relevant operating company.</p><div><a href="../faq/index.html">FAQ</a><a href="../legal-notice/index.html">Legal</a><a href="../privacy/index.html">Privacy</a></div></footer>
+<script>
+(() => {
+  const cards = [...document.querySelectorAll('.faq-card')];
+  const panels = [...document.querySelectorAll('.faq-panel')];
+
+  function select(panel) {
+    panels.forEach(item => { item.hidden = item !== panel; });
+    cards.forEach(card => {
+      if (card.hash === '#' + panel.id) card.setAttribute('aria-current', 'true');
+      else card.removeAttribute('aria-current');
+    });
+  }
+
+  function selectFromHash() {
+    const target = document.getElementById(window.location.hash.slice(1));
+    select(target?.closest('.faq-panel') || panels[0]);
+    if (target?.matches('details')) target.open = true;
+  }
+
+  cards.forEach(card => card.addEventListener('click', () => {
+    select(document.getElementById(card.hash.slice(1)));
+  }));
+  window.addEventListener('hashchange', selectFromHash);
+  selectFromHash();
+})();
+</script>
 </body>
 </html>

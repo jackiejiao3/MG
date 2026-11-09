@@ -9,7 +9,7 @@ PRODUCTS = (
      "Project-specific steelwork for buildings, infrastructure and industrial facilities."),
     ("Modular Plants", "MMEC", "contact-modular-plants.webp",
      "Large three-level integrated process plant module",
-     "Integrated modules, process modules, skids and port-oriented modular delivery."),
+     "Modular plants, including process modules and skids, with port-oriented delivery."),
     ("HRSG Pressure Parts", "MEEM", "contact-hrsg.webp",
      "Complete installed HRSG, shown as an application illustration for pressure parts",
      "Headers, finned tubes, harps, manifolds and pressure-part assemblies."),
@@ -65,7 +65,8 @@ def render_contact(page):
         <div class="contact-field contact-field-wide"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements"></textarea></div>
       </div>
       <button type="submit" class="contact-send" data-contact-send>Send enquiry <span aria-hidden="true">→</span></button>
-      <p class="contact-form-notice" id="contact-form-notice">All product enquiries are sent to <a href="mailto:jackie.jo@mdhichina.com">jackie.jo@mdhichina.com</a>.</p>
+      <p class="contact-form-notice" id="contact-form-notice">Modern Group receives all form submissions at <a href="mailto:jackie.jo@mdhichina.com">jackie.jo@mdhichina.com</a>.</p>
+      <p class="contact-form-notice">Before sending your enquiry, read our <a href="../faq/index.html">frequently asked questions</a>.</p>
       <p class="contact-form-status" data-contact-status role="status" aria-live="polite"></p>
       <noscript><p class="contact-form-notice">You can submit this form without JavaScript. All enquiries go to jackie.jo@mdhichina.com.</p></noscript>
     </form>
