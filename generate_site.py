@@ -23,8 +23,7 @@ def header(title, depth, active=None):
             ("Certificates", "quality-hse/certificates/index.html"),
         ]),
         "Contact": ("contact-submenu", [
-            ("Project Enquiry", "contact/index.html#enquiry-form"),
-            ("Company Contacts", "contact/index.html#company-emails"),
+            ("Contact & Enquiries", "contact/index.html"),
             ("FAQ", "faq/index.html"),
         ]),
     }
