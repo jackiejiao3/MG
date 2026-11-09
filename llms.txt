@@ -1,4 +1,33 @@
 # Modern Group
 
+> Modern Group is an integrated manufacturing group specializing in structural steel, modular plants, air-cooled heat exchangers and HRSG systems. Modern Group is a shared commercial identity connecting three specialist operating companies in Jiangsu, China. Contracts, certifications and project delivery remain with the relevant operating company.
+
+## Companies
+
+- [MDHI — Modern Heavy Industries (Taicang) Co., Ltd.](https://mdhiglobal.com/): Structural steel fabrication, based in Taicang, Jiangsu. Contact: info@mdhiglobal.com
+- [MMEC — Modern Modular Engineering & Construction Co., Ltd.](https://mmecglobal.com/): Structural steel and modular plants, based in Zhangjiagang, Jiangsu. Contact: build@mmecglobal.com
+- [MEEM — Modern Energy Equipment Manufacturing Co., Ltd.](https://www.m-energy.com/): HRSG pressure parts and air-cooled heat exchangers, based in Zhangjiagang, Jiangsu. Contact: info@m-energy.com
+
+## Product lines
+
+- Structural steel — fabricated by MDHI and MMEC
+- Modular plants — fabricated by MMEC
+- HRSG pressure parts — manufactured by MEEM
+- Air-cooled heat exchangers — manufactured by MEEM
+
 ## Key pages
-- [Frequently Asked Questions](https://www.modernhig.com/faq/index.html)
+
+- [Modern Group — Home](https://www.modernhig.com/): Three specialist companies. One Modern Group.
+- [About Modern Group](https://www.modernhig.com/about/index.html): Shared commercial identity, history, group structure and governance.
+- [Companies & Locations](https://www.modernhig.com/companies-locations/index.html): MDHI, MMEC and MEEM, with manufacturing bases in Taicang and Zhangjiagang.
+- [Product Portfolio](https://www.modernhig.com/product-portfolio/index.html): Structural steel, modular plants, HRSG pressure parts and air-cooled heat exchangers.
+- [Quality & HSE](https://www.modernhig.com/quality-hse/index.html): Quality, health, safety and environment approach.
+- [Contact & Enquiries](https://www.modernhig.com/contact/index.html): Enquiries are routed by product scope to the relevant operating company.
+- [Frequently Asked Questions](https://www.modernhig.com/faq/index.html): 18 questions in 5 groups — Group & Companies, Products, Logistics & Shipping, Enquiry & Quotation, Quality & Responsibility.
+- [MDHI](https://www.modernhig.com/mdhi/index.html): Modern Heavy Industries (Taicang) Co., Ltd. — Structural Steel.
+- [MMEC](https://www.modernhig.com/mmec/index.html): Modern Modular Engineering & Construction Co., Ltd. — Structural Steel and Modular Plants.
+- [MEEM](https://www.modernhig.com/meem/index.html): Modern Energy Equipment Manufacturing Co., Ltd. — HRSG Pressure Parts and Air-Cooled Heat Exchangers.
+
+## Optional
+
+- Do not crawl administrative or back-office paths.

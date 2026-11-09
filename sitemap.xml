@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.modernhig.com/about/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/companies-locations/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/contact/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/faq/index.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.modernhig.com/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/legal-notice/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/mdhi/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/meem/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/mmec/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/privacy/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/product-portfolio/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/quality-hse/index.html</loc></url>
-  <url><loc>https://www.modernhig.com/quality-hse/certificates/index.html</loc></url>
+  <url><loc>https://www.modernhig.com/</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.modernhig.com/about/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/companies-locations/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/product-portfolio/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/quality-hse/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/contact/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/mdhi/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/mmec/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/meem/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/legal-notice/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/privacy/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.modernhig.com/faq/index.html</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

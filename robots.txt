@@ -1,0 +1,28 @@
+# Modern Group — robots.txt
+# 正式地址：https://www.modernhig.com/
+# 允许搜索引擎与 AI 爬虫抓取公开业务页；后台路径不抓取。
+# AI 爬虫政策待法务定：下面 GPTBot、Google-Extended、PerplexityBot、ClaudeBot、anthropic-ai
+# 目前是注释掉的，默认不拦（User-agent: * Allow: / 已覆盖）。法务定了允许还是禁止再改，
+# 允许就取消注释，禁止就把对应那行的 Allow 改为 Disallow。不要整站屏蔽。
+
+User-agent: *
+Allow: /
+
+# User-agent: GPTBot
+# Allow: /
+
+# User-agent: Google-Extended
+# Allow: /
+
+# User-agent: PerplexityBot
+# Allow: /
+
+# User-agent: ClaudeBot
+# Allow: /
+
+# User-agent: anthropic-ai
+# Allow: /
+
+Disallow: /admin/
+
+Sitemap: https://www.modernhig.com/sitemap.xml
