@@ -17,9 +17,7 @@ def header(title, depth, active=None):
     ]
     submenus = {
         "Quality & HSE": ("quality-submenu", [
-            ("Overview", "quality-hse/index.html"),
-            ("Quality Management", "quality-hse/index.html#quality-process"),
-            ("Health, Safety & Environment", "quality-hse/index.html#hse-principles"),
+            ("Quality & HSE Overview", "quality-hse/index.html"),
             ("Certificates", "quality-hse/certificates/index.html"),
         ]),
         "Contact": ("contact-submenu", [
