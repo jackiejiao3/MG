@@ -11,8 +11,8 @@ STEPS = (
     ("monitoring", "Monitor conditions", "Look closely at the working environment.",
      "Workplace monitoring focuses on chemical hazards and physical factors, while environmental monitoring considers water discharge, emissions and noise. Occupational health surveillance helps identify concerns and supports appropriate action.",
      ("Workplace chemical and physical factors", "Water, emissions and noise", "Occupational health examinations"), "Workplace and environmental monitoring"),
-    ("improvement", "Improve operations", "Reduce errors, waste and resource use.",
-     "Efficient engineering, careful procurement and resource-conscious production help reduce errors and manufacturing waste. Improvement priorities include energy-efficient equipment, emission control and tracking water use.",
+    ("improvement", "Improve operations", "Reduce rework, waste and resource use.",
+     "Efficient engineering, careful procurement and resource-conscious production help reduce rework and manufacturing waste. Improvement priorities include energy-efficient equipment, emission control and tracking water use.",
      ("Efficient engineering", "Resource-efficient equipment", "Waste and emission reduction"), "Operational improvement"),
 )
 
@@ -50,7 +50,7 @@ def render_quality(page):
     for i, (key, title, headline, copy, records, topic) in enumerate(STEPS, 1):
         items = ''.join(f'<li><span aria-hidden="true">✓</span>{escape(record)}</li>' for record in records)
         content += f'''<article class="qh-process-panel" id="panel-{key}" data-qh-panel="{key}" aria-labelledby="step-{key}"><p class="qh-panel-eyebrow">Step {i:02d} / {escape(topic)}</p><h3>{escape(headline)}</h3><p>{escape(copy)}</p><div class="qh-records"><h4>Management priorities</h4><ul>{items}</ul></div></article>'''
-    content += f'''</div></div><div class="qh-quality-bottom">{photo_slot('quality', 'Manufacturing & workplace improvement')}<div class="qh-quality-note"><p class="qh-kicker">Improve the way work is done</p><h3>Efficiency with responsibility.</h3><p>Efficient engineering, careful procurement and improved equipment support fewer errors, less manufacturing waste and more responsible resource use.</p></div></div></section>
+    content += f'''</div></div><div class="qh-quality-bottom">{photo_slot('quality', 'Manufacturing & workplace improvement')}<div class="qh-quality-note"><p class="qh-kicker">Improve the way work is done</p><h3>Efficiency with responsibility.</h3><p>Efficient engineering, careful procurement and improved equipment help reduce rework and manufacturing waste and improve resource efficiency.</p></div></div></section>
 <section class="qh-hse" id="hse-principles" aria-labelledby="hse-heading"><div class="qh-width"><div class="qh-section-heading"><div><p class="qh-kicker">02 / Health, safety &amp; environment</p><h2 id="hse-heading">Care beyond<br><em>the finished product.</em></h2></div><p>Protecting people starts with understanding workplace risks. Training, emergency preparedness and responsible resource use support safer, more sustainable operations.</p></div><div class="qh-hse-grid">'''
     hse = (
         ("safety", "01", "Protect people.", "Occupational health & safety", "Preventing harm is the priority. Risk assessment, occupational health surveillance and monitoring of workplace hazards help protect employees throughout daily operations.", ("Harm prevention", "Occupational health", "Workplace monitoring"), "People & safe working practices"),
@@ -61,6 +61,6 @@ def render_quality(page):
         tag_markup = ''.join(f'<li>{escape(tag)}</li>' for tag in tags)
         content += f'''<article class="qh-hse-card qh-{key}"><div class="qh-hse-card-top"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true">{ICONS[key]}</svg><span>{number}</span></div><p class="qh-kicker">{topic}</p><h3>{headline}</h3><p class="qh-hse-copy">{copy}</p><ul>{tag_markup}</ul>{photo_slot(key, photo)}</article>'''
     content += '''</div></div></section>
-<section class="qh-contact"><div class="qh-width qh-contact-layout"><div><p class="qh-kicker">Quality &amp; HSE enquiries</p><h2>Have a question about quality or HSE?</h2><p>Tell us what your project requires. We’ll put you in touch with the company responsible for the work.</p></div><div class="qh-contact-actions"><a class="qh-button qh-button-gold" href="../contact/index.html">Start a conversation <span aria-hidden="true">↗</span></a><a class="qh-contact-faq" href="../faq/index.html#panel-quality">Read the Quality &amp; Responsibility FAQ <span aria-hidden="true">→</span></a></div></div></section>'''
+<section class="qh-contact"><div class="qh-width qh-contact-layout"><div><p class="qh-kicker">Connect with the responsible company</p><h2>Have a quality or HSE question?</h2><p>Tell us about your quality, workplace safety or environmental requirements.<br>We will connect you with the responsible operating company.<br><a class="closing-faq" href="../faq/index.html#panel-quality">Read the Quality &amp; Responsibility FAQ <span aria-hidden="true">→</span></a></p></div><a class="qh-button qh-button-gold" href="../contact/index.html">Start a conversation <span aria-hidden="true">↗</span></a></div></section>'''
     return page("Quality & HSE | Modern Group", 1, "Quality & HSE", "", "", "", content,
                 "Our approach to quality, health, safety and the environment: clear responsibility, risk assessment, occupational health and resource-efficient operations.")

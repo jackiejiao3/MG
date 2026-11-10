@@ -1453,3 +1453,10 @@ img[src$="product-air-cooled-heat-exchangers-default.webp"] {
 /* Keep headings balanced and avoid short last lines in running copy. */
 main :is(h1, h2, h3) { text-wrap: balance; }
 main :is(p, dd) { text-wrap: pretty; }
+
+.closing-faq {
+  display: inline-block;
+  margin-block-start: .5em;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
