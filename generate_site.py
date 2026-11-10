@@ -52,14 +52,14 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
     body_class = "home" if depth == 0 else "inner"
     page_assets = ""
     if active == "Home":
-        page_assets = '<link rel="stylesheet" href="assets/home.css">'
+        page_assets = '<link rel="stylesheet" href="assets/home.css?v=layout-2">'
     if active == "About":
         body_class += " about-page"
-        page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=hero-original-5')}">'''
+        page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=layout-2')}">'''
     if active == "Product Portfolio":
         body_class += " portfolio-page"
         page_assets = f'''
-  <link rel="stylesheet" href="{r('assets/product-portfolio.css')}?v=heading-spacing-1">
+  <link rel="stylesheet" href="{r('assets/product-portfolio.css')}?v=layout-2">
   <script defer src="{r('assets/product-portfolio.js')}"></script>'''
     if active == "Companies & Locations":
         body_class += " companies-page"
@@ -139,15 +139,19 @@ def home():
   <div class="section-label"><span>01</span> The network</div>
   <div class="network-heading">
     <h2 id="network-title">One group identity.<br>Three connected companies.</h2>
-    <p class="network-lead">Shared leadership. Complementary capabilities.<br>Clear responsibility.</p>
+    <p class="network-lead">
+      <span>Shared leadership.</span>
+      <span>Complementary capabilities.</span>
+      <span>Clear responsibility.</span>
+    </p>
     <p>Under the Modern Group brand, MDHI, MMEC and MEEM share executive leadership. Each operating company is responsible for its own contracts, certifications and delivery.</p>
   </div>
   <div class="network-relationship" aria-label="Modern Group connects three operating companies under shared executive leadership">
     <div class="network-brand"><img src="assets/images/logo-white.webp" alt="Modern Group" width="598" height="115" loading="lazy"><p>Shared commercial identity</p></div>
     <div class="network-company-headings">
-      <a href="mdhi/index.html"><h3>MDHI</h3><p>Modern Heavy Industries (Taicang) Co., Ltd.</p></a>
-      <a href="mmec/index.html"><h3>MMEC</h3><p>Modern Modular Engineering &amp; Construction Co., Ltd.</p></a>
-      <a href="meem/index.html"><h3>MEEM</h3><p>Modern Energy Equipment Manufacturing Co., Ltd.</p></a>
+      <a href="mdhi/index.html"><h3>MDHI</h3><p>Modern Heavy Industries <br class="network-name-break">(Taicang) Co., Ltd.</p></a>
+      <a href="mmec/index.html"><h3>MMEC</h3><p>Modern Modular Engineering <br class="network-name-break">&amp; Construction Co., Ltd.</p></a>
+      <a href="meem/index.html"><h3>MEEM</h3><p>Modern Energy Equipment <br class="network-name-break">Manufacturing Co., Ltd.</p></a>
     </div>
     <div class="network-shared-leadership"><span class="network-shared-symbol" aria-hidden="true">↔</span><div><h4>Shared executive leadership</h4><p>Led by the same executive team</p></div></div>
     <div class="network-scope-grid">

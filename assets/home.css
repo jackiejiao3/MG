@@ -14,7 +14,8 @@
 .home .network-overview { display: block; background: #f6f2e8; border-top: 1px solid var(--line); }
 .network-heading { margin-bottom: 45px; }
 .network-heading h2 { font: 400 clamp(36px,4.3vw,64px)/1.08 var(--serif); letter-spacing: -.035em; margin: 0 0 22px; }
-.network-lead { color: #303736; font-size: clamp(17px,1.6vw,23px); line-height: 1.5; margin-bottom: 12px; }
+.network-lead { color: #303736; font-size: clamp(17px,1.6vw,23px); line-height: 1.5; margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 4px clamp(16px, 2vw, 28px); }
+.network-lead > span { text-wrap: balance; }
 .network-heading > p:last-child { color: #686b68; font-size: 15px; line-height: 1.75; }
 .network-brand { position: relative; background: #252c2b; color: #d5d9d5; width: min(440px,100%); margin: 0 auto; padding: 28px 40px 23px; text-align: center; }
 .network-brand img { width: 100%; height: auto; max-width: 340px; margin: 0 auto 9px; }
@@ -28,6 +29,10 @@
 .network-company-headings h3 { font: 600 clamp(28px,3.1vw,44px)/1.2 var(--sans); letter-spacing: -.025em; margin-bottom: 7px; }
 .network-company-headings a:hover h3 { color: #8b703d; }
 .network-company-headings p { font-size: clamp(16px, 1.45vw, 20px); font-weight: 500; color: #39423d; line-height: 1.6; text-wrap: balance; }
+.network-name-break { display: none; }
+@media (min-width: 1120px) {
+  .network-name-break { display: initial; }
+}
 .network-shared-leadership { line-height: 1.5; display: flex; justify-content: center; align-items: center; gap: 22px; padding: 18px 26px; background: #252c2b; color: #e2e5e1; }
 .network-shared-symbol { font-size: 36px; line-height: 1; color: #d8bd8e; padding-right: 22px; border-right: 1px solid #bda16d88; }
 .network-shared-leadership h4 { color: #dcc49a; font-size: 15px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 2px; }
