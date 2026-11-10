@@ -52,7 +52,7 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
     body_class = "home" if depth == 0 else "inner"
     page_assets = ""
     if active == "Home":
-        page_assets = '<link rel="stylesheet" href="assets/home.css?v=layout-2">'
+        page_assets = '<link rel="stylesheet" href="assets/home.css?v=network-principles-1">'
     if active == "About":
         body_class += " about-page"
         page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=layout-2')}">'''
@@ -63,7 +63,7 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
   <script defer src="{r('assets/product-portfolio.js')}"></script>'''
     if active == "Companies & Locations":
         body_class += " companies-page"
-        page_assets = '<link rel="stylesheet" href="../assets/companies-locations.css?v=heading-spacing-1"><script defer src="../assets/companies-locations.js"></script>'
+        page_assets = '<link rel="stylesheet" href="../assets/companies-locations.css?v=intro-lines-1"><script defer src="../assets/companies-locations.js"></script>'
     if active == "Quality & HSE":
         body_class += " quality-page"
         page_assets = f'''
@@ -139,11 +139,11 @@ def home():
   <div class="section-label"><span>01</span> The network</div>
   <div class="network-heading">
     <h2 id="network-title">One group identity.<br>Three connected companies.</h2>
-    <p class="network-lead">
-      <span>Shared leadership.</span>
-      <span>Complementary capabilities.</span>
-      <span>Clear responsibility.</span>
-    </p>
+    <ul class="network-lead">
+      <li>Shared leadership</li>
+      <li>Complementary capabilities</li>
+      <li>Clear responsibility</li>
+    </ul>
     <p>Under the Modern Group brand, MDHI, MMEC and MEEM share executive leadership. Each operating company is responsible for its own contracts, certifications and delivery.</p>
   </div>
   <div class="network-relationship" aria-label="Modern Group connects three operating companies under shared executive leadership">
@@ -171,7 +171,7 @@ def home():
 <section class="portfolio section-shell section-soft" id="capabilities"><div class="portfolio-header"><div><div class="section-label"><span>03</span> Product portfolio</div><p class="eyebrow dark">A clear route to the right manufacturer</p><h2>Four focused product lines.</h2><p>Find the operating company for each product line.</p></div><aside class="portfolio-assurance"><span>Routing principle</span><p>Every product line is owned by a legal entity that can quote, contract, certify and deliver.</p></aside></div><div class="product-list"><article class="product-card"><div class="product-media"><img src="assets/images/home-structural-steel-frame-1600.webp" srcset="assets/images/home-structural-steel-frame-800.webp 800w, assets/images/home-structural-steel-frame-1600.webp 1600w, assets/images/home-structural-steel-frame-2000.webp 2000w" sizes="(max-width: 700px) 100vw, (max-width: 1050px) 310px, 390px" alt="Multi-level structural steel frame during preassembly at the fabrication yard" width="1600" height="628" loading="lazy" decoding="async"><span>01</span></div><div class="product-card-body"><div><h3>Structural Steel</h3><p>Two specialized fabrication bases supporting project-specific structural steel requirements.</p></div><strong>MDHI + MMEC</strong><a href="product-portfolio/index.html" aria-label="Explore Structural Steel in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/product-modular-plants-layer3.webp" alt="Modular plant equipment" width="1600" height="1000" loading="lazy" decoding="async"><span>02</span></div><div class="product-card-body"><div><h3>Modular Plants</h3><p>Modular Plants from MMEC, with module integration and port-oriented delivery.</p></div><strong>MMEC</strong><a href="product-portfolio/index.html" aria-label="Explore Modular Plants in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/hrsg-pressure-part-module-assemblies.webp" alt="Rows of HRSG pressure-part tube modules in yellow frames at the manufacturing facility" width="1600" height="1000" loading="lazy" decoding="async"><span>03</span></div><div class="product-card-body"><div><h3>HRSG Pressure Parts</h3><p>Dedicated manufacture of pressure-part assemblies for heat recovery steam generator applications.</p></div><strong>MEEM</strong><a href="product-portfolio/index.html" aria-label="Explore HRSG Pressure Parts in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/home-air-heater-approved.webp" alt="Air heater equipment in the manufacturing workshop" width="1440" height="1080" loading="lazy" decoding="async"><span>04</span></div><div class="product-card-body"><div><h3>Air-Cooled Heat Exchangers</h3><p>Specialized fabrication of air-cooled heat exchanger equipment for energy and process projects.</p></div><strong>MEEM</strong><a href="product-portfolio/index.html" aria-label="Explore Air-Cooled Heat Exchangers in the product portfolio">Explore product portfolio <b>→</b></a></div></article></div></section>
 <section class="locations section-shell locations-map-section" id="locations"><div class="location-copy"><div class="section-label"><span>04</span> Locations</div><p class="eyebrow dark">Shanghai · Taicang · Zhangjiagang</p><h2>Manufacturing access shaped by ports and industry.</h2><p>MDHI operates in Taicang Port Development Zone. MMEC and MEEM are located in Zhangjiagang near Gangxin Port, with engineering and commercial coordination supported from Shanghai.</p><div class="map-key"><span>3 manufacturing bases</span><span>1 engineering center</span><span>Yangtze River logistics</span></div></div>{interactive_map(0, "compact")}</section>
 {how_we_work()}
-<section class="contact-section" id="contact"><div class="section-shell"><div><p class="eyebrow">Start with Modern Group</p><h2>Tell us what you need to manufacture.</h2><p>Choose one of the four product lines. Modern Group receives enquiries centrally and coordinates with the relevant operating company.<br><a class="closing-faq" href="faq/index.html#panel-group">Read the FAQ <span aria-hidden="true">→</span></a></p></div><div class="contact-links"><a href="{r('contact/index.html?product=Structural%20Steel#enquiry-form')}"><b>Structural Steel</b><span>MDHI + MMEC →</span></a><a href="{r('contact/index.html?product=Modular%20Plants#enquiry-form')}"><b>Modular Plants</b><span>MMEC →</span></a><a href="{r('contact/index.html?product=HRSG%20Pressure%20Parts#enquiry-form')}"><b>HRSG Pressure Parts</b><span>MEEM →</span></a><a href="{r('contact/index.html?product=Air-Cooled%20Heat%20Exchangers#enquiry-form')}"><b>Air-Cooled Heat Exchangers</b><span>MEEM →</span></a></div></div></section>'''
+<section class="contact-section" id="contact"><div class="section-shell"><div><p class="eyebrow">Start with Modern Group</p><h2>Tell us what you need to manufacture.</h2><p>Choose one of the four product lines. Modern Group receives enquiries centrally and coordinates with the relevant operating company.<br><a class="closing-faq" href="faq/index.html#panel-group">Read the Group &amp; Companies FAQ <span aria-hidden="true">→</span></a></p></div><div class="contact-links"><a href="{r('contact/index.html?product=Structural%20Steel#enquiry-form')}"><b>Structural Steel</b><span>MDHI + MMEC →</span></a><a href="{r('contact/index.html?product=Modular%20Plants#enquiry-form')}"><b>Modular Plants</b><span>MMEC →</span></a><a href="{r('contact/index.html?product=HRSG%20Pressure%20Parts#enquiry-form')}"><b>HRSG Pressure Parts</b><span>MEEM →</span></a><a href="{r('contact/index.html?product=Air-Cooled%20Heat%20Exchangers#enquiry-form')}"><b>Air-Cooled Heat Exchangers</b><span>MEEM →</span></a></div></div></section>'''
     return page("Modern Group | Specialized Manufacturing Network", 0, "Home", "", "", "", content, "Modern Group connects MDHI, MMEC and MEEM across four focused manufacturing product lines.")
 
 def about():

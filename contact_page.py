@@ -29,7 +29,7 @@ def render_contact(page):
 </button>''')
     options = "".join(f'<option value="{escape(name)}">{escape(name)}</option>' for name, *_ in PRODUCTS)
     content = f'''<section class="contact-hero" aria-labelledby="contact-title">
-  <div class="contact-width"><div class="contact-hero-copy"><p class="contact-kicker">Modern Group · Contact</p><h1 id="contact-title">Contact &amp; Enquiries</h1><p>Start with the product scope. We will direct you to the relevant operating company.</p></div>
+  <div class="contact-width"><div class="contact-hero-copy"><p class="contact-kicker">Modern Group · Contact</p><h1 id="contact-title">Contact &amp; Enquiries</h1><p>Start with the product scope.<br>We will direct you to the relevant operating company.</p></div>
   </div>
 </section>
 <section class="contact-routing contact-width" aria-labelledby="routing-title">
@@ -66,7 +66,7 @@ def render_contact(page):
       </div>
       <button type="submit" class="contact-send" data-contact-send>Send enquiry <span aria-hidden="true">→</span></button>
       <p class="contact-form-notice" id="contact-form-notice">Modern Group receives all form submissions at <a href="mailto:jackie.jo@mdhichina.com">jackie.jo@mdhichina.com</a>.</p>
-      <p class="contact-form-notice">Before sending your enquiry, read our <a href="../faq/index.html#panel-enquiry">enquiry and quotation FAQ</a>.</p>
+      <p class="contact-form-notice"><a class="closing-faq" href="../faq/index.html#panel-enquiry">Read the Enquiry &amp; Quotation FAQ <span aria-hidden="true">→</span></a></p>
       <p class="contact-form-status" data-contact-status role="status" aria-live="polite"></p>
       <noscript><p class="contact-form-notice">You can submit this form without JavaScript. All enquiries go to jackie.jo@mdhichina.com.</p></noscript>
     </form>
