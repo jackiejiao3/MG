@@ -59,7 +59,7 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
     if active == "Product Portfolio":
         body_class += " portfolio-page"
         page_assets = f'''
-  <link rel="stylesheet" href="{r('assets/product-portfolio.css')}?v=original-steps-1">
+  <link rel="stylesheet" href="{r('assets/product-portfolio.css')}?v=balanced-steps-1">
   <script defer src="{r('assets/product-portfolio.js')}"></script>'''
     if active == "Companies & Locations":
         body_class += " companies-page"
@@ -67,7 +67,7 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
     if active == "Quality & HSE":
         body_class += " quality-page"
         page_assets = f'''
-  <link rel="stylesheet" href="{r('assets/quality-hse.css?v=alignment-1')}">
+  <link rel="stylesheet" href="{r('assets/quality-hse.css?v=hero-spacing-1')}">
   <script defer src="{r('assets/quality-hse.js')}"></script>'''
     return f'''<!doctype html>
 <html lang="en">

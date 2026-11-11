@@ -5,7 +5,7 @@
 .qh-hero { padding-top:58px; background:#f0ece1; }
 .qh-hero-grid { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(0,1fr); gap:clamp(32px,5vw,80px); align-items:center; }
 .qh-hero-copy .qh-kicker { margin-bottom:25px; }
-.qh-hero h1 { font:400 clamp(42px,4.7vw,70px)/1.03 var(--serif); letter-spacing:-.045em; }
+.qh-hero h1 { font:400 clamp(42px,4.7vw,70px)/1.16 var(--serif); letter-spacing:-.045em; }
 .qh-hero h1 em { color:var(--qh-green); font-weight:400; }
 .qh-lead { margin-block:24px 27px; color:#64695f; font-size:clamp(14px,1vw,15px); line-height:1.8; }
 .qh-button { display:inline-flex; align-items:center; justify-content:space-between; gap:35px; padding:15px 22px; min-height:48px; font-size:16px; font-weight:600; transition:transform .2s,filter .2s; }

@@ -91,7 +91,7 @@
 .pp-route-steps li + li { border-left:1px solid #ffffff2a; padding-left:30px; }
 .pp-route-steps li > span { color:#d2bb8d; font:400 28px var(--serif); }
 .pp-route-steps h3 { font:400 23px/1.2 var(--serif); margin-block:14px 12px; }
-.pp-route-steps p { font-size:14px; color:#b8c5c9; line-height:1.8; max-width:330px; }
+.pp-route-steps p { font-size:14px; color:#b8c5c9; line-height:1.8; max-width:330px; text-wrap:balance; }
 .pp-route-bottom { display:flex; align-items:center; justify-content:space-between; gap:30px; border-top:1px solid #ffffff2a; padding-top:28px; }
 .pp-route-bottom p { color:#b8c5c9; font-size:14px; }
 .pp-skip { position:fixed; left:20px; top:10px; padding:12px 18px; z-index:200; transform:translateY(-160%); color:white; background:var(--pp-navy); }
