@@ -88,3 +88,10 @@
   .network-mobile-companies dt { color: #8b703d; font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3px; }
   .network-mobile-companies dd { font-size: 14px; line-height: 1.65; }
 }
+
+/* Give the location summary the full desktop content width. */
+.home .locations-map-section .location-copy { max-width: none; }
+.home .location-coordination { display: block; font-size: clamp(14px, 1.05vw, 17px); }
+@media (min-width:1280px) {
+  .home .location-coordination { white-space: nowrap; }
+}
