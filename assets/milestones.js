@@ -20,7 +20,7 @@
     const width = Math.min(350, bounds.width - 40);
     const left = Math.max(20, Math.min(bounds.width - width - 20, tab.left - bounds.left + tab.width / 2 - width / 2));
     root.style.setProperty('--milestone-popup-left', left + 'px');
-    root.style.setProperty('--milestone-popup-top', (tab.top - bounds.top + 184) + 'px');
+    root.style.setProperty('--milestone-popup-top', (tab.top - bounds.top + 214) + 'px');
   }
   function select(index, open = true) {
     current = index;
