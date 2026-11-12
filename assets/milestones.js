@@ -27,6 +27,7 @@
   });
   function select(index) {
     current = index;
+    root.style.setProperty("--milestone-progress", String(index / Math.max(1, tabs.length - 1)));
     tabs.forEach((tab, i) => {
       tab.setAttribute('aria-selected', String(i === index));
       tab.tabIndex = i === index ? 0 : -1;

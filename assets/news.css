@@ -69,3 +69,21 @@
 @media(max-width:960px){.aw-ledger{grid-template-columns:1fr}.aw-record-body{grid-template-columns:1fr 180px}.aw-preview img{height:160px}}
 @media(max-width:540px){.mr-panel-image--meem{height:205px;min-height:205px}.mr-panel-image--meem img{max-height:none;object-position:50% 60%}.mr-track{padding-top:10px}.aw-record-head{padding:20px}.aw-record-body{grid-template-columns:minmax(0,1fr) 95px;gap:16px;padding:20px}.aw-preview img{height:130px}.aw-record h3{font-size:20px}.aw-summary{font-size:13px}.aw-year{font-size:29px}.aw-type{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.aw-record{transition:none}}
+
+/* A real manufacturing setting, and a directional path through the milestone dates. */
+.ma-heading--photo{position:relative;isolation:isolate;overflow:hidden;background:#182c3e;min-height:380px;border-bottom:0}
+.ma-heading-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 68%;z-index:-2}
+.ma-heading--photo:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,33,48,.92),rgba(15,33,48,.67) 48%,rgba(15,33,48,.25)),linear-gradient(0deg,rgba(15,33,48,.4),transparent 70%);z-index:-1}
+.ma-heading--photo>div{padding-top:34px;padding-bottom:44px}
+.ma-heading--photo h1{color:#fff;margin-top:22px;font-weight:600}
+.ma-heading--photo .ma-eyebrow{color:#dcc78e}.ma-heading--photo .nc-breadcrumb{color:#d1d7dc}
+.ma-heading--photo>div>p:last-of-type{color:#e0e5e8;max-width:650px}
+.ma-heading--photo .ma-section-links a{color:#fff;border-color:#bba56f}.ma-heading--photo .ma-section-links a:hover{color:#e8d39c}
+.mr-track{--milestone-progress:1}.mr-enhanced .mr-track{--milestone-progress:inherit}
+.mr-progress{position:absolute;left:calc(100% / 12);top:57px;width:calc((100% - 100% / 6) * var(--milestone-progress));height:2px;background:linear-gradient(90deg,#d1bf94,#96783a);z-index:0;transition:width .35s ease}
+.mr-progress>span{position:absolute;right:-3px;top:-3px;width:8px;height:8px;border-right:2px solid #96783a;border-top:2px solid #96783a;transform:rotate(45deg)}
+.mr-tick[aria-selected="true"] .mr-dot{box-shadow:0 0 0 5px #fff,0 0 0 6px #b49a6050}
+.mr-tick[aria-selected="true"]:after{content:"";position:absolute;top:32px;width:21px;height:38px;border-top:1px solid #a58b50;border-bottom:1px solid #a58b50;pointer-events:none}
+.mr-journey-label{display:flex;justify-content:flex-end;gap:14px;color:#928365;font:9px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;text-transform:uppercase;letter-spacing:.13em;margin:0 0 14px}
+@media(max-width:540px){.ma-heading--photo{min-height:350px}.ma-heading-image{object-position:58% 65%}.ma-heading--photo>div{padding-top:26px;padding-bottom:34px}.ma-heading--photo h1{font-size:36px;max-width:320px}.mr-journey-label{font-size:8px;gap:10px;justify-content:space-between;margin-top:6px}}
+@media(prefers-reduced-motion:reduce){.mr-progress{transition:none}}
