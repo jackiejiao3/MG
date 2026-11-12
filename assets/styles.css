@@ -1417,3 +1417,15 @@ img[src$="product-air-cooled-heat-exchangers-default.webp"] {
 .profile-visuals { min-width:0; }
 .profile-image.profile-image--manufacturing { min-height:0; }
 .profile-image--manufacturing img { position:relative; inset:auto; display:block; width:100%; height:auto; object-fit:contain; }
+
+/* About secondary navigation: native details supports pointer, touch and keyboard. */
+.site-header nav .nav-about{position:relative;flex:0 0 auto}
+.nav-about summary{cursor:pointer;list-style:none;white-space:nowrap;opacity:.85}
+.nav-about summary::-webkit-details-marker{display:none}
+.nav-about summary.active-nav{opacity:1;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.nav-about summary span{font-size:12px;margin-left:4px}
+.site-header nav .nav-about-menu{position:absolute;top:100%;left:-18px;min-width:240px;background:#192c3e;padding:14px 18px;box-shadow:0 12px 28px #0003;z-index:40}
+.site-header nav .nav-about-menu a{display:block;color:#fff;font-size:14px;padding:12px 0;letter-spacing:.01em}
+.nav-about summary:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+.about-news-link{padding-top:64px;padding-bottom:72px}.about-news-link h2{font-size:36px;margin:12px 0 20px}.about-news-link p{max-width:680px;line-height:1.7;margin-bottom:24px}
+@media(max-width:900px){.site-header nav .nav-about{width:100%}.nav-about summary{padding:14px 4px;border-bottom:1px solid #ffffff17}.site-header nav .nav-about-menu{position:static;box-shadow:none;background:transparent;padding:0 0 8px 20px;min-width:0}}
