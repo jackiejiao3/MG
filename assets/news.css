@@ -28,3 +28,43 @@
 @media(max-width:760px){.mr-heading{align-items:flex-start;gap:20px}.mr-heading h2{font-size:30px}.mr-heading>div>p:last-child{font-size:15px}.mr-controls{margin-top:8px}.mr-controls button{width:36px;height:36px}.mr-panel{grid-template-columns:1fr 1fr}.mr-panel-copy{padding:24px 24px 46px}.mr-panel h3{font-size:24px}.mr-position{left:24px}.mr-panel-meta{gap:10px;font-size:10px}.mr-panel-image{padding:12px}.mr-watermark{font-size:78px}}
 @media(max-width:540px){.mr-heading{display:block;margin-bottom:20px}.mr-controls{justify-content:flex-end;margin-top:-40px;margin-bottom:8px}.mr-heading>div>p:last-child{padding-bottom:34px}.mr-panel{grid-template-columns:1fr}.mr-panel-image{order:-1;padding:14px}.mr-panel-image img{max-height:170px}.mr-panel-copy{padding:22px 24px 46px}.mr-panel h3{font-size:23px}.mr-panel-summary{font-size:14px}.mr-track{min-width:660px}.mr-section{padding-bottom:40px}}
 @media(prefers-reduced-motion:reduce){.mr-enhanced .mr-panel{animation:none}.mr-dot,.mr-controls button{transition:none}}
+
+/* Industrial timeline rail and procurement award dossiers. */
+.mr-track-scroll{background:#192c3c;border:1px solid #314654;padding:0;box-shadow:inset 0 1px 0 #ffffff0b;scrollbar-color:#b49a60 #263b4c}
+.mr-track{padding:26px 12px 24px;counter-reset:milestone;isolation:isolate;background-image:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);background-size:24px 24px}
+.mr-track:before{top:73px;left:12px;right:12px;background:#8e805e;height:1px}
+.mr-track:after{top:74px;left:12px;right:12px;height:14px;background:repeating-linear-gradient(to right,#aebac14a 0,#aebac14a 1px,transparent 1px,transparent 10px)}
+.mr-tick{counter-increment:milestone;color:#a6b2bb}
+.mr-tick:before{content:"0" counter(milestone);position:absolute;top:-14px;font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;color:#607a8b}
+.mr-tick-year{font:500 18px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em}
+.mr-dot{width:12px;height:12px;border:1px solid #a49a7d;border-radius:0;background:#192c3c;transform:rotate(45deg);margin-top:6px;margin-bottom:18px}
+.mr-tick-date{font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:#9aabb6}
+.mr-tick:hover .mr-dot,.mr-tick[aria-selected="true"] .mr-dot{background:#d2b878;border-color:#d2b878;box-shadow:0 0 0 4px #192c3c,0 0 0 5px #b49a6080}
+.mr-tick[aria-selected="true"] .mr-tick-year{color:#f1e8d5;font-weight:600}
+.mr-tick[aria-selected="true"] .mr-tick-date{color:#d2b878}
+.mr-tick[aria-selected="true"]:before{color:#d2b878}
+.mr-panels{margin-top:0}.mr-panel{border:1px solid #d7dcd9;border-top:0;background:#f6f5f0}
+.mr-panel-copy{border-left:3px solid #b49a60}
+.mr-panel-meta{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em}
+.mr-panel-meta>span{color:#182c3e}.mr-watermark{font-size:88px;font-weight:400;color:#e6e3d9}
+.mr-controls button{border-radius:0}.mr-detail{color:#263b4c}
+.mr-panel-image--meem{padding:0;height:320px;min-height:320px;overflow:hidden;background:#1a465b}
+.mr-panel-image--meem img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:50% 62%}
+.aw-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.aw-record{border:1px solid #d4d4cc;background:#fbfaf6;min-width:0;position:relative;transition:border-color .2s,box-shadow .2s}
+.aw-record:hover{border-color:#ad9869;box-shadow:0 5px 20px #182c3c08}
+.aw-record:before{content:"";position:absolute;left:-1px;top:-1px;width:30px;height:3px;background:#ad9869}
+.aw-record-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 26px;border-bottom:1px solid #deded5}
+.aw-year{font:400 33px/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.05em;color:#24394a}
+.aw-record-head>div{text-align:right}.aw-type{margin:0 0 7px;text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:#7c693d}
+.aw-record-head time{font-size:11px;color:#849097}
+.aw-record-body{display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:22px;padding:26px;align-items:start}
+.aw-record-copy>.ma-eyebrow{font-size:10px;line-height:1.6;letter-spacing:.08em;margin:0 0 12px}
+.aw-record h3{font-size:22px;line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
+.aw-record h3 a{color:#182c3e}.aw-summary{font-size:14px;line-height:1.85;color:#68747b;margin:0}
+.aw-record .ma-detail{font-size:12px;margin-top:22px;gap:24px}
+.aw-preview{display:block;background:#eeeee7;border:1px solid #e0e1d8;padding:5px}
+.aw-preview img{display:block;width:100%;height:160px;object-fit:contain}
+@media(max-width:960px){.aw-ledger{grid-template-columns:1fr}.aw-record-body{grid-template-columns:1fr 180px}.aw-preview img{height:160px}}
+@media(max-width:540px){.mr-panel-image--meem{height:205px;min-height:205px}.mr-panel-image--meem img{max-height:none;object-position:50% 60%}.mr-track{padding-top:26px}.aw-record-head{padding:20px}.aw-record-body{grid-template-columns:minmax(0,1fr) 95px;gap:16px;padding:20px}.aw-preview img{height:130px}.aw-record h3{font-size:20px}.aw-summary{font-size:13px}.aw-year{font-size:29px}.aw-type{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.aw-record{transition:none}}
