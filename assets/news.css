@@ -30,25 +30,26 @@
 @media(prefers-reduced-motion:reduce){.mr-enhanced .mr-panel{animation:none}.mr-dot,.mr-controls button{transition:none}}
 
 /* Industrial timeline rail and procurement award dossiers. */
-.mr-track-scroll{background:#192c3c;border:1px solid #314654;padding:0;box-shadow:inset 0 1px 0 #ffffff0b;scrollbar-color:#b49a60 #263b4c}
-.mr-track{padding:26px 12px 24px;counter-reset:milestone;isolation:isolate;background-image:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);background-size:24px 24px}
-.mr-track:before{top:73px;left:12px;right:12px;background:#8e805e;height:1px}
-.mr-track:after{top:74px;left:12px;right:12px;height:14px;background:repeating-linear-gradient(to right,#aebac14a 0,#aebac14a 1px,transparent 1px,transparent 10px)}
-.mr-tick{counter-increment:milestone;color:#a6b2bb}
-.mr-tick:before{content:"0" counter(milestone);position:absolute;top:-14px;font:9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;color:#607a8b}
-.mr-tick-year{font:500 18px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em}
-.mr-dot{width:12px;height:12px;border:1px solid #a49a7d;border-radius:0;background:#192c3c;transform:rotate(45deg);margin-top:6px;margin-bottom:18px}
-.mr-tick-date{font:11px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:#9aabb6}
-.mr-tick:hover .mr-dot,.mr-tick[aria-selected="true"] .mr-dot{background:#d2b878;border-color:#d2b878;box-shadow:0 0 0 4px #192c3c,0 0 0 5px #b49a6080}
-.mr-tick[aria-selected="true"] .mr-tick-year{color:#f1e8d5;font-weight:600}
-.mr-tick[aria-selected="true"] .mr-tick-date{color:#d2b878}
-.mr-tick[aria-selected="true"]:before{color:#d2b878}
-.mr-panels{margin-top:0}.mr-panel{border:1px solid #d7dcd9;border-top:0;background:#f6f5f0}
-.mr-panel-copy{border-left:3px solid #b49a60}
-.mr-panel-meta{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.04em}
-.mr-panel-meta>span{color:#182c3e}.mr-watermark{font-size:88px;font-weight:400;color:#e6e3d9}
-.mr-controls button{border-radius:0}.mr-detail{color:#263b4c}
-.mr-panel-image--meem{padding:0;height:320px;min-height:320px;overflow:hidden;background:#1a465b}
+
+/* Light architectural ruler with major stations and a separate calibration band. */
+.mr-track-scroll{background:transparent;border:0;padding:6px 0 12px;box-shadow:none;scrollbar-color:#b49a60 #f1efe9}
+.mr-track{padding:10px 12px 18px;counter-reset:milestone;isolation:isolate;background:none}
+.mr-track:before{content:"";top:57px;left:12px;right:12px;height:2px;background:linear-gradient(90deg,#d9ddd9 0%,#a99a75 50%,#d9ddd9 100%)}
+.mr-track:after{content:"";top:68px;left:12px;right:12px;height:7px;background:repeating-linear-gradient(90deg,#c1c8c2 0,#c1c8c2 1px,transparent 1px,transparent 18px);opacity:.7}
+.mr-tick{color:#7d8589;position:relative}
+.mr-tick:before{content:"";position:absolute;top:41px;height:28px;width:1px;background:#b9c1b9;z-index:-1}
+.mr-tick-year{font:500 18px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.02em}
+.mr-dot{box-sizing:border-box;width:11px;height:11px;border:2px solid #a99a75;border-radius:2px;transform:none;background:#fff;margin-top:6px;margin-bottom:24px;transition:background .2s,box-shadow .2s}
+.mr-tick-date{font-size:12px;line-height:1.6;color:#7d8589}
+.mr-tick:hover .mr-dot,.mr-tick[aria-selected="true"] .mr-dot{background:#b49a60;border-color:#b49a60;box-shadow:0 0 0 4px #fff,0 0 0 5px #b49a6038}
+.mr-tick[aria-selected="true"] .mr-tick-year{color:#182c3e;font-weight:700}
+.mr-tick[aria-selected="true"] .mr-tick-date{color:#80682e}
+.mr-tick[aria-selected="true"]:before{background:#b49a60;height:34px}
+.mr-panels{margin-top:14px}.mr-panel{border:0;background:#f3f0e8}
+.mr-panel-copy{border:0}.mr-panel-meta{font-family:inherit;letter-spacing:.07em}
+.mr-panel-meta>span{color:#7e704e}.mr-watermark{font-size:100px;font-weight:600;color:#e4dfd2}
+.mr-detail{color:#80682e}
+.mr-panel-image--meem{padding:0;height:320px;min-height:320px;overflow:hidden;background:#e8e8e1}
 .mr-panel-image--meem img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:50% 62%}
 .aw-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .aw-record{border:1px solid #d4d4cc;background:#fbfaf6;min-width:0;position:relative;transition:border-color .2s,box-shadow .2s}
@@ -66,5 +67,5 @@
 .aw-preview{display:block;background:#eeeee7;border:1px solid #e0e1d8;padding:5px}
 .aw-preview img{display:block;width:100%;height:160px;object-fit:contain}
 @media(max-width:960px){.aw-ledger{grid-template-columns:1fr}.aw-record-body{grid-template-columns:1fr 180px}.aw-preview img{height:160px}}
-@media(max-width:540px){.mr-panel-image--meem{height:205px;min-height:205px}.mr-panel-image--meem img{max-height:none;object-position:50% 60%}.mr-track{padding-top:26px}.aw-record-head{padding:20px}.aw-record-body{grid-template-columns:minmax(0,1fr) 95px;gap:16px;padding:20px}.aw-preview img{height:130px}.aw-record h3{font-size:20px}.aw-summary{font-size:13px}.aw-year{font-size:29px}.aw-type{font-size:9px}}
+@media(max-width:540px){.mr-panel-image--meem{height:205px;min-height:205px}.mr-panel-image--meem img{max-height:none;object-position:50% 60%}.mr-track{padding-top:10px}.aw-record-head{padding:20px}.aw-record-body{grid-template-columns:minmax(0,1fr) 95px;gap:16px;padding:20px}.aw-preview img{height:130px}.aw-record h3{font-size:20px}.aw-summary{font-size:13px}.aw-year{font-size:29px}.aw-type{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.aw-record{transition:none}}
