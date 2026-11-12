@@ -31,3 +31,13 @@
 ## Optional
 
 - Do not crawl administrative or back-office paths.
+
+## News
+
+- [News](https://www.modernhig.com/news/index.html): Dated company developments and historical industry updates.
+- [Modern Group Opens Its Third Manufacturing Facility](https://www.modernhig.com/news/meem-grand-opening.html): 2025-10-28 — Modern Energy Equipment Manufacturing Co., Ltd. opens a purpose-built manufacturing facility in Zhangjiagang, Jiangsu, dedicated to energy equipment fabrication.
+- [Modern Modular E&C Workshop Takes Shape](https://www.modernhig.com/news/mmecnews2.html): 2021-05-07 — An update on the phased development of MMEC’s modular fabrication facility and its workshop construction.
+- [US Trade Commission Rules on Anti-Dumping](https://www.modernhig.com/news/ad-ruling.html): 2020-02-29 — A historical industry update on the USITC determination concerning fabricated structural steel from Canada, China and Mexico.
+- [Modern’s Modular Yard Under Construction](https://www.modernhig.com/news/mmecnews.html): 2020-02-25 — Construction progress at MMEC’s modular fabrication yard in Zhangjiagang, including the workshop, yard and planned manufacturing scope.
+- [Modern Heavy Industries Returns to Work](https://www.modernhig.com/news/covid.html): 2020-02-24 — MDHI’s February 2020 update on the resumption of work at its Taicang facility, staffing and workplace health precautions.
+- [Top Girders & Box Columns: The Bigger the Better](https://www.modernhig.com/news/topg.html): 2020-02-15 — A fabrication highlight showing the manufacture, welding, inspection and delivery preparation of heavy top girders and box columns.
