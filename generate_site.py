@@ -15,34 +15,59 @@ def header(title, depth, active=None):
         ("Quality & HSE", r("quality-hse/index.html")),
         ("Contact", r("contact/index.html")),
     ]
-    links = "".join(f'<a class="{"active-nav" if active==label else ""}" href="{href}">{label}</a>' for label, href in nav)
+    submenus = {
+        "Quality & HSE": ("quality-submenu", [
+            ("Quality & HSE Overview", "quality-hse/index.html"),
+            ("Certificates", "quality-hse/certificates/index.html"),
+        ]),
+        "Contact": ("contact-submenu", [
+            ("Contact & Enquiries", "contact/index.html"),
+            ("FAQ", "faq/index.html"),
+        ]),
+    }
+    links = []
+    for label, href in nav:
+        current = "active-nav" if active == label else ""
+        link = f'<a class="{current}" href="{href}">{html.escape(label)}</a>'
+        if label in submenus:
+            submenu_id, items = submenus[label]
+            escaped_label = html.escape(label)
+            children = "".join(f'<a href="{r(path)}">{html.escape(name)}</a>' for name, path in items)
+            link = (
+                f'<div class="nav-menu" data-menu-label="{escaped_label}">{link}'
+                f'<button class="nav-menu-toggle" type="button" aria-label="Open {escaped_label} submenu" '
+                f'aria-expanded="false" aria-controls="{submenu_id}"><span aria-hidden="true"></span></button>'
+                f'<div class="nav-submenu" id="{submenu_id}">{children}</div></div>'
+            )
+        links.append(link)
+    links = "".join(links)
     return f'''<header class="site-header {'inner-header' if depth else ''}"><a class="brand" href="{r('index.html')}" aria-label="Modern Group home"><span class="brand-surface"><img src="{r('assets/images/logo-white.webp')}" alt="Modern Group" width="598" height="115"></span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button><nav id="primary-nav" aria-label="Primary navigation">{links}</nav><div class="header-tools"><a class="header-cta" href="{r('contact/index.html')}">Start an enquiry</a></div></header>'''
 
 def footer(depth):
     r = lambda p: rel(p, depth)
-    return f'''<footer><div class="footer-brand"><span class="brand-surface"><img src="{r('assets/images/logo-white.webp')}" alt="Modern Group" width="598" height="115"></span></div><p>Modern Group is a commercial brand and is not a separate incorporated legal entity. Contracts, certifications and legal obligations are held by the relevant operating company.</p><div><a href="{r('legal-notice/index.html')}">Legal</a><a href="{r('privacy/index.html')}">Privacy</a></div></footer>'''
+    return f'''<footer><div class="footer-brand"><span class="brand-surface"><img src="{r('assets/images/logo-white.webp')}" alt="Modern Group" width="598" height="115"></span></div><p>Modern Group is a commercial brand and is not a separate incorporated legal entity.<br>Contracts, certifications and legal obligations are held by the relevant operating company.</p><div><a href="{r('legal-notice/index.html')}">Legal</a><a href="{r('privacy/index.html')}">Privacy</a></div></footer>'''
 
 def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc=""):
     r = lambda p: rel(p, depth)
     body_class = "home" if depth == 0 else "inner"
     page_assets = ""
     if active == "Home":
-        page_assets = '<link rel="stylesheet" href="assets/home.css">'
+        page_assets = '<link rel="stylesheet" href="assets/home.css?v=factory-info-1">'
     if active == "About":
         body_class += " about-page"
-        page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=hero-original-5')}">'''
+        page_assets = f'''\n  <link rel="stylesheet" href="{r('assets/about.css?v=alignment-1')}">'''
     if active == "Product Portfolio":
         body_class += " portfolio-page"
         page_assets = f'''
-  <link rel="stylesheet" href="{r('assets/product-portfolio.css')}">
+  <link rel="stylesheet" href="{r('assets/product-portfolio.css')}?v=balanced-steps-1">
   <script defer src="{r('assets/product-portfolio.js')}"></script>'''
     if active == "Companies & Locations":
         body_class += " companies-page"
-        page_assets = '<link rel="stylesheet" href="../assets/companies-locations.css"><script defer src="../assets/companies-locations.js"></script>'
+        page_assets = '<link rel="stylesheet" href="../assets/companies-locations.css?v=alignment-1"><script defer src="../assets/companies-locations.js"></script>'
     if active == "Quality & HSE":
         body_class += " quality-page"
         page_assets = f'''
-  <link rel="stylesheet" href="{r('assets/quality-hse.css')}">
+  <link rel="stylesheet" href="{r('assets/quality-hse.css?v=hero-spacing-1')}">
   <script defer src="{r('assets/quality-hse.js')}"></script>'''
     return f'''<!doctype html>
 <html lang="en">
@@ -52,8 +77,8 @@ def page(title, depth, active, hero_title, hero_sub, hero_img, content, desc="")
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(desc)}">
   <link rel="icon" href="{r('assets/images/favicon.ico')}">
-  <link rel="stylesheet" href="{r('assets/styles.css')}">
-  <script defer src="{r('assets/site.js')}"></script>{page_assets}
+  <link rel="stylesheet" href="{r('assets/styles.css')}?v=static-navigation-1">
+  <script defer src="{r('assets/site.js')}?v=static-navigation-1"></script>{page_assets}
 </head>
 <body class="{body_class}">
 {header(title.split(' | ')[0], depth, active)}
@@ -89,7 +114,7 @@ def how_we_work():
         f'<h3>{title}</h3><p>{copy}</p></article>'
         for number, icon, title, copy in steps
     )
-    return f'''<section class="principles section-shell section-muted principles--illustrated" id="how-we-work" aria-labelledby="how-we-work-title"><div class="section-heading"><div class="section-label"><span>05</span> How we work</div><h2 id="how-we-work-title">One point of entry. The right company takes responsibility.</h2></div><div class="principle-grid">{cards}</div></section>'''
+    return f'''<section class="principles section-shell section-muted principles--illustrated" id="how-we-work" aria-labelledby="how-we-work-title"><div class="section-heading"><div class="section-label"><span>05</span> How we work</div><h2 id="how-we-work-title">One point of entry.<br>The right company takes responsibility.</h2></div><div class="principle-grid">{cards}</div></section>'''
 
 
 def home():
@@ -100,9 +125,9 @@ def home():
   <div class="hero-content">
     <p class="eyebrow">Three specialist companies. One Modern Group.</p>
     <h1 id="group-title">MODERN GROUP</h1>
-    <p class="hero-copy">Modern Group is an integrated manufacturing group specializing in structural steel, modular plants, air-cooled heat exchangers and HRSG systems.</p>
+    <p class="hero-copy">Modern Heavy Industries Group (Modern Group) brings together three specialist manufacturers in Jiangsu, China.<br>Their capabilities span structural steel fabrication, modular plants, heat recovery steam generator (HRSG) pressure parts and air-cooled heat exchangers.</p>
     <ul class="hero-company-signature" aria-label="Companies in the Modern Group network">
-      <li><a href="mdhi/index.html"><strong>MDHI</strong><span>Modern Heavy Industries Co., Ltd.</span></a></li>
+      <li><a href="mdhi/index.html"><strong>MDHI</strong><span>Modern Heavy Industries (Taicang) Co., Ltd.</span></a></li>
       <li><a href="mmec/index.html"><strong>MMEC</strong><span>Modern Modular Engineering &amp; Construction Co., Ltd.</span></a></li>
       <li><a href="meem/index.html"><strong>MEEM</strong><span>Modern Energy Equipment Manufacturing Co., Ltd.</span></a></li>
     </ul>
@@ -114,15 +139,19 @@ def home():
   <div class="section-label"><span>01</span> The network</div>
   <div class="network-heading">
     <h2 id="network-title">One group identity.<br>Three connected companies.</h2>
-    <p class="network-lead">Shared leadership. Complementary capabilities. Clear responsibility.</p>
-    <p>Modern Group is the shared commercial identity of MDHI, MMEC and MEEM.</p>
+    <ul class="network-lead">
+      <li>Shared leadership</li>
+      <li>Complementary capabilities</li>
+      <li>Clear responsibility</li>
+    </ul>
+    <p>Under the Modern Group brand, MDHI, MMEC and MEEM share executive leadership.<br>Each operating company is responsible for its own contracts, certifications and delivery.</p>
   </div>
   <div class="network-relationship" aria-label="Modern Group connects three operating companies under shared executive leadership">
     <div class="network-brand"><img src="assets/images/logo-white.webp" alt="Modern Group" width="598" height="115" loading="lazy"><p>Shared commercial identity</p></div>
     <div class="network-company-headings">
-      <a href="mdhi/index.html"><h3>MDHI</h3><p>Modern Heavy Industries</p></a>
-      <a href="mmec/index.html"><h3>MMEC</h3><p>Modern Modular Engineering &amp; Construction</p></a>
-      <a href="meem/index.html"><h3>MEEM</h3><p>Modern Energy Equipment Manufacturing</p></a>
+      <a href="mdhi/index.html"><h3>MDHI</h3><p>Modern Heavy Industries <br class="network-name-break">(Taicang) Co., Ltd.</p></a>
+      <a href="mmec/index.html"><h3>MMEC</h3><p>Modern Modular Engineering <br class="network-name-break">&amp; Construction Co., Ltd.</p></a>
+      <a href="meem/index.html"><h3>MEEM</h3><p>Modern Energy Equipment <br class="network-name-break">Manufacturing Co., Ltd.</p></a>
     </div>
     <div class="network-shared-leadership"><span class="network-shared-symbol" aria-hidden="true">↔</span><div><h4>Shared executive leadership</h4><p>Led by the same executive team</p></div></div>
     <div class="network-scope-grid">
@@ -131,18 +160,18 @@ def home():
       <div><p class="network-fact-label">Manufacturing base</p><p class="network-base">Zhangjiagang, Jiangsu</p><div class="network-focus"><p class="network-fact-label">Specialist focus</p><p>HRSG Pressure Parts<br>Air-Cooled Heat Exchangers</p></div></div>
     </div>
     <div class="network-mobile-companies">
-      <article><h3><a href="mdhi/index.html">MDHI <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Heavy Industries</p><dl><div><dt>Manufacturing base</dt><dd>Taicang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel</dd></div></dl></article>
-      <article><h3><a href="mmec/index.html">MMEC <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Modular Engineering &amp; Construction</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel · Modular Plants</dd></div></dl></article>
-      <article><h3><a href="meem/index.html">MEEM <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Energy Equipment Manufacturing</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>HRSG Pressure Parts · Air-Cooled Heat Exchangers</dd></div></dl></article>
+      <article><h3><a href="mdhi/index.html">MDHI <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Heavy Industries (Taicang) Co., Ltd.</p><dl><div><dt>Manufacturing base</dt><dd>Taicang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel</dd></div></dl></article>
+      <article><h3><a href="mmec/index.html">MMEC <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Modular Engineering &amp; Construction Co., Ltd.</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>Structural Steel · Modular Plants</dd></div></dl></article>
+      <article><h3><a href="meem/index.html">MEEM <span aria-hidden="true">↗</span></a></h3><p class="network-mobile-name">Modern Energy Equipment Manufacturing Co., Ltd.</p><dl><div><dt>Manufacturing base</dt><dd>Zhangjiagang, Jiangsu</dd></div><div><dt>Specialist focus</dt><dd>HRSG Pressure Parts · Air-Cooled Heat Exchangers</dd></div></dl></article>
     </div>
   </div>
-  <div class="network-accountability"><div><h3>Connected at group level. Accountable at company level.</h3><p>Contracts, certifications and project delivery remain with the relevant operating company.</p></div><a href="#companies">Explore our companies <span aria-hidden="true">↗</span></a></div>
+  <div class="network-accountability"><div><h3>Connected at group level.<br>Accountable at company level.</h3><p>Contracts, certifications and project delivery remain with the relevant operating company.</p></div><a href="#companies">Explore our companies <span aria-hidden="true">↗</span></a></div>
 </section>
-<section class="facility-network section-shell" id="companies"><div class="split-heading"><div><div class="section-label"><span>02</span> Our companies</div><h2>Three manufacturing bases. Clear responsibility by company.</h2></div><p>Purpose-built facilities in Taicang and Zhangjiagang align specialist production with port-oriented logistics.</p></div><div class="facility-grid"><a class="facility-card" href="{r('mdhi/index.html')}"><div class="facility-photo"><img src="{r('assets/images/mdhi_birdview.webp')}" alt="Aerial view of MDHI manufacturing base"><span>01</span></div><div class="facility-info"><p class="company-code">MDHI · TAICANG</p><h3>Modern Heavy Industries (Taicang) Co., Ltd.</h3><p class="company-role">Structural Steel</p><span class="card-link">Explore MDHI <b>→</b></span></div></a><a class="facility-card" href="{r('mmec/index.html')}"><div class="facility-photo"><img src="{r('assets/images/mmec_birdview.webp')}" alt="Aerial view of MMEC manufacturing base"><span>02</span></div><div class="facility-info"><p class="company-code">MMEC · ZHANGJIAGANG</p><h3>Modern Modular Engineering &amp; Construction Co., Ltd.</h3><p class="company-role">Structural Steel · Modular Plants</p><span class="card-link">Explore MMEC <b>→</b></span></div></a><a class="facility-card" href="{r('meem/index.html')}"><div class="facility-photo"><img src="{r('assets/images/meem_birdview.webp')}" alt="Aerial view of MEEM manufacturing base"><span>03</span></div><div class="facility-info"><p class="company-code">MEEM · ZHANGJIAGANG</p><h3>Modern Energy Equipment Manufacturing Co., Ltd.</h3><p class="company-role">HRSG Pressure Parts · ACHE</p><span class="card-link">Explore MEEM <b>→</b></span></div></a></div></section>
-<section class="portfolio section-shell section-soft" id="capabilities"><div class="portfolio-header"><div><div class="section-label"><span>03</span> Product portfolio</div><p class="eyebrow dark">A clear route to the right manufacturer</p><h2>Four focused product lines.</h2><p>Every enquiry is directed to the operating company with the relevant manufacturing scope.</p></div><aside class="portfolio-assurance"><span>Routing principle</span><p>Every product line is owned by a legal entity that can quote, contract, certify and deliver.</p></aside></div><div class="product-list"><article class="product-card"><div class="product-media"><img src="assets/images/home-structural-steel-frame-1600.webp" srcset="assets/images/home-structural-steel-frame-800.webp 800w, assets/images/home-structural-steel-frame-1600.webp 1600w, assets/images/home-structural-steel-frame-2000.webp 2000w" sizes="(max-width: 700px) 100vw, (max-width: 1050px) 310px, 390px" alt="Multi-level structural steel frame during preassembly at the fabrication yard" width="1600" height="628" loading="lazy" decoding="async"><span>01</span></div><div class="product-card-body"><div><h3>Structural Steel</h3><p>Two specialized fabrication bases supporting project-specific structural steel requirements.</p></div><strong>MDHI + MMEC</strong><a href="product-portfolio/index.html" aria-label="Explore Structural Steel in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/product-modular-plants-layer3.webp" alt="Modular plant equipment" width="1600" height="1000" loading="lazy" decoding="async"><span>02</span></div><div class="product-card-body"><div><h3>Modular Plants</h3><p>A focused manufacturing platform for integrated modules and modular plant delivery.</p></div><strong>MMEC</strong><a href="product-portfolio/index.html" aria-label="Explore Modular Plants in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/hrsg-pressure-part-module-assemblies.webp" alt="Rows of HRSG pressure-part tube modules in yellow frames at the manufacturing facility" width="1600" height="1000" loading="lazy" decoding="async"><span>03</span></div><div class="product-card-body"><div><h3>HRSG Pressure Parts</h3><p>Dedicated manufacture of pressure-part assemblies for heat recovery steam generator applications.</p></div><strong>MEEM</strong><a href="product-portfolio/index.html" aria-label="Explore HRSG Pressure Parts in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/home-air-heater-approved.webp" alt="Air heater equipment in the manufacturing workshop" width="1440" height="1080" loading="lazy" decoding="async"><span>04</span></div><div class="product-card-body"><div><h3>Air-Cooled Heat Exchangers</h3><p>Specialized fabrication of air-cooled heat exchanger equipment for energy and process projects.</p></div><strong>MEEM</strong><a href="product-portfolio/index.html" aria-label="Explore Air-Cooled Heat Exchangers in the product portfolio">Explore product portfolio <b>→</b></a></div></article></div></section>
-<section class="locations section-shell locations-map-section" id="locations"><div class="location-copy"><div class="section-label"><span>04</span> Locations</div><p class="eyebrow dark">Shanghai · Taicang · Zhangjiagang</p><h2>Manufacturing access shaped by ports and industry.</h2><p>MDHI operates in Taicang Port Development Zone. MMEC and MEEM are located in Zhangjiagang near Gangxin Port, with engineering and commercial coordination supported from Shanghai.</p><div class="map-key"><span>3 manufacturing bases</span><span>1 engineering center</span><span>Yangtze River logistics</span></div></div>{interactive_map(0, "compact")}</section>
+<section class="facility-network section-shell" id="companies"><div class="split-heading"><div><div class="section-label"><span>02</span> Our companies</div><h2>Three manufacturing bases.<br>Clear responsibility by company.</h2></div><p>Purpose-built facilities in Taicang and Zhangjiagang align specialist production with port-oriented logistics.</p></div><div class="facility-grid"><a class="facility-card" href="{r('mdhi/index.html')}"><div class="facility-photo"><img src="{r('assets/images/mdhi_birdview.webp')}" alt="Aerial view of MDHI manufacturing base"><span>01</span></div><div class="facility-info"><p class="company-code">MDHI · TAICANG</p><h3>Modern Heavy Industries (Taicang) Co., Ltd.</h3><p class="company-role">Structural Steel</p><span class="card-link">Explore MDHI <b>→</b></span></div></a><a class="facility-card" href="{r('mmec/index.html')}"><div class="facility-photo"><img src="{r('assets/images/mmec_birdview.webp')}" alt="Aerial view of MMEC manufacturing base"><span>02</span></div><div class="facility-info"><p class="company-code">MMEC · ZHANGJIAGANG</p><h3>Modern Modular Engineering &amp; Construction Co., Ltd.</h3><p class="company-role">Structural Steel · Modular Plants</p><span class="card-link">Explore MMEC <b>→</b></span></div></a><a class="facility-card" href="{r('meem/index.html')}"><div class="facility-photo"><img src="{r('assets/images/meem_birdview.webp')}" alt="Aerial view of MEEM manufacturing base"><span>03</span></div><div class="facility-info"><p class="company-code">MEEM · ZHANGJIAGANG</p><h3>Modern Energy Equipment Manufacturing Co., Ltd.</h3><p class="company-role">HRSG Pressure Parts · Air-Cooled Heat Exchangers</p><span class="card-link">Explore MEEM <b>→</b></span></div></a></div></section>
+<section class="portfolio section-shell section-soft" id="capabilities"><div class="portfolio-header"><div><div class="section-label"><span>03</span> Product portfolio</div><p class="eyebrow dark">A clear route to the right manufacturer</p><h2>Four focused product lines.</h2><p>Find the operating company for each product line.</p></div><aside class="portfolio-assurance"><span>Routing principle</span><p>Every product line is owned by a legal entity that can quote, contract, certify and deliver.</p></aside></div><div class="product-list"><article class="product-card"><div class="product-media"><img src="assets/images/home-structural-steel-frame-1600.webp" srcset="assets/images/home-structural-steel-frame-800.webp 800w, assets/images/home-structural-steel-frame-1600.webp 1600w, assets/images/home-structural-steel-frame-2000.webp 2000w" sizes="(max-width: 700px) 100vw, (max-width: 1050px) 310px, 390px" alt="Multi-level structural steel frame during preassembly at the fabrication yard" width="1600" height="628" loading="lazy" decoding="async"><span>01</span></div><div class="product-card-body"><div><h3>Structural Steel</h3><p>Two specialized fabrication bases supporting project-specific structural steel requirements.</p></div><strong>MDHI + MMEC</strong><a href="product-portfolio/index.html" aria-label="Explore Structural Steel in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/product-modular-plants-layer3.webp" alt="Modular plant equipment" width="1600" height="1000" loading="lazy" decoding="async"><span>02</span></div><div class="product-card-body"><div><h3>Modular Plants</h3><p>Modular Plants from MMEC, with module integration and port-oriented delivery.</p></div><strong>MMEC</strong><a href="product-portfolio/index.html" aria-label="Explore Modular Plants in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/hrsg-pressure-part-module-assemblies.webp" alt="Rows of HRSG pressure-part tube modules in yellow frames at the manufacturing facility" width="1600" height="1000" loading="lazy" decoding="async"><span>03</span></div><div class="product-card-body"><div><h3>HRSG Pressure Parts</h3><p>Dedicated manufacture of pressure-part assemblies for heat recovery steam generator applications.</p></div><strong>MEEM</strong><a href="product-portfolio/index.html" aria-label="Explore HRSG Pressure Parts in the product portfolio">Explore product portfolio <b>→</b></a></div></article><article class="product-card"><div class="product-media"><img src="assets/images/home-air-heater-approved.webp" alt="Air heater equipment in the manufacturing workshop" width="1440" height="1080" loading="lazy" decoding="async"><span>04</span></div><div class="product-card-body"><div><h3>Air-Cooled Heat Exchangers</h3><p>Specialized fabrication of air-cooled heat exchanger equipment for energy and process projects.</p></div><strong>MEEM</strong><a href="product-portfolio/index.html" aria-label="Explore Air-Cooled Heat Exchangers in the product portfolio">Explore product portfolio <b>→</b></a></div></article></div></section>
+<section class="locations section-shell locations-map-section" id="locations"><div class="location-copy"><div class="section-label"><span>04</span> Locations</div><p class="eyebrow dark">Shanghai · Taicang · Zhangjiagang</p><h2>Manufacturing access shaped by<br>ports and industry.</h2><p>MDHI operates in Taicang Port Development Zone.<br><span class="location-coordination">MMEC and MEEM are located in Zhangjiagang near Gangxin Port, with engineering and commercial coordination supported from Shanghai.</span></p><div class="map-key"><span>3 manufacturing bases</span><span>1 engineering center</span><span>Yangtze River logistics</span></div></div>{interactive_map(0, "compact")}</section>
 {how_we_work()}
-<section class="contact-section" id="contact"><div class="section-shell"><div><p class="eyebrow">Start with Modern Group</p><h2>Tell us what you need to manufacture.</h2><p>Choose one of the four product lines. We will route your enquiry to the operating company with the relevant manufacturing responsibility.</p></div><div class="contact-links"><a href="{r('contact/index.html?product=Structural%20Steel#enquiry-form')}"><b>Structural Steel</b><span>MDHI + MMEC →</span></a><a href="{r('contact/index.html?product=Modular%20Plants#enquiry-form')}"><b>Modular Plants</b><span>MMEC →</span></a><a href="{r('contact/index.html?product=HRSG%20Pressure%20Parts#enquiry-form')}"><b>HRSG Pressure Parts</b><span>MEEM →</span></a><a href="{r('contact/index.html?product=Air-Cooled%20Heat%20Exchangers#enquiry-form')}"><b>Air-Cooled Heat Exchangers</b><span>MEEM →</span></a></div></div></section>'''
+<section class="contact-section" id="contact"><div class="section-shell"><div><p class="eyebrow">Start with Modern Group</p><h2>Tell us what you need to manufacture.</h2><p>Choose one of the four product lines.<br>Modern Group receives enquiries centrally and coordinates with the relevant operating company.<br><a class="closing-faq" href="faq/index.html#panel-group">Read the Group &amp; Companies FAQ <span aria-hidden="true">→</span></a></p></div><div class="contact-links"><a href="{r('contact/index.html?product=Structural%20Steel#enquiry-form')}"><b>Structural Steel</b><span>MDHI + MMEC →</span></a><a href="{r('contact/index.html?product=Modular%20Plants#enquiry-form')}"><b>Modular Plants</b><span>MMEC →</span></a><a href="{r('contact/index.html?product=HRSG%20Pressure%20Parts#enquiry-form')}"><b>HRSG Pressure Parts</b><span>MEEM →</span></a><a href="{r('contact/index.html?product=Air-Cooled%20Heat%20Exchangers#enquiry-form')}"><b>Air-Cooled Heat Exchangers</b><span>MEEM →</span></a></div></div></section>'''
     return page("Modern Group | Specialized Manufacturing Network", 0, "Home", "", "", "", content, "Modern Group connects MDHI, MMEC and MEEM across four focused manufacturing product lines.")
 
 def about():
@@ -163,10 +192,12 @@ def profile(slug, code, legal, role, location, desc, scope, facts, img, image_al
     content = inner_hero(hero_title, hero_sub, f"assets/images/{img}", depth)
     visuals = f'<div class="profile-image profile-image--manufacturing"><img src="{r(f"assets/images/{img}")}" alt="{html.escape(image_alt)}" loading="lazy" decoding="async"><span class="profile-image-label">{code} · {location}</span></div>'
     content += f'''<section class="content-shell company-profile"><div class="profile-visuals">{visuals}</div><div class="prose"><p class="eyebrow dark">Operating company</p><h2>{legal}</h2><p>{desc}</p><div class="profile-facts">'''
-    for k, v in facts:
-        content += f'<div><span>{k}</span><strong>{v}</strong></div>'
-    content += f'''</div><h3>Core manufacturing scope</h3><p>{scope}</p><a class="button button-gold profile-cta" href="{official_url(code)}" target="_blank" rel="noopener">Visit {code} website ↗</a></div></section>'''
-    return page(f"{code} | Modern Group", depth, None, "", "", "", content, f"{legal} — {role}.").replace("assets/styles.css", "assets/styles.css?v=company-photos-1")
+    for label, value in facts:
+        if label == "Website":
+            value = f'<a href="{official_url(code)}" target="_blank" rel="noopener">{value}</a>'
+        content += f'<div><span>{label}</span><strong>{value}</strong></div>'
+    content += f'''</div><h3>Core manufacturing scope</h3><p>{scope}</p></div></section>'''
+    return page(f"{code} | Modern Group", depth, None, "", "", "", content, f"{legal} — {role}.").replace("assets/styles.css", "assets/styles.css?v=company-website-link")
 
 def official_url(code):
     return {"MDHI":"https://mdhiglobal.com","MMEC":"https://mmecglobal.com","MEEM":"https://m-energy.com"}[code]
@@ -184,10 +215,10 @@ def mmec_profile():
     return profile("mmec", "MMEC", "Modern Modular Engineering & Construction Co., Ltd.", "Structural Steel · Modular Plants", "Zhangjiagang, Jiangsu", desc, scope, facts, "mmec-integrated-module-transport.webp", "Integrated module on an SPMT transporter at the MMEC workshop")
 
 def meem_profile():
-    facts = [("Legal name","Modern Energy Equipment Manufacturing Co., Ltd."),("Address","1 Duanshan Road, Deji Subdistrict, Zhangjiagang, Jiangsu 215635, China"),("Scope","HRSG Pressure Parts · ACHE"),("Website","m-energy.com")]
+    facts = [("Legal name","Modern Energy Equipment Manufacturing Co., Ltd."),("Address","1 Duanshan Road, Deji Subdistrict, Zhangjiagang, Jiangsu 215635, China"),("Scope","HRSG Pressure Parts · Air-Cooled Heat Exchangers"),("Website","m-energy.com")]
     desc = "MEEM is the group’s newest manufacturing facility, dedicated to energy equipment for power generation and process industries. It brings 15+ years of sector experience into a purpose-built Zhangjiagang plant."
     scope = "Heat recovery steam generator (HRSG) pressure parts including finned tubes, headers, manifolds, harps and modules; air-cooled heat exchangers (ACHE); ASME pressure vessels; and modular structures for energy projects."
-    return profile("meem", "MEEM", "Modern Energy Equipment Manufacturing Co., Ltd.", "HRSG Pressure Parts · ACHE", "Zhangjiagang, Jiangsu", desc, scope, facts, "meem-hrsg-header-welding.webp", "Welder working on an HRSG header assembly at the MEEM manufacturing facility")
+    return profile("meem", "MEEM", "Modern Energy Equipment Manufacturing Co., Ltd.", "HRSG Pressure Parts · Air-Cooled Heat Exchangers", "Zhangjiagang, Jiangsu", desc, scope, facts, "meem-hrsg-header-welding.webp", "Welder working on an HRSG header assembly at the MEEM manufacturing facility")
 
 def product_portfolio():
     from product_portfolio import render_portfolio

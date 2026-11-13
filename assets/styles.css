@@ -256,7 +256,7 @@ footer div a { color: var(--gold); font-size: 14px; font-weight: 700; letter-spa
 .profile-facts div { padding: 18px; background: var(--white); border-left: 3px solid var(--gold); }
 .profile-facts span { display: block; font-size: 14px; color: #777168; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
 .profile-facts strong { font-size: 16px; color: var(--ink); }
-.profile-cta { display: inline-flex; margin-top: 10px; }
+.profile-facts a { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Org chart */
 .org-section { padding-top: 30px; }
@@ -1056,7 +1056,7 @@ footer { padding: 46px clamp(24px, 6vw, 96px); }
   text-transform: uppercase;
 }
 .enquiry-route-card > a b { color: var(--gold-deep); font-size: 17px; }
-#enquiry-form { scroll-margin-top: 90px; }
+#enquiry-form, #company-emails { scroll-margin-top: 90px; }
 .form-intro { margin: -4px 0 24px; color: #68635b; font-size: 16px; line-height: 1.7; }
 
 @media (max-width: 900px) {
@@ -1417,3 +1417,46 @@ img[src$="product-air-cooled-heat-exchangers-default.webp"] {
 .profile-visuals { min-width:0; }
 .profile-image.profile-image--manufacturing { min-height:0; }
 .profile-image--manufacturing img { position:relative; inset:auto; display:block; width:100%; height:auto; object-fit:contain; }
+
+/* Navigation disclosures: the link navigates; the adjacent button opens the submenu. */
+.nav-menu { position:relative; display:flex; align-items:center; gap:0; }
+.nav-menu-toggle { display:inline-flex; align-items:center; justify-content:center; width:24px; height:36px; padding:0; border:0; background:transparent; color:inherit; cursor:pointer; font-size:20px; }
+.nav-menu-toggle span { display:block; width:6px; height:6px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:translateY(-2px) rotate(45deg); }
+.nav-menu-toggle[aria-expanded="true"] span { transform:translateY(1px) rotate(225deg); }
+.nav-menu-toggle:focus-visible,.nav-submenu a:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.nav-submenu { position:absolute; top:100%; right:0; min-width:250px; padding:10px 16px; background:var(--ink); color:var(--ivory); border:1px solid rgba(189,161,109,.4); box-shadow:0 12px 28px rgba(0,0,0,.18); }
+.nav-submenu[hidden] { display:none; }
+.site-header nav .nav-submenu a { display:block; padding:11px 4px; font-size:14px; letter-spacing:0; border-bottom:1px solid transparent; }
+.site-header nav .nav-submenu a:hover,.site-header nav .nav-submenu a.active-nav { padding-bottom:11px; border-bottom-color:var(--gold); }
+@media(min-width:901px) and (max-width:1240px) { .header-tools { display:none; } }
+@media(min-width:901px) and (max-width:1040px) { .site-header nav { font-size:14px; gap:12px; } .brand img { width:160px; } }
+@media(max-width:900px) {
+  .nav-menu { flex-wrap:wrap; gap:0; }
+  .nav-menu > a { flex:1; }
+  .nav-menu-toggle { width:48px; height:52px; border-bottom:1px solid rgba(255,255,255,.09); }
+  .nav-submenu { position:static; flex-basis:100%; min-width:0; padding:4px 12px; margin:0 0 4px; box-shadow:none; border:0; border-left:1px solid var(--gold); }
+  .site-header nav { max-height:calc(100svh - 80px); overflow-y:auto; }
+}
+
+/* Keep the full link list available when the navigation script is unavailable. */
+.site-header:not(.nav-enhanced) { position:relative; height:auto; min-height:94px; flex-wrap:wrap; padding-block:12px; background:var(--ink); }
+.site-header:not(.nav-enhanced) .menu-toggle,
+.site-header:not(.nav-enhanced) .nav-menu-toggle { display:none; }
+.site-header:not(.nav-enhanced) #primary-nav { position:static; display:flex; flex-flow:row wrap; align-items:flex-start; gap:12px 20px; max-height:none; padding:0; opacity:1; visibility:visible; transform:none; pointer-events:auto; background:none; border:0; box-shadow:none; }
+.site-header:not(.nav-enhanced) .nav-menu { display:block; }
+.site-header:not(.nav-enhanced) .nav-submenu { position:static; min-width:0; padding:0 0 0 8px; margin:4px 0 0; border:0; border-left:1px solid var(--gold); box-shadow:none; }
+.site-header:not(.nav-enhanced) #primary-nav .nav-submenu a { padding:4px; }
+@media (max-width:900px) {
+  .site-header:not(.nav-enhanced) #primary-nav { flex-basis:100%; }
+}
+
+/* Keep headings balanced and avoid short last lines in running copy. */
+main :is(h1, h2, h3) { text-wrap: balance; }
+main :is(p, dd) { text-wrap: pretty; }
+
+.closing-faq {
+  display: inline-block;
+  margin-block-start: .5em;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}

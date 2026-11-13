@@ -1,0 +1,30 @@
+# Modern Group — robots.txt
+# 正式地址：https://www.modernhig.com/
+# 允许搜索引擎与 AI 爬虫抓取公开业务页；后台路径不抓取。
+# AI crawler policy decided 2026-11-09: explicitly allow AI crawlers to crawl public business pages.
+
+User-agent: *
+Disallow: /admin/
+Allow: /
+
+User-agent: GPTBot
+Disallow: /admin/
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /admin/
+Allow: /
+
+User-agent: PerplexityBot
+Disallow: /admin/
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /admin/
+Allow: /
+
+User-agent: anthropic-ai
+Disallow: /admin/
+Allow: /
+
+Sitemap: https://www.modernhig.com/sitemap.xml

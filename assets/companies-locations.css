@@ -1,10 +1,10 @@
 .companies-page { background:var(--ivory); }
 .companies-page .site-header { position:relative; background:var(--ink); }
 .cl-hero { display:grid; grid-template-columns:46% 54%; min-height:570px; }
-.cl-hero-copy { padding:74px 10% 70px 13%; align-self:center; }
+.cl-hero-copy { padding:74px 7% 70px 13%; align-self:center; }
 .cl-eyebrow { color:var(--gold-deep); font:600 15px/1.5 var(--sans); letter-spacing:.18em; text-transform:uppercase; margin-bottom:22px; }
-.cl-hero h1 { font:400 clamp(42px,4.5vw,76px)/1.04 var(--serif); letter-spacing:-.035em; margin-bottom:28px; }
-.cl-intro { max-width:450px; color:#53544e; font-size:16px; line-height:1.8; margin-bottom:30px; }
+.cl-hero h1 { font:400 clamp(42px,4.5vw,76px)/1.16 var(--serif); letter-spacing:-.035em; margin-bottom:28px; }
+.cl-intro { max-width:38rem; color:#53544e; font-size:16px; line-height:1.8; margin-bottom:30px; }
 .cl-hero-image { position:relative; min-height:530px; }
 .cl-hero-image img { position:absolute; width:100%; height:100%; object-fit:cover; }
 .cl-hero-image > span { position:absolute; right:0; top:40px; writing-mode:vertical-rl; padding:26px 16px; background:var(--gold); font-size:14px; letter-spacing:.22em; text-transform:uppercase; }
@@ -14,14 +14,14 @@
 .cl-index a { font-size:16px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
 .cl-index span { color:var(--gold-deep); margin-right:16px; }
 .cl-companies { max-width:1600px; margin:auto; padding:0 5%; }
-.cl-company { display:grid; grid-template-columns:90px minmax(0,1.1fr) minmax(0,1fr); gap:34px; padding:48px 0; border-bottom:1px solid var(--line); scroll-margin-top:24px; align-items:center; }
+.cl-company { display:grid; grid-template-columns:max-content minmax(0,1.1fr) minmax(0,1fr); gap:34px; padding:48px 0; border-bottom:1px solid var(--line); scroll-margin-top:24px; align-items:center; }
 .cl-number { align-self:start; display:flex; flex-direction:column; padding-top:4px; }
 .cl-number > span { font:400 78px/.95 var(--serif); color:#d9c9a9; margin-bottom:18px; }
 .cl-number strong { font-size:14px; letter-spacing:.13em; }
-.cl-number small { margin-top:6px; font-size:14px; text-transform:uppercase; letter-spacing:.08em; }
+.cl-number small { margin-top:6px; font-size:14px; text-transform:uppercase; letter-spacing:.08em; white-space:nowrap; }
 .cl-photo { margin:0; height:410px; overflow:hidden; }
 .cl-photo img { width:100%; height:100%; object-fit:cover; }
-.cl-company:nth-child(2) { grid-template-columns:90px minmax(0,1fr) minmax(0,1.1fr); }
+.cl-company:nth-child(2) { grid-template-columns:max-content minmax(0,1fr) minmax(0,1.1fr); }
 .cl-company:nth-child(2) .cl-photo { grid-column:3; grid-row:1; }
 .cl-company:nth-child(2) .cl-company-copy { grid-column:2; grid-row:1; }
 .cl-company h2 { font:400 clamp(30px,3.1vw,48px)/1.08 var(--serif); letter-spacing:-.025em; max-width:510px; margin-bottom:24px; }
@@ -45,7 +45,7 @@
 @media(max-width:1050px) {
  .cl-hero-copy { padding:48px 9%; }
  .cl-hero,.cl-hero-image { min-height:470px; }
- .cl-company,.cl-company:nth-child(2) { grid-template-columns:65px minmax(0,1fr) minmax(0,1fr); gap:22px; }
+ .cl-company,.cl-company:nth-child(2) { grid-template-columns:max-content minmax(0,1fr) minmax(0,1fr); gap:22px; }
  .cl-number > span { font-size:64px; }
  .cl-photo { height:380px; }
  .cl-index { gap:28px; }
@@ -60,7 +60,7 @@
  .cl-index span { margin-right:5px; }
  .cl-companies { padding:0 24px; }
  .cl-company,.cl-company:nth-child(2) { grid-template-columns:1fr; padding:32px 0; gap:22px; }
- .cl-number { flex-direction:row; align-items:baseline; gap:15px; }
+ .cl-number { flex-direction:row; flex-wrap:wrap; align-items:baseline; gap:10px 15px; }
  .cl-number > span { font-size:45px; margin:0; }
  .cl-company:nth-child(2) .cl-photo,.cl-company:nth-child(2) .cl-company-copy { grid-column:auto; grid-row:auto; }
  .cl-photo { height:auto; aspect-ratio:1.5; }

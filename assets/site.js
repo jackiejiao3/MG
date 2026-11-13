@@ -5,7 +5,44 @@
 
   if (!header || !toggle || !nav) return;
 
+  const canHover = window.matchMedia('(hover: hover) and (min-width: 901px)');
+  const menus = [...nav.querySelectorAll('.nav-menu')].map((group) => ({
+    group,
+    label: group.dataset.menuLabel,
+    link: group.querySelector('a'),
+    button: group.querySelector('.nav-menu-toggle'),
+    submenu: group.querySelector('.nav-submenu'),
+  }));
+  const setMenuOpen = ({ button, submenu, label }, open) => {
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', `${open ? 'Close' : 'Open'} ${label} submenu`);
+    submenu.hidden = !open;
+  };
+  const openMenu = (selected) => menus.forEach((menu) => setMenuOpen(menu, menu === selected));
+  openMenu(null);
+  header.classList.add('nav-enhanced');
+
+  menus.forEach((menu) => {
+    const { group, link, button, submenu } = menu;
+    button.addEventListener('click', () => submenu.hidden ? openMenu(menu) : setMenuOpen(menu, false));
+    link.addEventListener('pointerenter', () => {
+      if (canHover.matches) openMenu(menu);
+    });
+    group.addEventListener('pointerleave', () => {
+      if (canHover.matches && !group.contains(document.activeElement)) setMenuOpen(menu, false);
+    });
+    group.addEventListener('focusout', (event) => {
+      if (!group.contains(event.relatedTarget)) setMenuOpen(menu, false);
+    });
+  });
+  document.addEventListener('click', (event) => {
+    menus.forEach((menu) => {
+      if (!menu.group.contains(event.target)) setMenuOpen(menu, false);
+    });
+  });
+
   const setOpen = (open) => {
+    if (!open) openMenu(null);
     document.body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
@@ -20,7 +57,16 @@
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setOpen(false);
+    if (event.key !== 'Escape') return;
+    const open = menus.find(({ submenu }) => !submenu.hidden);
+    if (open) {
+      setMenuOpen(open, false);
+      open.button.focus();
+    } else {
+      const wasOpen = document.body.classList.contains('menu-open');
+      setOpen(false);
+      if (wasOpen) toggle.focus();
+    }
   });
 
   window.addEventListener('resize', () => {

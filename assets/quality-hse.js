@@ -19,7 +19,12 @@
       });
       if (moveFocus) button.focus();
     };
-    selectStep(stepButtons[0]);
+    const selectFromHash = () => {
+      const current = stepButtons.find((link) => link.hash === window.location.hash);
+      selectStep(current || stepButtons[0]);
+    };
+    selectFromHash();
+    window.addEventListener('hashchange', selectFromHash);
     stepButtons.forEach((button, index) => {
       button.addEventListener('click', () => selectStep(button));
       button.addEventListener('keydown', (event) => {
@@ -28,6 +33,7 @@
         if (['ArrowLeft','ArrowUp'].includes(event.key)) next = (index - 1 + stepButtons.length) % stepButtons.length;
         if (event.key === 'Home') next = 0;
         if (event.key === 'End') next = stepButtons.length - 1;
+        if (event.key === ' ') { event.preventDefault(); button.click(); }
         if (next !== undefined) { event.preventDefault(); selectStep(stepButtons[next], true); }
       });
     });
