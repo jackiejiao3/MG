@@ -186,3 +186,20 @@
 .ma-award-detail .award-card__gallery a{height:auto;aspect-ratio:4/3;overflow:hidden;background:transparent}
 .ma-award-detail .award-card__gallery img{width:100%;height:100%;max-height:none;object-fit:cover}
 @media(max-width:540px){.aw-record-body{padding:0}.aw-record-copy{padding:22px}.aw-record .aw-preview img{height:100%}}
+
+/* Full-width, subject-specific backgrounds for the four trophy cards. */
+.aw-ledger{align-items:stretch}
+.aw-record{display:flex}
+.aw-record-body{width:100%;min-width:0}
+.aw-record-copy{display:flex;flex-direction:column;flex:1;box-sizing:border-box;width:100%}
+.aw-record-copy>.ma-detail{margin-top:auto;padding-top:22px}
+.aw-record .aw-preview{flex:none;position:relative;isolation:isolate}
+#award-valmet-quality-excellence-award .aw-preview{background:linear-gradient(180deg,#d8d5ce 0%,#dedbd5 72%,#d1cbbf 100%)}
+#award-valmet-quality-excellence-award .aw-preview img{width:auto;max-width:100%;height:100%;object-fit:contain;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+#award-amrun-chith-export-facility-recognition .aw-preview{background:#dedbd8}
+#award-amrun-chith-export-facility-recognition .aw-preview img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+#award-3 .aw-preview{background:linear-gradient(180deg,#c5d5d9 0%,#91b8c6 45%,#789ca8 77%,#9faeae 100%)}
+#award-3 .aw-preview img{width:auto;max-width:100%;height:100%;object-fit:contain;mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%)}
+#award-4 .aw-preview{background:#000}
+#award-4 .aw-preview img{width:auto;max-width:100%;height:100%;object-fit:contain}
+@media(min-width:961px){.aw-record h3{min-height:2.6em}.aw-summary{min-height:5.55em}}
