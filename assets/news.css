@@ -170,3 +170,19 @@
 .aw-record-body{align-items:start;padding:30px}
 .aw-preview{align-self:center}.aw-preview img{height:190px;object-fit:contain}
 @media(max-width:540px){.aw-record-body{grid-template-columns:1fr;padding:24px}.aw-preview img{height:200px}.aw-record h3{font-size:25px}}
+
+/* Consistent award imagery without stretched portrait frames. */
+.aw-ledger{align-items:start}
+.aw-record-body{display:flex;flex-direction:column;gap:0;padding:0}
+.aw-record .aw-preview{order:-1;align-self:stretch;width:100%;height:auto;aspect-ratio:16/10;box-sizing:border-box;padding:0;border:0;border-bottom:1px solid #e0e1d8;background:#f2f1ec;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.aw-record .aw-preview img{width:100%;height:100%;max-height:none;object-fit:cover}
+.aw-record .aw-preview img[src*="recognition"],.aw-record .aw-preview img[src*="valmet"],.aw-record .aw-preview img[src*="amrun"],.aw-record .aw-preview img[src*="jazigc"],.aw-record .aw-preview img[src*="mcdw"]{object-fit:contain}
+.aw-record-copy{padding:26px 28px 30px}
+.ma-award-detail .award-card{align-items:start}
+.ma-award-detail .award-card__media{display:grid;gap:18px;align-content:start}
+.ma-award-detail .award-card__visual{height:auto;min-height:0;align-self:start;background:transparent;border:0;padding:0}
+.ma-award-detail .award-card__visual img{display:block;width:100%;height:auto;min-height:0;max-height:520px;object-fit:contain;background:transparent}
+.ma-award-detail .award-card__gallery{margin-top:0;align-items:start}
+.ma-award-detail .award-card__gallery a{height:auto;aspect-ratio:4/3;overflow:hidden;background:transparent}
+.ma-award-detail .award-card__gallery img{width:100%;height:100%;max-height:none;object-fit:cover}
+@media(max-width:540px){.aw-record-body{padding:0}.aw-record-copy{padding:22px}.aw-record .aw-preview img{height:100%}}
