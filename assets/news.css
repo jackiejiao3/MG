@@ -208,3 +208,15 @@
 #award-3 .aw-preview img,#award-4 .aw-preview img{width:100%;height:100%;max-width:100%;object-fit:contain;mask-image:none}
 #award-3 .aw-preview{background:#b8c8cc}
 .ma-award-detail .award-card__visual img[src*="egyptmp2"],.ma-award-detail .award-card__visual img[src*="mcdw2"]{width:100%;height:auto;max-height:none;object-fit:contain;mask-image:none}
+
+/* Native swipeable award gallery; each slide retains the full image. */
+.ma-award-detail .award-carousel{min-width:0;width:100%}
+.ma-award-detail .award-carousel__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;overscroll-behavior-x:contain;width:100%;border:1px solid #deded5;background:#f4f3ef;box-sizing:border-box}
+.ma-award-detail .award-carousel__slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3}
+.ma-award-detail .award-carousel__slide>a{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;box-sizing:border-box;padding:14px;background:transparent;margin:0;border:0}
+.ma-award-detail .award-carousel__slide img{width:100%;height:calc(100% - 32px);max-height:none;min-height:0;object-fit:contain;flex:1;min-width:0}
+.ma-award-detail .award-carousel__slide a>span{flex:none;font-size:10px;line-height:1.5;letter-spacing:.08em;color:#80682e;margin:10px 0 0}
+.award-carousel__controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;color:#68747b;font-size:12px}
+.award-carousel__controls button{width:42px;height:38px;border:1px solid #c9bc9d;background:#fff;color:#263b4b;cursor:pointer;font-size:20px}
+.award-carousel__controls button:disabled{opacity:.3;cursor:default}
+.award-carousel__controls button:focus-visible,.award-carousel__track:focus-visible{outline:2px solid #94763c;outline-offset:3px}
