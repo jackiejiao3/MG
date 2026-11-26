@@ -220,3 +220,7 @@
 .award-carousel__controls button{width:42px;height:38px;border:1px solid #c9bc9d;background:#fff;color:#263b4b;cursor:pointer;font-size:20px}
 .award-carousel__controls button:disabled{opacity:.3;cursor:default}
 .award-carousel__controls button:focus-visible,.award-carousel__track:focus-visible{outline:2px solid #94763c;outline-offset:3px}
+
+/* End the development timeline in the shared brand gold. */
+.mr-tick:last-of-type:after,.mr-tick:last-of-type:hover:after,.mr-tick:last-of-type[aria-selected="true"]:after{background:var(--gold,#bea56f)}
+.mr-tick:last-of-type:before{background:color-mix(in srgb,var(--gold,#bea56f) 40%,#f6f2e8)}
